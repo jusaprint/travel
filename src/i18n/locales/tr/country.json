@@ -1,0 +1,23 @@
+{
+  "starting.from": "Başlangıç fiyatı",
+  "packages.available": "paket mevcut",
+  "view.details": "Detayları Görüntüle",
+  "popular.badge": "En Popüler",
+  "best.value.badge": "En İyi Değer",
+  "get.local.esim": "Yerel bir {{country}} eSIM edinin",
+  "downloadable.sim": "Çoklu kullanım için ön ödemeli veriye sahip en iyi {{country}} eSIM",
+  "network": "Ağ",
+  "hotspot": "Hotspot",
+  "hotspot.allowed": "Kudo hotspot kullanımına izin verilir",
+  "speed": "Hız",
+  "available.packages": "Mevcut Paketler",
+  "features": "Özellikler",
+  "description": "Açıklama",
+  "not.found": "Aradığınız ülke mevcut değil veya kullanılamıyor.",
+  "back": "Destinasyonlara Geri Dön",
+  "error": "Hata",
+  "valid.for": "Geçerlilik süresi",
+  "days": "gün",
+  "most.popular": "En Popüler",
+  "best.value": "En İyi Değer"
+}

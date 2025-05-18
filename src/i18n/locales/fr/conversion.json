@@ -1,0 +1,23 @@
+{
+  "live_views": "Vues en Direct",
+  "right_now": "En ce moment",
+  "live_users": "Utilisateurs Actifs",
+  "browsing_plans": "parcourent les forfaits",
+  "viewing_this_page": "consultent cette page",
+  "purchased_today": "achetés aujourd'hui",
+  "bookings_today": "Réservations Aujourd'hui",
+  "last_24h": "Dernières 24h",
+  "recent_purchases": "Achats Récents",
+  "flash_sale": "Vente Flash",
+  "free_activation": "Activation Gratuite",
+  "limited_time_offer": "Offre à Durée Limitée",
+  "free_activation_promo": "ACTIVATION GRATUITE",
+  "promo_ends_in": "La promotion se termine dans",
+  "claim_now": "Réclamer Maintenant",
+  "instant": "Instantané",
+  "connect_in_minutes": "Connectez-vous en Minutes",
+  "instant_activation": "Activation Instantanée",
+  "no_physical_sim": "Pas de SIM physique nécessaire",
+  "scan_qr_code": "Scannez simplement un code QR",
+  "connect_instantly": "Connectez-vous instantanément"
+}

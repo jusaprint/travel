@@ -1,0 +1,33 @@
+{
+  "title": "Udhëtoni më me Mençuri me KudoSIM",
+  "subtitle": "Qëndroni të lidhur kudo në botë me shërbimin tonë të besueshëm eSIM",
+  "coverage": {
+    "title": "200+ destinacione",
+    "description": "Jo më ndërrim SIM-esh, instalojeni një herë, mbajeni përgjithmonë"
+  },
+  "support": {
+    "title": "Mbështetje premium",
+    "description": "Ne do të jemi gjithmonë me ju, për mirë dhe për keq."
+  },
+  "lounge": {
+    "title": "Qasje falas në lounge",
+    "description": "Merrni qasje në lounge nëse fluturimi juaj vonohet, çfarë marrëveshje e ëmbël!"
+  },
+  "bills": {
+    "title": "Jo më befasi në fatura",
+    "description": "Shijoni qetësi absolute dhe fleksibilitet për të rimbushur në çdo kohë"
+  },
+  "quickPurchase": "Blerje e shpejtë",
+  "seeAllPacks": "Shiko të gjitha paketat",
+  "yourEsim": "eSIM-i juaj",
+  "installed": "Instaluar",
+  "esimOn": "eSIM është aktiv",
+  "keepRoaming": "Vazhdoni roaming, Jetpacker",
+  "enjoyingServices": "Shpresojmë që po i shijoni shërbimet tona!",
+  "stats": {
+    "countries": "Vende",
+    "networks": "Partnerë Rrjeti",
+    "users": "Përdorues të Kënaqur",
+    "support": "Mbështetje 24/7"
+  }
+}

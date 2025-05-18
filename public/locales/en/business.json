@@ -1,0 +1,111 @@
+{
+  "seo": {
+    "title": "KudoSIM Business - Join Our Global Network",
+    "description": "Join KudoSIM's business program and earn up to 15% commission for every eSIM sale. Help travelers stay connected worldwide while growing your income."
+  },
+  "hero": {
+    "title": "Welcome to",
+    "highlight": "KudoPartners!",
+    "subtitle": "Join the most rewarding affiliate program in the travel industry",
+    "cta": {
+      "join": "Join Now",
+      "learn": "Learn More"
+    }
+  },
+  "benefits": {
+    "title": "Why Join KudoSIM?",
+    "subtitle": "Join the most rewarding affiliate program in the travel industry",
+    "commission": {
+      "title": "Generous Commissions",
+      "description": "Earn up to 15% commission on every sale. The more you sell, the higher your commission tier becomes!"
+    },
+    "setup": {
+      "title": "Quick Setup",
+      "description": "Get started in minutes with our easy-to-use platform. No technical knowledge required!"
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Our dedicated partner support team is always here to help you succeed."
+    }
+  },
+  "rewards": {
+    "title": "Our love language is gift giving",
+    "subtitle": "Enjoy exclusive rewards and benefits as a KudoPartner",
+    "flights": {
+      "title": "Free Flights",
+      "description": "Score free flights and other cool travel perks as you hit sales milestones."
+    },
+    "events": {
+      "title": "Exclusive Events",
+      "description": "Get invited to secret events and network with fellow partners."
+    },
+    "features": {
+      "title": "First Access",
+      "description": "Be the first to try new features and products before anyone else."
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about the KudoPartner program",
+    "eligible": {
+      "question": "Who can become a KudoPartner?",
+      "answer": "Any business or individual with an audience interested in travel can join. This includes travel bloggers, agencies, content creators, and more."
+    },
+    "payment": {
+      "question": "How do I get paid?",
+      "answer": "We process payments monthly via PayPal or bank transfer. You'll earn commission for every successful referral that results in a purchase."
+    },
+    "commission": {
+      "question": "What's the commission structure?",
+      "answer": "Start earning 5% commission and increase up to 15% based on your sales performance. The more you sell, the higher your commission tier becomes!"
+    },
+    "tracking": {
+      "question": "How do I track my earnings?",
+      "answer": "You'll get access to a comprehensive dashboard where you can track clicks, conversions, and earnings in real-time."
+    }
+  },
+  "cta": {
+    "title": "Ready to start earning?",
+    "button": "Join KudoPartners Now"
+  },
+  "no.minimums": "No Minimums",
+  "no.minimums.desc": "No MOQ. Create an account, buy an eSIM and get started. Prices listed clearly, no hidden fees.",
+  "management.console": "Management Console",
+  "management.console.desc": "Issue and manage eSIM plans to your team or your customers from our easy to use web console.",
+  "quick.start": "Quick Start",
+  "quick.start.desc": "Buy a pre-built eSIM shop or add a No Code integration to your existing eCommerce platform.",
+  "api.access": "API Access",
+  "api.access.desc": "Create a custom sales experience with our API. Order, top up, and suspend eSIMs from our API.",
+  "powered.by.title": "Powered by Redtea Mobile",
+  "powered.by.subtitle": "a Leader in eSIM and Global Connectivity",
+  "esim.since": "eSIM Since",
+  "esim.since.desc": "Pioneer in eSIM technology",
+  "connections": "Connections",
+  "connections.desc": "Active eSIM connections worldwide",
+  "service.provider": "Service Provider",
+  "service.provider.value": "Global",
+  "service.provider.desc": "Trusted by businesses worldwide",
+  "partner.telekom": "Deutsche Telekom",
+  "partner.telekom.value": "Partner",
+  "partner.telekom.desc": "Strategic partnership",
+  "certified": "Certified",
+  "certified.value": "GSMA",
+  "certified.desc": "Industry standard compliance",
+  "funding": "Funding",
+  "funding.value": "$50M+",
+  "funding.desc": "Venture capital backed",
+  "endorsed.by.forbes": "Endorsed by Forbes as one of the \"100 Most Customer-Centric Companies\".",
+  "trusted.partners": "Trusted by our Partners",
+  "plug.into.workflows": "Plug into your existing workflows",
+  "start.nocode": "Start with our No-Code solution",
+  "data.coverage.title": "Data coverage everywhere",
+  "data.coverage.subtitle": "Benefit from our pricing power in over 100 countries and regions",
+  "large.small.title": "Large and small, short and long",
+  "large.small.desc": "We offer data for travelers in 1GB, 3GB, 5GB, 10GB and 20GB sizes. Additionally, we have the ability to customize plans, to suit your needs.",
+  "repeat.customers.title": "Repeat Customers",
+  "repeat.customers.desc": "Sell plans as single use or let users top up their existing installed eSIM with additional data.",
+  "single.multi.title": "Single or multi country plans",
+  "single.multi.desc": "We offer single country or as a multi-country data plans for people visiting more than one destination in a trip.",
+  "multiple.networks.title": "Multiple Networks",
+  "multiple.networks.desc": "We are working directly with global tier 1 operators, purchasing in bulk and offering you competitive rates."
+}

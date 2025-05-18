@@ -1,0 +1,67 @@
+{
+  "common": {
+    "welcome": "Mirë se vini në KudoSIM",
+    "tagline": "Lidhje globale për udhëtarët modernë",
+    "search": "Kërko",
+    "loading": "Duke u ngarkuar...",
+    "error": "Ndodhi një gabim",
+    "selectLanguage": "Zgjidh Gjuhën",
+    "shop": "Blej",
+    "shopEsims": "Blej eSIM"
+  },
+  "nav": {
+    "home": "Kryefaqja",
+    "destinations": "Destinacionet",
+    "business": "Për Biznesin",
+    "support": "Mbështetje",
+    "myEsims": "eSIM-et e Mia"
+  },
+  "hero": {
+    "title": "Udhëtoni me KudoSIM në",
+    "subtitle": "Qëndroni të lidhur globalisht me karta SIM dixhitale të menjëhershme. Nuk nevojitet SIM fizike, thjesht skanoni dhe lidhuni.",
+    "searchPlaceholder": "Ku po udhëtoni?",
+    "ctaPrimary": "Fillo Tani",
+    "ctaSecondary": "Mëso më Shumë"
+  },
+  "features": {
+    "title": "Udhëtoni më me Mençuri me KudoSIM",
+    "subtitle": "Qëndroni të lidhur kudo në botë me shërbimin tonë të besueshëm eSIM",
+    "coverage": {
+      "title": "200+ destinacione",
+      "description": "Jo më ndërrim SIM-esh, instalojeni një herë, mbajeni përgjithmonë"
+    },
+    "support": {
+      "title": "Mbështetje premium",
+      "description": "Ne do të jemi gjithmonë me ju, për mirë dhe për keq."
+    },
+    "lounge": {
+      "title": "Qasje falas në lounge",
+      "description": "Merrni qasje në lounge nëse fluturimi juaj vonohet, çfarë marrëveshje e ëmbël!"
+    },
+    "bills": {
+      "title": "Jo më befasi në fatura",
+      "description": "Shijoni qetësi absolute dhe fleksibilitet për të rimbushur në çdo kohë"
+    }
+  },
+  "coverage": {
+    "title": "Mbulim Global në Majat e Gishtave Tuaj",
+    "subtitle": "Lidhuni pa probleme në të gjithë kontinentet me rrjetin tonë global",
+    "mostPopular": "🔥 Më i Popullarizuari",
+    "validFor": "E vlefshme për",
+    "days": "ditë"
+  },
+  "package": {
+    "validFor": "E vlefshme për",
+    "days": "ditë",
+    "hotspot": "Hotspot",
+    "allowed": "I lejuar",
+    "speed": "Shpejtësia",
+    "noLimit": "Pa Limit",
+    "europeanCoverage": "Mbulimi Evropian",
+    "balkanCoverage": "Mbulimi i Ballkanit",
+    "otherCoverage": "Mbulim Tjetër",
+    "getStarted": "Fillo Tani",
+    "mostPopular": "Më i Popullarizuar",
+    "bestValue": "Vlera më e Mirë"
+  }
+}

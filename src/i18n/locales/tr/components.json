@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "title": "KudoSIM ile şurada seyahat edin:",
+    "subtitle": "Anında dijital SIM kartlarla dünya çapında bağlantıda kalın. Fiziksel SIM gerekmez, sadece tarayın ve bağlanın.",
+    "searchPlaceholder": "Nereye seyahat ediyorsunuz?",
+    "ctaPrimary": "Hemen Başla",
+    "ctaSecondary": "Daha Fazla Bilgi"
+  },
+  "coverage": {
+    "title": "Parmaklarınızın Ucunda Küresel Kapsama",
+    "subtitle": "Dünya çapındaki ağımızla kıtalar arasında sorunsuz bağlantı kurun",
+    "mostPopular": "🔥 En Popüler",
+    "validFor": "Geçerlilik süresi",
+    "days": "gün"
+  },
+  "plans": {
+    "title": "Yolculuğunuz İçin Önerilen Planlar",
+    "subtitle": "Premium bağlantı çözümlerimizin özenle seçilmiş koleksiyonunu keşfedin",
+    "suggestedTitle": "Önerilen Planlar",
+    "suggestedDescription": "En popüler veri planlarımızdan seçim yapın"
+  },
+  "package": {
+    "validFor": "Geçerlilik süresi",
+    "days": "gün",
+    "hotspot": "Hotspot",
+    "allowed": "İzin Verilir",
+    "speed": "Hız",
+    "noLimit": "Limit Yok",
+    "europeanCoverage": "Avrupa Kapsamı",
+    "balkanCoverage": "Balkan Kapsamı",
+    "otherCoverage": "Diğer Kapsam",
+    "getStarted": "Hemen Başla",
+    "mostPopular": "En Popüler",
+    "bestValue": "En İyi Değer"
+  },
+  "operator": {
+    "title": "En iyi ağ ortaklarına erişim sağlıyoruz",
+    "subtitle": "Dünya çapında önde gelen operatörlerle bağlantı kurun",
+    "heading": "Ağ Ortaklarımız",
+    "subheading": "Dünya çapında önde gelen operatörlerle sizi buluşturuyoruz"
+  },
+  "testimonials": {
+    "title": "Mutlu Müşterilerimiz Ne Diyor",
+    "subtitle": "Sizin gibi gezginlerden gerçek deneyimler"
+  },
+  "app": {
+    "download": {
+      "title": "Web'de alışveriş yapın veya KudoSIM uygulamasını kullanın",
+      "description": "Dünya çapında 200'den fazla ülke için SIM kartları indirin ve anında güvenilir, ön ödemeli mobil verinin keyfini çıkarın. Sözleşme yok, gizli ücret yok ve dolaşım ücreti yok."
+    },
+    "store": {
+      "ios": "App Store'dan İndir",
+      "android": "Google Play'den Edinin"
+    }
+  },
+  "support": {
+    "24h": {
+      "title": "24 Saat Canlı Sohbet ve E-posta Desteği",
+      "description": "Herhangi bir soru veya endişenizle ilgili size yardımcı olmak için 7/24 hazır olan uzman destek ekibimizden anında yardım alın.",
+      "button": "Desteğe ulaşın"
+    },
+    "guarantee": {
+      "title": "Sektörde İlk Para İade Garantisi",
+      "description": "Hizmetimizi güvenle deneyin. Memnun kalmazsanız, satın alma bedelinizi iade ederiz - soru sormadan.",
+      "button": "eSIM verisi satın al"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "title": "Udhëtoni me KudoSIM në",
+    "subtitle": "Qëndroni të lidhur globalisht me karta SIM dixhitale të menjëhershme. Nuk nevojitet SIM fizike, thjesht skanoni dhe lidhuni.",
+    "searchPlaceholder": "Ku po udhëtoni?",
+    "ctaPrimary": "Fillo Tani",
+    "ctaSecondary": "Mëso më Shumë"
+  },
+  "coverage": {
+    "title": "Mbulim Global në Majat e Gishtave Tuaj",
+    "subtitle": "Lidhuni pa probleme në të gjithë kontinentet me rrjetin tonë global",
+    "mostPopular": "🔥 Më i Popullarizuari",
+    "validFor": "E vlefshme për",
+    "days": "ditë"
+  },
+  "plans": {
+    "title": "Planet e Sugjeruara për Udhëtimin Tuaj",
+    "subtitle": "Zbuloni përzgjedhjen tonë të kujdesshme të zgjidhjeve premium të lidhjes",
+    "suggestedTitle": "Planet e Sugjeruara",
+    "suggestedDescription": "Zgjidhni nga planet tona më të popullarizuara të të dhënave"
+  },
+  "package": {
+    "validFor": "E vlefshme për",
+    "days": "ditë",
+    "hotspot": "Hotspot",
+    "allowed": "I lejuar",
+    "speed": "Shpejtësia",
+    "noLimit": "Pa Limit",
+    "europeanCoverage": "Mbulimi Evropian",
+    "balkanCoverage": "Mbulimi i Ballkanit",
+    "otherCoverage": "Mbulim Tjetër",
+    "getStarted": "Fillo Tani",
+    "mostPopular": "Më i Popullarizuar",
+    "bestValue": "Vlera më e Mirë"
+  },
+  "operator": {
+    "title": "Duke ju dhënë qasje në partnerët e rrjetit të nivelit të lartë",
+    "subtitle": "Lidhuni me operatorët kryesorë në mbarë botën",
+    "heading": "Partnerët Tanë të Rrjetit",
+    "subheading": "Duke ju lidhur me operatorët kryesorë në mbarë botën"
+  },
+  "testimonials": {
+    "title": "Çfarë Thonë Klientët Tanë të Kënaqur",
+    "subtitle": "Përvoja të vërteta nga udhëtarë si ju"
+  },
+  "appDownload": {
+    "title": "Blini në web ose përdorni aplikacionin KudoSIM",
+    "description": "Shkarkoni karta SIM për më shumë se 200 vende në mbarë botën dhe gëzoni menjëherë të dhëna mobile të besueshme të parapaguara. Pa kontrata, pa tarifa të fshehura dhe pa tarifa roaming.",
+    "appStore": "Shkarkoni në App Store",
+    "playStore": "Merreni në Google Play"
+  },
+  "support": {
+    "24hTitle": "Chat dhe Email Mbështetje 24-orë",
+    "24hDescription": "Merrni ndihmë të menjëhershme nga ekipi ynë ekspert i mbështetjes, i disponueshëm 24/7 për t'ju ndihmuar me çdo pyetje ose shqetësim.",
+    "24hButton": "Kontakto mbështetjen",
+    "guaranteeTitle": "Garanci Kthimi Parash e Para në Industri",
+    "guaranteeDescription": "Provoni shërbimin tonë me besim. Nëse nuk jeni të kënaqur, do t'ju kthejmë paratë - pa pyetje.",
+    "guaranteeButton": "Blej të dhëna eSIM"
+  }
+}

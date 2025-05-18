@@ -1,0 +1,33 @@
+{
+  "check_your_balance": "Überprüfen Sie Ihr eSIM-Guthaben",
+  "monitor_usage": "Überwachen Sie Ihre Datennutzung, prüfen Sie das verbleibende Guthaben und sehen Sie Ihre Tarifdetails ein",
+  "subscriber_id": "Teilnehmer-ID",
+  "enter_subscriber_id": "Geben Sie Ihre Teilnehmer-ID ein",
+  "find_subscriber_id": "Sie finden Ihre Teilnehmer-ID in Ihrer Kaufbestätigungs-E-Mail oder in Ihrem Kontodashboard.",
+  "checking": "Überprüfung...",
+  "check_balance": "Guthaben prüfen",
+  "login_required": "Bitte melden Sie sich an, um Ihr eSIM-Guthaben zu überprüfen",
+  "login": "Anmelden",
+  "data_remaining": "Verbleibende Daten",
+  "data_used": "Genutzte Daten",
+  "expires_at": "Läuft ab am",
+  "expires_in": "Läuft ab in",
+  "data_usage": "Datennutzung",
+  "used": "Genutzt",
+  "total_package": "Gesamtpaket",
+  "esim_details": "eSIM-Details",
+  "status": "Status",
+  "plan_name": "Tarifname",
+  "total_package_size": "Gesamtpaketgröße",
+  "usage_percentage": "Nutzungsprozentsatz",
+  "iccid": "ICCID",
+  "network": "Netzwerk",
+  "not_available": "N/A",
+  "days_remaining": "{{count}} Tage",
+  "expired": "Abgelaufen",
+  "top_up": "Laden Sie Ihre eSIM auf",
+  "seo": {
+    "title": "eSIM-Guthaben prüfen - KudoSIM",
+    "description": "Überprüfen Sie Ihr KudoSIM eSIM-Guthaben, Datennutzung und Gültigkeitszeitraum. Bleiben Sie über Ihre verbleibenden Daten und das Ablaufdatum Ihres Tarifs informiert."
+  }
+}

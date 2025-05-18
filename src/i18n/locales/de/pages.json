@@ -1,0 +1,72 @@
+{
+  "home": {
+    "title": "Globale eSIM-Datentarife für Internationale Reisen",
+    "description": "Bleiben Sie weltweit mit KudoSIM's sofortigen digitalen eSIM-Karten verbunden. Keine physische SIM erforderlich, einfach scannen und verbinden. Verfügbar in über 200 Ländern."
+  },
+  "destinations": {
+    "title": "Finden Sie die Beste eSIM für Ihr Reiseziel",
+    "subtitle": "Bleiben Sie weltweit mit unserem zuverlässigen eSIM-Service verbunden",
+    "searchPlaceholder": "Länder suchen...",
+    "filter": {
+      "all": "Alle Kategorien",
+      "countries": "Länder",
+      "regions": "Regionen"
+    },
+    "empty": {
+      "title": "Keine Reiseziele gefunden",
+      "description": "Versuchen Sie, Ihre Suche oder Filter anzupassen"
+    },
+    "back": "Zurück zu Reisezielen"
+  },
+  "popular": {
+    "title": "Beliebte Reiseziele",
+    "subtitle": "Meistbesuchte Länder mit zuverlässiger eSIM-Abdeckung. Erhalten Sie sofortigen Zugang zu mobilen Daten und bleiben Sie während Ihrer Reisen verbunden.",
+    "empty": {
+      "title": "Keine Reiseziele gefunden",
+      "description": "Bitte schauen Sie später wieder vorbei"
+    }
+  },
+  "regions": {
+    "title": "Globale Abdeckungsregionen",
+    "subtitle": "Finden Sie den perfekten Datentarif für Ihr Reiseziel mit umfassender regionaler Abdeckung. Greifen Sie mit einer einzigen eSIM auf zuverlässige mobile Daten in ganzen Regionen zu.",
+    "empty": {
+      "title": "Keine Regionen gefunden",
+      "description": "Bitte schauen Sie später wieder vorbei"
+    }
+  },
+  "country": {
+    "getLocalEsim": "Holen Sie sich eine lokale {{country}} eSIM",
+    "downloadableSim": "Herunterladbare {{country}} SIM-Karte mit vorausbezahlten Daten",
+    "network": "Netzwerk",
+    "hotspot": "Hotspot",
+    "hotspotAllowed": "Kudo Hotspot ist erlaubt",
+    "speed": "Geschwindigkeit",
+    "availablePackages": "Verfügbare Pakete",
+    "features": "Funktionen",
+    "description": "Beschreibung",
+    "notFound": "Das gesuchte Land existiert nicht oder ist nicht verfügbar."
+  },
+  "faq": {
+    "title": "Häufig Gestellte Fragen",
+    "subtitle": "Finden Sie Antworten auf häufige Fragen zu KudoSIM und unseren Diensten",
+    "searchPlaceholder": "Fragen durchsuchen...",
+    "noResults": "Keine Fragen gefunden",
+    "tryAgain": "Versuchen Sie, Ihre Suchbegriffe anzupassen",
+    "helpCenter": "Hilfecenter",
+    "howCanHelp": "Wie können wir Ihnen helfen?"
+  },
+  "contact": {
+    "title": "Kontakt KudoSIM - 24/7 Globaler Support für eSIM-Dienste",
+    "description": "Erhalten Sie sofortige Unterstützung für Ihren KudoSIM eSIM-Service. 24/7 verfügbar über Live-Chat, E-Mail oder Telefon. Experten-Unterstützung für Reisende weltweit.",
+    "getInTouch": "Kontaktieren Sie uns",
+    "hereToHelp": "Wir sind hier um zu helfen",
+    "supportAvailable": "Unser Support-Team ist rund um die Uhr für Sie da, um Ihnen bei Fragen oder Anliegen zu helfen"
+  },
+  "business": {
+    "title": "KudoSIM Business - Werden Sie Teil Unseres Globalen Netzwerks",
+    "description": "Treten Sie dem KudoSIM Business-Programm bei und verdienen Sie bis zu 15% Provision für jeden eSIM-Verkauf. Helfen Sie Reisenden, weltweit verbunden zu bleiben, während Sie Ihr Einkommen steigern.",
+    "heroTitle": "Willkommen bei",
+    "heroHighlight": "KudoPartners!",
+    "heroSubtitle": "Treten Sie dem lukrativsten Partnerprogramm der Reisebranche bei"
+  }
+}

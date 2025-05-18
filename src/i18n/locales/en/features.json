@@ -1,0 +1,33 @@
+{
+  "title": "Travel Smarter with KudoSIM",
+  "subtitle": "Stay connected anywhere in the world with our reliable eSIM service",
+  "coverage": {
+    "title": "200+ destinations",
+    "description": "No more switching SIMs, install it once, keep it forever"
+  },
+  "support": {
+    "title": "Premium support",
+    "description": "We will always have your back, for good and for bad."
+  },
+  "lounge": {
+    "title": "Free lounge access",
+    "description": "Get lounge access if your flight delays, what a sweet deal!"
+  },
+  "bills": {
+    "title": "No more bill shocks",
+    "description": "Enjoy ultimate peace of mind and flexibility to top up anytime"
+  },
+  "quickPurchase": "Quick purchase",
+  "seeAllPacks": "See all packs",
+  "yourEsim": "Your eSIM",
+  "installed": "Installed",
+  "esimOn": "eSIM is on",
+  "keepRoaming": "Keep roaming, Jetpacker",
+  "enjoyingServices": "Hope you are enjoying our services!",
+  "stats": {
+    "countries": "Countries",
+    "networks": "Network Partners",
+    "users": "Happy Users",
+    "support": "24/7 Support"
+  }
+}

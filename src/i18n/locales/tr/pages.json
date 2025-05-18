@@ -1,0 +1,72 @@
+{
+  "home": {
+    "title": "Uluslararası Seyahat için Küresel eSIM Veri Planları",
+    "description": "KudoSIM'in anında dijital eSIM kartlarıyla dünya çapında bağlantıda kalın. Fiziksel SIM gerekmez, sadece tarayın ve bağlanın. 200'den fazla ülkede kullanılabilir."
+  },
+  "destinations": {
+    "title": "Destinasyonunuz İçin En İyi eSIM'i Bulun",
+    "subtitle": "Güvenilir eSIM hizmetimizle dünya çapında bağlantıda kalın",
+    "searchPlaceholder": "Ülkeleri ara...",
+    "filter": {
+      "all": "Tüm Kategoriler",
+      "countries": "Ülkeler",
+      "regions": "Bölgeler"
+    },
+    "empty": {
+      "title": "Destinasyon bulunamadı",
+      "description": "Arama veya filtrelerinizi ayarlamayı deneyin"
+    },
+    "back": "Destinasyonlara Geri Dön"
+  },
+  "popular": {
+    "title": "Popüler Destinasyonlar",
+    "subtitle": "Güvenilir eSIM kapsamına sahip en çok ziyaret edilen ülkeler. Anında mobil veri erişimi elde edin ve seyahatleriniz sırasında bağlantıda kalın.",
+    "empty": {
+      "title": "Destinasyon bulunamadı",
+      "description": "Güncellemeler için lütfen daha sonra tekrar kontrol edin"
+    }
+  },
+  "regions": {
+    "title": "Küresel Kapsama Bölgeleri",
+    "subtitle": "Kapsamlı bölgesel kapsama alanıyla destinasyonunuz için mükemmel veri planını bulun. Tek bir eSIM ile tüm bölgelerde güvenilir mobil verilere erişin.",
+    "empty": {
+      "title": "Bölge bulunamadı",
+      "description": "Güncellemeler için lütfen daha sonra tekrar kontrol edin"
+    }
+  },
+  "country": {
+    "getLocalEsim": "Yerel bir {{country}} eSIM edinin",
+    "downloadableSim": "Ön ödemeli veriye sahip indirilebilir {{country}} SIM kartı",
+    "network": "Ağ",
+    "hotspot": "Hotspot",
+    "hotspotAllowed": "Kudo hotspot kullanımına izin verilir",
+    "speed": "Hız",
+    "availablePackages": "Mevcut Paketler",
+    "features": "Özellikler",
+    "description": "Açıklama",
+    "notFound": "Aradığınız ülke mevcut değil veya kullanılamıyor."
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "KudoSIM ve hizmetlerimiz hakkında sık sorulan soruların cevaplarını bulun",
+    "searchPlaceholder": "Soruları ara...",
+    "noResults": "Soru bulunamadı",
+    "tryAgain": "Arama terimlerinizi ayarlamayı deneyin",
+    "helpCenter": "Yardım Merkezi",
+    "howCanHelp": "Size nasıl yardımcı olabiliriz?"
+  },
+  "contact": {
+    "title": "KudoSIM ile İletişim - eSIM Hizmetleri için 7/24 Küresel Destek",
+    "description": "KudoSIM eSIM hizmetiniz için anında destek alın. Canlı sohbet, e-posta veya telefon yoluyla 7/24 kullanılabilir. Dünya çapındaki gezginler için uzman yardımı.",
+    "getInTouch": "İletişime Geçin",
+    "hereToHelp": "Yardım etmek için buradayız",
+    "supportAvailable": "Destek ekibimiz, herhangi bir soru veya endişenizde size yardımcı olmak için 7/24 hizmetinizdedir"
+  },
+  "business": {
+    "title": "KudoSIM Business - Küresel Ağımıza Katılın",
+    "description": "KudoSIM'in iş programına katılın ve her eSIM satışı için %15'e kadar komisyon kazanın. Gelirinizi artırırken gezginlerin dünya çapında bağlantıda kalmalarına yardımcı olun.",
+    "heroTitle": "Hoş Geldiniz",
+    "heroHighlight": "KudoPartners!",
+    "heroSubtitle": "Seyahat sektöründeki en ödüllendirici ortaklık programına katılın"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "starting.from": "À partir de",
+  "packages.available": "forfaits disponibles",
+  "view.details": "Voir les Détails",
+  "popular.badge": "Plus Populaire",
+  "best.value.badge": "Meilleur Rapport Qualité-Prix",
+  "get.local.esim": "Obtenez une eSIM locale pour {{country}}",
+  "downloadable.sim": "Meilleure eSIM {{country}} avec données prépayées pour utilisations multiples",
+  "network": "Réseau",
+  "hotspot": "Point d'accès",
+  "hotspot.allowed": "Le point d'accès Kudo est autorisé",
+  "speed": "Vitesse",
+  "available.packages": "Forfaits Disponibles",
+  "features": "Caractéristiques",
+  "description": "Description",
+  "not.found": "Le pays que vous recherchez n'existe pas ou n'est pas disponible.",
+  "back": "Retour aux Destinations",
+  "error": "Erreur",
+  "valid.for": "Valable pour",
+  "days": "jours",
+  "most.popular": "Plus Populaire",
+  "best.value": "Meilleur Rapport Qualité-Prix"
+}

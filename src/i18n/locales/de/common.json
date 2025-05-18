@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "destinations": "Reiseziele",
+    "business": "Für Unternehmen",
+    "support": "Support",
+    "myEsims": "Meine eSIMs"
+  },
+  "footer": {
+    "copyright": "© {{year}} KudoSIM. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen"
+  },
+  "buttons": {
+    "loadMore": "Mehr laden",
+    "viewMore": "Mehr anzeigen",
+    "getStarted": "Jetzt starten",
+    "learnMore": "Mehr erfahren",
+    "back": "Zurück",
+    "next": "Weiter"
+  },
+  "search": {
+    "placeholder": "Länder suchen...",
+    "noResults": "Keine Länder gefunden",
+    "tryAgain": "Versuchen Sie, Ihre Suchbegriffe anzupassen"
+  },
+  "error": {
+    "loading": "Fehler beim Laden der Daten",
+    "tryAgain": "Bitte versuchen Sie es erneut"
+  },
+  "loading": "Wird geladen..."
+}

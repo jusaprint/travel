@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "title": "Travel with KudoSIM in",
+    "subtitle": "Stay connected globally with instant digital SIM cards. No physical SIM needed, just scan and connect.",
+    "searchPlaceholder": "Where are you travelling to?",
+    "ctaPrimary": "Get Started",
+    "ctaSecondary": "Learn More"
+  },
+  "coverage": {
+    "title": "Global Coverage at Your Fingertips",
+    "subtitle": "Connect seamlessly across continents with our worldwide network",
+    "mostPopular": "🔥 Most Popular",
+    "validFor": "Valid for",
+    "days": "days"
+  },
+  "plans": {
+    "title": "Suggested Plans for Your Journey",
+    "subtitle": "Discover our carefully curated selection of premium connectivity solutions",
+    "suggestedTitle": "Suggested Plans",
+    "suggestedDescription": "Choose from our most popular data plans"
+  },
+  "package": {
+    "validFor": "Valid for",
+    "days": "days",
+    "hotspot": "Hotspot",
+    "allowed": "Allowed",
+    "speed": "Speed",
+    "noLimit": "No Limit",
+    "europeanCoverage": "European Coverage",
+    "balkanCoverage": "Balkan Coverage",
+    "otherCoverage": "Other Coverage",
+    "getStarted": "Get Started",
+    "mostPopular": "Most Popular",
+    "bestValue": "Best Value"
+  },
+  "operator": {
+    "title": "Giving you access to top tier network partners",
+    "subtitle": "Connect with leading carriers worldwide",
+    "heading": "Our Network Partners",
+    "subheading": "Connecting you with leading carriers worldwide"
+  },
+  "testimonials": {
+    "title": "What Our Happy Customers Say",
+    "subtitle": "Real experiences from travelers like you"
+  },
+  "app": {
+    "download": {
+      "title": "Shop on the web or use the KudoSIM app",
+      "description": "Download SIM cards for 200+ countries worldwide, and instantly enjoy reliable, prepaid mobile data. No contracts, no hidden fees, and no roaming charges."
+    },
+    "store": {
+      "ios": "Download on the App Store",
+      "android": "Get it on Google Play"
+    }
+  },
+  "support": {
+    "24h": {
+      "title": "24-hour Live Chat and Email Support",
+      "description": "Get instant help from our expert support team, available 24/7 to assist you with any questions or concerns.",
+      "button": "Contact support"
+    },
+    "guarantee": {
+      "title": "Industry-first Money Back Guarantee",
+      "description": "Try our service with confidence. If you're not satisfied, we'll refund your purchase - no questions asked.",
+      "button": "Shop eSIM data"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Kryefaqja",
+    "destinations": "Destinacionet",
+    "business": "Për Biznesin",
+    "support": "Mbështetje",
+    "myEsims": "eSIM-et e Mia"
+  },
+  "footer": {
+    "copyright": "© {{year}} KudoSIM. Të gjitha të drejtat e rezervuara.",
+    "privacy": "Politika e Privatësisë",
+    "terms": "Kushtet e Shërbimit"
+  },
+  "buttons": {
+    "loadMore": "Ngarko më Shumë",
+    "viewMore": "Shiko më Shumë",
+    "getStarted": "Fillo Tani",
+    "learnMore": "Mëso më Shumë",
+    "back": "Kthehu",
+    "next": "Vazhdo"
+  },
+  "search": {
+    "placeholder": "Kërko Vendet...",
+    "noResults": "Nuk u gjetën vende",
+    "tryAgain": "Provoni të rregulloni termat e kërkimit"
+  },
+  "error": {
+    "loading": "Gabim në ngarkimin e të dhënave",
+    "tryAgain": "Ju lutemi provoni përsëri"
+  },
+  "loading": "Duke u ngarkuar..."
+}

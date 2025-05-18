@@ -1,0 +1,16 @@
+{
+  "title": "Reisen Sie mit KudoSIM in",
+  "subtitle": "Bleiben Sie weltweit mit sofortigen digitalen SIM-Karten verbunden. Keine physische SIM erforderlich, einfach scannen und verbinden.",
+  "search.placeholder": "Wohin reisen Sie?",
+  "cta.primary": "Jetzt starten",
+  "cta.secondary": "Mehr erfahren",
+  "payment_methods": {
+    "visa": "Visa",
+    "mastercard": "Mastercard",
+    "apple_pay": "Apple Pay",
+    "google_pay": "Google Pay",
+    "paypal": "PayPal",
+    "secure_payment": "Sichere Zahlung",
+    "ssl_encrypted": "256-bit SSL"
+  }
+}

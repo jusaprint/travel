@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Home",
+    "destinations": "Destinations",
+    "business": "For Business",
+    "support": "Support",
+    "myEsims": "My eSIMs"
+  },
+  "footer": {
+    "copyright": "© {{year}} KudoSIM. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "buttons": {
+    "loadMore": "Load More",
+    "viewMore": "View More",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "back": "Back",
+    "next": "Next"
+  },
+  "search": {
+    "placeholder": "Search Countries...",
+    "noResults": "No countries found",
+    "tryAgain": "Try adjusting your search terms"
+  },
+  "error": {
+    "loading": "Error loading data",
+    "tryAgain": "Please try again"
+  },
+  "loading": "Loading..."
+}

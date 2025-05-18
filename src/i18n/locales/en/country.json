@@ -1,0 +1,23 @@
+{
+  "starting.from": "Starting from",
+  "packages.available": "packages available",
+  "view.details": "View Details",
+  "popular.badge": "Most Popular",
+  "best.value.badge": "Best Value",
+  "get.local.esim": "Get a local {{country}} eSIM",
+  "downloadable.sim": "Best {{country}} eSIM with prepaid data for multiple use",
+  "network": "Network",
+  "hotspot": "Hotspot",
+  "hotspot.allowed": "Kudo hotspot is allowed",
+  "speed": "Speed",
+  "available.packages": "Available Packages",
+  "features": "Features",
+  "description": "Description",
+  "not.found": "The country you're looking for doesn't exist or is not available.",
+  "back": "Back to Destinations",
+  "error": "Error",
+  "valid.for": "Valid for",
+  "days": "days",
+  "most.popular": "Most Popular",
+  "best.value": "Best Value"
+}

@@ -1,0 +1,111 @@
+{
+  "seo": {
+    "title": "KudoSIM Biznes - Bashkohuni me Rrjetin Tonë Global",
+    "description": "Bashkohuni me programin e biznesit të KudoSIM dhe fitoni deri në 15% komision për çdo shitje eSIM. Ndihmoni udhëtarët të qëndrojnë të lidhur në mbarë botën ndërsa rritni të ardhurat tuaja."
+  },
+  "hero": {
+    "title": "Mirë se vini në",
+    "highlight": "KudoPartners!",
+    "subtitle": "Bashkohuni me programin më shpërblyes të partneritetit në industrinë e udhëtimit",
+    "cta": {
+      "join": "Bashkohu Tani",
+      "learn": "Mëso më Shumë"
+    }
+  },
+  "benefits": {
+    "title": "Pse të Bashkoheni me KudoSIM?",
+    "subtitle": "Bashkohuni me programin më shpërblyes të partneritetit në industrinë e udhëtimit",
+    "commission": {
+      "title": "Komisione Bujare",
+      "description": "Fitoni deri në 15% komision për çdo shitje. Sa më shumë të shisni, aq më i lartë bëhet niveli juaj i komisionit!"
+    },
+    "setup": {
+      "title": "Konfigurim i Shpejtë",
+      "description": "Filloni në minuta me platformën tonë të lehtë për t'u përdorur. Nuk kërkohen njohuri teknike!"
+    },
+    "support": {
+      "title": "Mbështetje 24/7",
+      "description": "Ekipi ynë i dedikuar i mbështetjes së partnerëve është gjithmonë këtu për t'ju ndihmuar të keni sukses."
+    }
+  },
+  "rewards": {
+    "title": "Gjuha jonë e dashurisë është dhënia e dhuratave",
+    "subtitle": "Shijoni shpërblime dhe përfitime ekskluzive si KudoPartner",
+    "flights": {
+      "title": "Fluturime Falas",
+      "description": "Fitoni fluturime falas dhe përfitime të tjera të bukura udhëtimi ndërsa arrini objektivat e shitjeve."
+    },
+    "events": {
+      "title": "Evente Ekskluzive",
+      "description": "Merrni ftesa për evente sekrete dhe rrjetëzohuni me partnerët e tjerë."
+    },
+    "features": {
+      "title": "Qasje e Parë",
+      "description": "Jini i pari që provoni veçori dhe produkte të reja para të gjithëve."
+    }
+  },
+  "faq": {
+    "title": "Pyetjet më të Shpeshta",
+    "subtitle": "Gjithçka që duhet të dini për programin KudoPartner",
+    "eligible": {
+      "question": "Kush mund të bëhet KudoPartner?",
+      "answer": "Çdo biznes ose individ me një audiencë të interesuar për udhëtime mund të bashkohet. Kjo përfshin blogerët e udhëtimit, agjencitë, krijues të përmbajtjes dhe më shumë."
+    },
+    "payment": {
+      "question": "Si paguhem?",
+      "answer": "Ne përpunojmë pagesat çdo muaj përmes PayPal ose transfertë bankare. Do të fitoni komision për çdo referim të suksesshëm që rezulton në një blerje."
+    },
+    "commission": {
+      "question": "Cila është struktura e komisionit?",
+      "answer": "Filloni të fitoni 5% komision dhe rriteni deri në 15% bazuar në performancën tuaj të shitjeve. Sa më shumë të shisni, aq më i lartë bëhet niveli juaj i komisionit!"
+    },
+    "tracking": {
+      "question": "Si i gjurmoj fitimet e mia?",
+      "answer": "Do të keni qasje në një panel të plotë ku mund të gjurmoni klikime, konvertime dhe fitime në kohë reale."
+    }
+  },
+  "cta": {
+    "title": "Gati për të filluar të fitoni?",
+    "button": "Bashkohuni me KudoPartners Tani"
+  },
+  "no.minimums": "Pa Minimume",
+  "no.minimums.desc": "Pa sasi minimale porosie. Krijoni një llogari, blini një eSIM dhe filloni. Çmimet të listuara qartë, pa tarifa të fshehura.",
+  "management.console": "Konsola e Menaxhimit",
+  "management.console.desc": "Lëshoni dhe menaxhoni plane eSIM për ekipin tuaj ose klientët tuaj nga konsola jonë e lehtë për t'u përdorur.",
+  "quick.start": "Fillim i Shpejtë",
+  "quick.start.desc": "Blini një dyqan eSIM të parandërtuar ose shtoni një integrim No Code në platformën tuaj ekzistuese të eCommerce.",
+  "api.access": "Qasje në API",
+  "api.access.desc": "Krijoni një përvojë të personalizuar shitjeje me API-në tonë. Porositni, rimbushni dhe pezulloni eSIM-et nga API-ja jonë.",
+  "powered.by.title": "Mundësuar nga Redtea Mobile",
+  "powered.by.subtitle": "një Lider në eSIM dhe Lidhje Globale",
+  "esim.since": "eSIM që nga",
+  "esim.since.desc": "Pionier në teknologjinë eSIM",
+  "connections": "Lidhje",
+  "connections.desc": "Lidhje aktive eSIM në mbarë botën",
+  "service.provider": "Ofrues Shërbimi",
+  "service.provider.value": "Global",
+  "service.provider.desc": "I besuar nga bizneset në mbarë botën",
+  "partner.telekom": "Deutsche Telekom",
+  "partner.telekom.value": "Partner",
+  "partner.telekom.desc": "Partneritet strategjik",
+  "certified": "Certifikuar",
+  "certified.value": "GSMA",
+  "certified.desc": "Përputhshmëri me standardet e industrisë",
+  "funding": "Financimi",
+  "funding.value": "50M+",
+  "funding.desc": "I mbështetur nga kapitali i rrezikut",
+  "endorsed.by.forbes": "I vlerësuar nga Forbes si një nga \"100 Kompanitë më të Përqendruara te Klienti\".",
+  "trusted.partners": "I besuar nga Partnerët tanë",
+  "plug.into.workflows": "Lidhuni me rrjedhën tuaj ekzistuese të punës",
+  "start.nocode": "Filloni me zgjidhjen tonë No-Code",
+  "data.coverage.title": "Mbulim i të dhënave kudo",
+  "data.coverage.subtitle": "Përfitoni nga fuqia jonë e çmimeve në më shumë se 100 vende dhe rajone",
+  "large.small.title": "Të mëdha dhe të vogla, të shkurtra dhe të gjata",
+  "large.small.desc": "Ne ofrojmë të dhëna për udhëtarët në madhësitë 1GB, 3GB, 5GB, 10GB dhe 20GB. Gjithashtu, kemi aftësinë të personalizojmë planet, për të përmbushur nevojat tuaja.",
+  "repeat.customers.title": "Klientë të Përsëritur",
+  "repeat.customers.desc": "Shisni plane për përdorim të vetëm ose lejoni përdoruesit të rimbushin eSIM-in e tyre ekzistues me të dhëna shtesë.",
+  "single.multi.title": "Plane për një ose shumë vende",
+  "single.multi.desc": "Ne ofrojmë plane të dhënash për një vend të vetëm ose për shumë vende për njerëzit që vizitojnë më shumë se një destinacion në një udhëtim.",
+  "multiple.networks.title": "Rrjete të Shumta",
+  "multiple.networks.desc": "Ne punojmë drejtpërdrejt me operatorët globalë të nivelit 1, duke blerë me shumicë dhe duke ju ofruar çmime konkurruese."
+}

@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "title": "Reisen Sie mit KudoSIM in",
+    "subtitle": "Bleiben Sie weltweit mit sofortigen digitalen SIM-Karten verbunden. Keine physische SIM erforderlich, einfach scannen und verbinden.",
+    "searchPlaceholder": "Wohin reisen Sie?",
+    "ctaPrimary": "Jetzt starten",
+    "ctaSecondary": "Mehr erfahren"
+  },
+  "coverage": {
+    "title": "Weltweite Abdeckung auf Knopfdruck",
+    "subtitle": "Verbinden Sie sich nahtlos über Kontinente hinweg mit unserem weltweiten Netzwerk",
+    "mostPopular": "🔥 Am Beliebtesten",
+    "validFor": "Gültig für",
+    "days": "Tage"
+  },
+  "plans": {
+    "title": "Empfohlene Tarife für Ihre Reise",
+    "subtitle": "Entdecken Sie unsere sorgfältig kuratierte Auswahl an Premium-Konnektivitätslösungen",
+    "suggestedTitle": "Empfohlene Tarife",
+    "suggestedDescription": "Wählen Sie aus unseren beliebtesten Datentarifen"
+  },
+  "package": {
+    "validFor": "Gültig für",
+    "days": "Tage",
+    "hotspot": "Hotspot",
+    "allowed": "Erlaubt",
+    "speed": "Geschwindigkeit",
+    "noLimit": "Keine Begrenzung",
+    "europeanCoverage": "Europa-Abdeckung",
+    "balkanCoverage": "Balkan-Abdeckung",
+    "otherCoverage": "Andere Abdeckung",
+    "getStarted": "Jetzt starten",
+    "mostPopular": "Am Beliebtesten",
+    "bestValue": "Bestes Angebot"
+  },
+  "operator": {
+    "title": "Zugang zu erstklassigen Netzwerkpartnern",
+    "subtitle": "Verbinden Sie sich mit führenden Anbietern weltweit",
+    "heading": "Unsere Netzwerkpartner",
+    "subheading": "Verbindung zu führenden Mobilfunkanbietern weltweit"
+  },
+  "testimonials": {
+    "title": "Was Unsere Zufriedenen Kunden Sagen",
+    "subtitle": "Echte Erfahrungen von Reisenden wie Ihnen"
+  },
+  "appDownload": {
+    "title": "Kaufen Sie im Web oder nutzen Sie die KudoSIM-App",
+    "description": "Laden Sie SIM-Karten für über 200 Länder weltweit herunter und genießen Sie sofort zuverlässige, vorausbezahlte mobile Daten. Keine Verträge, keine versteckten Gebühren und keine Roaming-Kosten.",
+    "appStore": "Laden im App Store",
+    "playStore": "Jetzt bei Google Play"
+  },
+  "support": {
+    "24hTitle": "24-Stunden Live-Chat und E-Mail-Support",
+    "24hDescription": "Erhalten Sie sofortige Hilfe von unserem Experten-Support-Team, das rund um die Uhr für Sie da ist, um Ihnen bei allen Fragen oder Anliegen zu helfen.",
+    "24hButton": "Support kontaktieren",
+    "guaranteeTitle": "Branchenweit erste Geld-zurück-Garantie",
+    "guaranteeDescription": "Testen Sie unseren Service mit Vertrauen. Wenn Sie nicht zufrieden sind, erstatten wir Ihren Kauf - ohne Fragen zu stellen.",
+    "guaranteeButton": "eSIM-Daten kaufen"
+  }
+}

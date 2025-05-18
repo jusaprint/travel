@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "destinations": "Destinasyonlar",
+    "business": "İş İçin",
+    "support": "Destek",
+    "myEsims": "eSIM'lerim"
+  },
+  "footer": {
+    "copyright": "© {{year}} KudoSIM. Tüm hakları saklıdır.",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Koşulları"
+  },
+  "buttons": {
+    "loadMore": "Daha Fazla Yükle",
+    "viewMore": "Daha Fazla Göster",
+    "getStarted": "Hemen Başla",
+    "learnMore": "Daha Fazla Bilgi",
+    "back": "Geri",
+    "next": "İleri"
+  },
+  "search": {
+    "placeholder": "Ülkeleri Ara...",
+    "noResults": "Ülke bulunamadı",
+    "tryAgain": "Arama terimlerinizi ayarlamayı deneyin"
+  },
+  "error": {
+    "loading": "Veri yüklenirken hata oluştu",
+    "tryAgain": "Lütfen tekrar deneyin"
+  },
+  "loading": "Yükleniyor..."
+}

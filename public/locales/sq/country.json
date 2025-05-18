@@ -1,0 +1,17 @@
+{
+  "starting.from": "Duke filluar nga",
+  "packages.available": "paketa të disponueshme",
+  "view.details": "Shiko Detajet",
+  "popular.badge": "Më i Popullarizuari",
+  "best.value.badge": "Vlera më e Mirë",
+  "get.local.esim": "Merrni një eSIM lokale për {{country}}",
+  "downloadable.sim": "eSIM më e mirë për {{country}} me të dhëna të parapaguara për përdorim të shumëfishtë",
+  "network": "Rrjeti",
+  "hotspot": "Hotspot",
+  "hotspot.allowed": "Kudo hotspot është i lejuar",
+  "speed": "Shpejtësia",
+  "available.packages": "Paketat e Disponueshme",
+  "features": "Veçoritë",
+  "description": "Përshkrimi",
+  "not.found": "Vendi që po kërkoni nuk ekziston ose nuk është i disponueshëm."
+}

@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "title": "Voyagez avec KudoSIM en",
+    "subtitle": "Restez connecté mondialement avec des cartes SIM numériques instantanées. Pas de SIM physique nécessaire, scannez et connectez-vous.",
+    "searchPlaceholder": "Où voyagez-vous ?",
+    "ctaPrimary": "Commencer",
+    "ctaSecondary": "En savoir plus"
+  },
+  "coverage": {
+    "title": "Couverture Mondiale à Portée de Main",
+    "subtitle": "Connectez-vous sans problème à travers les continents avec notre réseau mondial",
+    "mostPopular": "🔥 Plus Populaire",
+    "validFor": "Valable pour",
+    "days": "jours"
+  },
+  "plans": {
+    "title": "Forfaits Suggérés pour Votre Voyage",
+    "subtitle": "Découvrez notre sélection soigneusement organisée de solutions de connectivité premium",
+    "suggestedTitle": "Forfaits Suggérés",
+    "suggestedDescription": "Choisissez parmi nos forfaits de données les plus populaires"
+  },
+  "package": {
+    "validFor": "Valable pour",
+    "days": "jours",
+    "hotspot": "Point d'accès",
+    "allowed": "Autorisé",
+    "speed": "Vitesse",
+    "noLimit": "Sans Limite",
+    "europeanCoverage": "Couverture Européenne",
+    "balkanCoverage": "Couverture des Balkans",
+    "otherCoverage": "Autre Couverture",
+    "getStarted": "Commencer",
+    "mostPopular": "Plus Populaire",
+    "bestValue": "Meilleur Rapport Qualité-Prix"
+  },
+  "operator": {
+    "title": "Vous donnant accès aux partenaires réseau de premier niveau",
+    "subtitle": "Connectez-vous avec les principaux opérateurs mondiaux",
+    "heading": "Nos Partenaires Réseau",
+    "subheading": "Vous connectant aux principaux opérateurs mondiaux"
+  },
+  "testimonials": {
+    "title": "Ce que Disent Nos Clients Satisfaits",
+    "subtitle": "Expériences réelles de voyageurs comme vous"
+  },
+  "appDownload": {
+    "title": "Achetez sur le web ou utilisez l'application KudoSIM",
+    "description": "Téléchargez des cartes SIM pour plus de 200 pays dans le monde et profitez instantanément de données mobiles prépayées fiables. Pas de contrats, pas de frais cachés et pas de frais d'itinérance.",
+    "appStore": "Télécharger sur l'App Store",
+    "playStore": "Disponible sur Google Play"
+  },
+  "support": {
+    "24hTitle": "Support Chat et Email 24h/24",
+    "24hDescription": "Obtenez une aide instantanée de notre équipe de support expert, disponible 24h/24 et 7j/7 pour vous aider avec toutes vos questions ou préoccupations.",
+    "24hButton": "Contacter le support",
+    "guaranteeTitle": "Garantie de Remboursement Unique dans l'Industrie",
+    "guaranteeDescription": "Essayez notre service en toute confiance. Si vous n'êtes pas satisfait, nous vous remboursons votre achat - sans poser de questions.",
+    "guaranteeButton": "Acheter des données eSIM"
+  }
+}

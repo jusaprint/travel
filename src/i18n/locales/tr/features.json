@@ -1,0 +1,33 @@
+{
+  "title": "KudoSIM ile Daha Akıllı Seyahat Edin",
+  "subtitle": "Güvenilir eSIM hizmetimizle dünyanın her yerinde bağlantıda kalın",
+  "coverage": {
+    "title": "200+ destinasyon",
+    "description": "Artık SIM kart değiştirmeye gerek yok, bir kez kurun, sonsuza kadar saklayın"
+  },
+  "support": {
+    "title": "Premium destek",
+    "description": "İyi günde de kötü günde de her zaman yanınızda olacağız."
+  },
+  "lounge": {
+    "title": "Ücretsiz lounge erişimi",
+    "description": "Uçuşunuz gecikirse lounge erişimi kazanın, ne harika bir fırsat!"
+  },
+  "bills": {
+    "title": "Artık fatura şoku yok",
+    "description": "Mutlak huzur ve istediğiniz zaman yükleme esnekliğinin keyfini çıkarın"
+  },
+  "quick.purchase": "Hızlı satın alma",
+  "see.all.packs": "Tüm paketleri gör",
+  "your.esim": "eSIM'iniz",
+  "installed": "Kuruldu",
+  "esim.on": "eSIM açık",
+  "keep.roaming": "Dolaşıma devam et, Jetpacker",
+  "enjoying.services": "Umarız hizmetlerimizden memnun kalıyorsunuzdur!",
+  "stats": {
+    "countries": "Ülkeler",
+    "networks": "Ağ Ortakları",
+    "users": "Mutlu Kullanıcılar",
+    "support": "7/24 Support"
+  }
+}

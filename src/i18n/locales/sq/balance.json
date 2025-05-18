@@ -1,0 +1,33 @@
+{
+  "check_your_balance": "Kontrolloni Bilancin e eSIM-it Tuaj",
+  "monitor_usage": "Monitoroni përdorimin e të dhënave, kontrolloni bilancin e mbetur dhe shikoni detajet e planit",
+  "subscriber_id": "ID e Abonentit",
+  "enter_subscriber_id": "Vendosni ID-në tuaj të abonentit",
+  "find_subscriber_id": "Mund ta gjeni ID-në tuaj të abonentit në emailin e konfirmimit të blerjes ose në panelin e llogarisë suaj.",
+  "checking": "Duke kontrolluar...",
+  "check_balance": "Kontrollo Bilancin",
+  "login_required": "Ju lutemi identifikohuni për të kontrolluar bilancin e eSIM-it tuaj",
+  "login": "Identifikohu",
+  "data_remaining": "Të Dhëna të Mbetura",
+  "data_used": "Të Dhëna të Përdorura",
+  "expires_at": "Skadon në",
+  "expires_in": "Skadon për",
+  "data_usage": "Përdorimi i të Dhënave",
+  "used": "Përdorur",
+  "total_package": "Paketa Totale",
+  "esim_details": "Detajet e eSIM",
+  "status": "Statusi",
+  "plan_name": "Emri i Planit",
+  "total_package_size": "Madhësia Totale e Paketës",
+  "usage_percentage": "Përqindja e Përdorimit",
+  "iccid": "ICCID",
+  "network": "Rrjeti",
+  "not_available": "N/A",
+  "days_remaining": "{{count}} ditë",
+  "expired": "Skaduar",
+  "top_up": "Rimbushni eSIM-in Tuaj",
+  "seo": {
+    "title": "Kontrollo Bilancin e eSIM - KudoSIM",
+    "description": "Kontrolloni bilancin e KudoSIM eSIM, përdorimin e të dhënave dhe periudhën e vlefshmërisë. Qëndroni të informuar për të dhënat tuaja të mbetura dhe skadimin e planit."
+  }
+}

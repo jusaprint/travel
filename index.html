@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KudoSIM - Global Connectivity for Modern Travelers</title>
+    
+    <!-- Critical CSS for immediate rendering -->
+    <style>
+      /* Critical rendering path styles */
+      :root {
+        --primary-color: #690d89;
+        --secondary-color: #8B5CF6;
+      }
+      
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeSpeed;
+      }
+      
+      #root {
+        min-height: 100vh;
+        background: linear-gradient(to bottom, rgba(105, 13, 137, 0.05), white);
+      }
+      
+      /* Loading indicator */
+      .initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom, rgba(105, 13, 137, 0.05), white);
+        z-index: 9999;
+      }
+      
+      .initial-loader__spinner {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 3px solid rgba(105, 13, 137, 0.1);
+        border-top-color: #690d89;
+        animation: spinner 1s linear infinite;
+      }
+      
+      @keyframes spinner {
+        to {transform: rotate(360deg);}
+      }
+      
+      /* Navbar placeholder */
+      .navbar-placeholder {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 64px;
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(8px);
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      
+      .logo-placeholder {
+        width: 120px;
+        height: 32px;
+        background-color: #690d89;
+        border-radius: 4px;
+      }
+      
+      /* Hero section placeholder */
+      .hero-placeholder {
+        min-height: calc(100vh - 64px);
+        padding-top: 64px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+      }
+      
+      .hero-placeholder::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(243, 230, 255, 0.6), rgba(255, 255, 255, 0.9));
+        z-index: -1;
+      }
+      
+      .hero-title-placeholder {
+        width: 80%;
+        max-width: 600px;
+        height: 48px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        margin-bottom: 16px;
+      }
+      
+      .hero-subtitle-placeholder {
+        width: 90%;
+        max-width: 700px;
+        height: 24px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 6px;
+        margin-bottom: 32px;
+      }
+      
+      .hero-search-placeholder {
+        width: 90%;
+        max-width: 500px;
+        height: 56px;
+        background-color: white;
+        border-radius: 16px;
+        margin-bottom: 24px;
+      }
+      
+      /* Hide initial placeholders when content loads */
+      .loaded .initial-loader,
+      .loaded .navbar-placeholder,
+      .loaded .hero-placeholder {
+        display: none;
+      }
+      
+      /* Content-visibility for off-screen content */
+      .content-visibility-auto {
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 1000px;
+      }
+      
+      /* Hide TrustIndex widgets in the footer */
+      footer .trustindex-widget,
+      body > .trustindex-widget,
+      #root > .trustindex-widget,
+      .trustindex-widget:not(#trustindex-widget-container .trustindex-widget) {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        pointer-events: none !important;
+        z-index: -9999 !important;
+      }
+      
+      /* Ensure TrustIndex widget only appears in the designated container */
+      #trustindex-widget-container .trustindex-widget {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+        position: relative !important;
+        z-index: 10 !important;
+      }
+    </style>
+    
+    <!-- Resource hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://flagcdn.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://cdn.trustindex.io">
+    <link rel="dns-prefetch" href="https://idlmdcspzrzcwbyqmbpc.supabase.co">
+    
+    <!-- Preconnect to critical domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://flagcdn.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="preconnect" href="https://idlmdcspzrzcwbyqmbpc.supabase.co" crossorigin>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/kudosim-logo.svg" as="image" type="image/svg+xml" fetchpriority="high">
+    <link rel="preload" href="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=1200&q=80" as="image" fetchpriority="high">
+    <link rel="preload" href="/grid.svg" as="image" type="image/svg+xml" fetchpriority="high">
+    
+    <!-- Optimized font loading with font-display swap -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" 
+          rel="stylesheet"
+          media="print"
+          onload="this.media='all'"
+          crossorigin>
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" 
+            rel="stylesheet">
+    </noscript>
+    
+    <!-- Meta tags for better SEO and sharing -->
+    <meta name="description" content="Stay connected worldwide with KudoSIM eSIM technology. No physical SIM needed, just scan and connect.">
+    <meta property="og:title" content="KudoSIM - Global Connectivity for Modern Travelers">
+    <meta property="og:description" content="Stay connected worldwide with KudoSIM eSIM technology. No physical SIM needed, just scan and connect.">
+    <meta property="og:image" content="/og-image.jpg">
+    <meta name="theme-color" content="#690d89">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- PWA tags -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  </head>
+  <body>
+    <!-- Initial loading state with placeholders for critical UI -->
+    <div class="initial-loader">
+      <div class="initial-loader__spinner"></div>
+    </div>
+    
+    <div class="navbar-placeholder">
+      <div class="logo-placeholder"></div>
+    </div>
+    
+    <div class="hero-placeholder">
+      <div class="hero-title-placeholder"></div>
+      <div class="hero-subtitle-placeholder"></div>
+      <div class="hero-search-placeholder"></div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <!-- Script to mark page as loaded -->
+    <script>
+      // Mark document as loaded when content is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          document.body.classList.add('loaded');
+        }, 100);
+      });
+      
+      // Function to clean up TrustIndex widgets
+      function cleanupTrustIndexWidgets() {
+        // Get all TrustIndex widgets
+        const widgets = document.querySelectorAll('.trustindex-widget, .ti-widget');
+        
+        // Check each widget
+        widgets.forEach(widget => {
+          // Check if widget is in the correct container
+          const isInContainer = widget.closest('#trustindex-widget-container');
+          
+          // If not in container, move it to the container
+          if (!isInContainer) {
+            const container = document.getElementById('trustindex-widget-container');
+            if (container && widget.parentNode) {
+              widget.parentNode.removeChild(widget);
+              container.appendChild(widget);
+            }
+          }
+        });
+      }
+      
+      // Run cleanup on DOMContentLoaded
+      document.addEventListener('DOMContentLoaded', cleanupTrustIndexWidgets);
+      
+      // Run cleanup periodically
+      const cleanupInterval = setInterval(cleanupTrustIndexWidgets, 1000);
+      
+      // Create MutationObserver to watch for new widgets
+      const observer = new MutationObserver((mutations) => {
+        let needsCleanup = false;
+        
+        mutations.forEach((mutation) => {
+          if (mutation.addedNodes.length) {
+            needsCleanup = true;
+          }
+        });
+        
+        if (needsCleanup) {
+          cleanupTrustIndexWidgets();
+        }
+      });
+      
+      // Start observing once DOM is loaded
+      document.addEventListener('DOMContentLoaded', () => {
+        observer.observe(document.body, { 
+          childList: true, 
+          subtree: true 
+        });
+        
+        // Cleanup after 10 seconds to avoid performance issues
+        setTimeout(() => {
+          clearInterval(cleanupInterval);
+          observer.disconnect();
+        }, 10000);
+      });
+    </script>
+    
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+{
+  "common": {
+    "welcome": "Bienvenue sur KudoSIM",
+    "tagline": "Connectivité mondiale pour les voyageurs modernes",
+    "search": "Rechercher",
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "selectLanguage": "Sélectionner la langue",
+    "shop": "Acheter",
+    "shopEsims": "Acheter eSIMs"
+  },
+  "nav": {
+    "home": "Accueil",
+    "destinations": "Destinations",
+    "business": "Pour Entreprises",
+    "support": "Support",
+    "myEsims": "Mes eSIMs"
+  },
+  "hero": {
+    "title": "Voyagez avec KudoSIM en",
+    "subtitle": "Restez connecté mondialement avec des cartes SIM numériques instantanées. Pas de SIM physique nécessaire, scannez et connectez-vous.",
+    "searchPlaceholder": "Où voyagez-vous ?",
+    "ctaPrimary": "Commencer",
+    "ctaSecondary": "En savoir plus"
+  },
+  "features": {
+    "title": "Voyagez Plus Intelligemment avec KudoSIM",
+    "subtitle": "Restez connecté partout dans le monde avec notre service eSIM fiable",
+    "coverage": {
+      "title": "200+ destinations",
+      "description": "Plus besoin de changer de carte SIM, installez-la une fois, gardez-la pour toujours"
+    },
+    "support": {
+      "title": "Support premium",
+      "description": "Nous serons toujours là pour vous, pour le meilleur et pour le pire."
+    },
+    "lounge": {
+      "title": "Accès gratuit au salon",
+      "description": "Accédez au salon si votre vol est retardé, quelle belle offre !"
+    },
+    "bills": {
+      "title": "Plus de factures surprises",
+      "description": "Profitez d'une tranquillité d'esprit totale et de la flexibilité de recharger à tout moment"
+    }
+  },
+  "coverage": {
+    "title": "Couverture Mondiale à Portée de Main",
+    "subtitle": "Connectez-vous sans problème à travers les continents avec notre réseau mondial",
+    "mostPopular": "🔥 Plus Populaire",
+    "validFor": "Valable pour",
+    "days": "jours"
+  },
+  "package": {
+    "validFor": "Valable pour",
+    "days": "jours",
+    "hotspot": "Point d'accès",
+    "allowed": "Autorisé",
+    "speed": "Vitesse",
+    "noLimit": "Sans Limite",
+    "europeanCoverage": "Couverture Européenne",
+    "balkanCoverage": "Couverture des Balkans",
+    "otherCoverage": "Autre Couverture",
+    "getStarted": "Commencer",
+    "mostPopular": "Plus Populaire",
+    "bestValue": "Meilleur Rapport Qualité-Prix"
+  }
+}

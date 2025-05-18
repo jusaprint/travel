@@ -1,0 +1,33 @@
+{
+  "check_your_balance": "eSIM Bakiyenizi Kontrol Edin",
+  "monitor_usage": "Veri kullanımınızı izleyin, kalan bakiyenizi kontrol edin ve plan detaylarını görüntüleyin",
+  "subscriber_id": "Abone ID",
+  "enter_subscriber_id": "Abone ID'nizi girin",
+  "find_subscriber_id": "Abone ID'nizi satın alma onay e-postanızda veya hesap panelinizde bulabilirsiniz.",
+  "checking": "Kontrol ediliyor...",
+  "check_balance": "Bakiyeyi Kontrol Et",
+  "login_required": "eSIM bakiyenizi kontrol etmek için lütfen giriş yapın",
+  "login": "Giriş Yap",
+  "data_remaining": "Kalan Veri",
+  "data_used": "Kullanılan Veri",
+  "expires_at": "Bitiş Tarihi",
+  "expires_in": "Kalan Süre",
+  "data_usage": "Veri Kullanımı",
+  "used": "Kullanılan",
+  "total_package": "Toplam Paket",
+  "esim_details": "eSIM Detayları",
+  "status": "Durum",
+  "plan_name": "Plan Adı",
+  "total_package_size": "Toplam Paket Boyutu",
+  "usage_percentage": "Kullanım Yüzdesi",
+  "iccid": "ICCID",
+  "network": "Ağ",
+  "not_available": "Mevcut Değil",
+  "days_remaining": "{{count}} gün",
+  "expired": "Süresi Doldu",
+  "top_up": "eSIM'inizi Yenileyin",
+  "seo": {
+    "title": "eSIM Bakiyesi Kontrol Et - KudoSIM",
+    "description": "KudoSIM eSIM bakiyenizi, veri kullanımınızı ve geçerlilik sürenizi kontrol edin. Kalan verileriniz ve planınızın sona erme tarihi hakkında bilgi sahibi olun."
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "seo": {
+    "title": "KudoSIM Business - Werden Sie Teil Unseres Globalen Netzwerks",
+    "description": "Treten Sie dem KudoSIM Business-Programm bei und verdienen Sie bis zu 15% Provision für jeden eSIM-Verkauf. Helfen Sie Reisenden, weltweit verbunden zu bleiben, während Sie Ihr Einkommen steigern."
+  },
+  "hero": {
+    "title": "Willkommen bei",
+    "highlight": "KudoPartners!",
+    "subtitle": "Treten Sie dem lukrativsten Partnerprogramm der Reisebranche bei",
+    "cta": {
+      "join": "Jetzt Beitreten",
+      "learn": "Mehr Erfahren"
+    }
+  },
+  "benefits": {
+    "title": "Warum KudoSIM Beitreten?",
+    "subtitle": "Treten Sie dem lukrativsten Partnerprogramm der Reisebranche bei",
+    "commission": {
+      "title": "Großzügige Provisionen",
+      "description": "Verdienen Sie bis zu 15% Provision pro Verkauf. Je mehr Sie verkaufen, desto höher wird Ihre Provisionsstufe!"
+    },
+    "setup": {
+      "title": "Schnelle Einrichtung",
+      "description": "Starten Sie in wenigen Minuten mit unserer benutzerfreundlichen Plattform. Keine technischen Kenntnisse erforderlich!"
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Unser engagiertes Partner-Support-Team ist immer für Sie da, um Ihnen zum Erfolg zu verhelfen."
+    }
+  },
+  "rewards": {
+    "title": "Unsere Liebessprache ist das Schenken",
+    "subtitle": "Genießen Sie exklusive Belohnungen und Vorteile als KudoPartner",
+    "flights": {
+      "title": "Kostenlose Flüge",
+      "description": "Erhalten Sie kostenlose Flüge und andere tolle Reisevorteile, wenn Sie Verkaufsmeilensteine erreichen."
+    },
+    "events": {
+      "title": "Exklusive Events",
+      "description": "Werden Sie zu exklusiven Events eingeladen und vernetzen Sie sich mit anderen Partnern."
+    },
+    "features": {
+      "title": "Erster Zugriff",
+      "description": "Seien Sie der Erste, der neue Funktionen und Produkte vor allen anderen testet."
+    }
+  },
+  "faq": {
+    "title": "Häufig Gestellte Fragen",
+    "subtitle": "Alles, was Sie über das KudoPartner-Programm wissen müssen",
+    "eligible": {
+      "question": "Wer kann KudoPartner werden?",
+      "answer": "Jedes Unternehmen oder jede Person mit einem reiseinteressierten Publikum kann beitreten. Dazu gehören Reiseblogger, Agenturen, Content Creator und mehr."
+    },
+    "payment": {
+      "question": "Wie werde ich bezahlt?",
+      "answer": "Wir verarbeiten Zahlungen monatlich per PayPal oder Banküberweisung. Sie erhalten eine Provision für jede erfolgreiche Empfehlung, die zu einem Kauf führt."
+    },
+    "commission": {
+      "question": "Wie ist die Provisionsstruktur?",
+      "answer": "Beginnen Sie mit 5% Provision und steigern Sie diese auf bis zu 15% basierend auf Ihrer Verkaufsleistung. Je mehr Sie verkaufen, desto höher wird Ihre Provisionsstufe!"
+    },
+    "tracking": {
+      "question": "Wie verfolge ich meine Einnahmen?",
+      "answer": "Sie erhalten Zugriff auf ein umfassendes Dashboard, in dem Sie Klicks, Konversionen und Einnahmen in Echtzeit verfolgen können."
+    }
+  },
+  "cta": {
+    "title": "Bereit zum Verdienen?",
+    "button": "Jetzt KudoPartner werden"
+  },
+  "no.minimums": "Keine Mindestbestellmenge",
+  "no.minimums.desc": "Kein MOQ. Erstellen Sie ein Konto, kaufen Sie eine eSIM und legen Sie los. Preise klar aufgelistet, keine versteckten Gebühren.",
+  "management.console": "Management-Konsole",
+  "management.console.desc": "Stellen Sie eSIM-Pläne für Ihr Team oder Ihre Kunden über unsere benutzerfreundliche Web-Konsole aus und verwalten Sie diese.",
+  "quick.start": "Schnellstart",
+  "quick.start.desc": "Kaufen Sie einen vorgefertigten eSIM-Shop oder fügen Sie eine No-Code-Integration zu Ihrer bestehenden E-Commerce-Plattform hinzu.",
+  "api.access": "API-Zugriff",
+  "api.access.desc": "Erstellen Sie ein individuelles Verkaufserlebnis mit unserer API. Bestellen, aufladen und sperren Sie eSIMs über unsere API.",
+  "powered.by.title": "Unterstützt von Redtea Mobile",
+  "powered.by.subtitle": "ein Marktführer für eSIM und globale Konnektivität",
+  "esim.since": "eSIM seit",
+  "esim.since.desc": "Pionier in der eSIM-Technologie",
+  "connections": "Verbindungen",
+  "connections.desc": "Aktive eSIM-Verbindungen weltweit",
+  "service.provider": "Dienstleister",
+  "service.provider.value": "Global",
+  "service.provider.desc": "Vertrauenswürdig für Unternehmen weltweit",
+  "partner.telekom": "Deutsche Telekom",
+  "partner.telekom.value": "Partner",
+  "partner.telekom.desc": "Strategische Partnerschaft",
+  "certified": "Zertifiziert",
+  "certified.value": "GSMA",
+  "certified.desc": "Einhaltung der Branchenstandards",
+  "funding": "Finanzierung",
+  "funding.value": "50 Mio.+",
+  "funding.desc": "Risikokapitalfinanziert",
+  "endorsed.by.forbes": "Von Forbes als eines der \"100 kundenorientiertesten Unternehmen\" ausgezeichnet.",
+  "trusted.partners": "Vertrauenswürdige Partner",
+  "plug.into.workflows": "Integrieren Sie in Ihre bestehenden Arbeitsabläufe",
+  "start.nocode": "Starten Sie mit unserer No-Code-Lösung",
+  "data.coverage.title": "Datenabdeckung überall",
+  "data.coverage.subtitle": "Profitieren Sie von unserer Preisgestaltung in über 100 Ländern und Regionen",
+  "large.small.title": "Groß und klein, kurz und lang",
+  "large.small.desc": "Wir bieten Daten für Reisende in den Größen 1GB, 3GB, 5GB, 10GB und 20GB an. Zusätzlich können wir Pläne anpassen, um Ihren Bedürfnissen gerecht zu werden.",
+  "repeat.customers.title": "Wiederkehrende Kunden",
+  "repeat.customers.desc": "Verkaufen Sie Pläne zur einmaligen Nutzung oder lassen Sie Benutzer ihre bestehende installierte eSIM mit zusätzlichen Daten aufladen.",
+  "single.multi.title": "Einzel- oder Mehrländerpläne",
+  "single.multi.desc": "Wir bieten Einzelland- oder Mehrländer-Datenpläne für Personen an, die mehr als ein Reiseziel auf einer Reise besuchen.",
+  "multiple.networks.title": "Mehrere Netzwerke",
+  "multiple.networks.desc": "Wir arbeiten direkt mit globalen Tier-1-Betreibern zusammen, kaufen in großen Mengen ein und bieten Ihnen wettbewerbsfähige Preise."
+}

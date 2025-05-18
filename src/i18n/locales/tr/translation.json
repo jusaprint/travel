@@ -1,0 +1,67 @@
+{
+  "common": {
+    "welcome": "KudoSIM'e Hoş Geldiniz",
+    "tagline": "Modern gezginler için küresel bağlantı",
+    "search": "Ara",
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "selectLanguage": "Dil Seçin",
+    "shop": "Mağaza",
+    "shopEsims": "eSIM Satın Al"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "destinations": "Destinasyonlar",
+    "business": "İş İçin",
+    "support": "Destek",
+    "myEsims": "eSIM'lerim"
+  },
+  "hero": {
+    "title": "KudoSIM ile şurada seyahat edin:",
+    "subtitle": "Anında dijital SIM kartlarla dünya çapında bağlantıda kalın. Fiziksel SIM gerekmez, sadece tarayın ve bağlanın.",
+    "searchPlaceholder": "Nereye seyahat ediyorsunuz?",
+    "ctaPrimary": "Hemen Başla",
+    "ctaSecondary": "Daha Fazla Bilgi"
+  },
+  "features": {
+    "title": "KudoSIM ile Daha Akıllı Seyahat Edin",
+    "subtitle": "Güvenilir eSIM hizmetimizle dünyanın her yerinde bağlantıda kalın",
+    "coverage": {
+      "title": "200+ destinasyon",
+      "description": "Artık SIM kart değiştirmeye gerek yok, bir kez kurun, sonsuza kadar saklayın"
+    },
+    "support": {
+      "title": "Premium destek",
+      "description": "İyi günde de kötü günde de her zaman yanınızda olacağız."
+    },
+    "lounge": {
+      "title": "Ücretsiz lounge erişimi",
+      "description": "Uçuşunuz gecikirse lounge erişimi kazanın, ne harika bir fırsat!"
+    },
+    "bills": {
+      "title": "Artık fatura şoku yok",
+      "description": "Mutlak huzur ve istediğiniz zaman yükleme esnekliğinin keyfini çıkarın"
+    }
+  },
+  "coverage": {
+    "title": "Parmaklarınızın Ucunda Küresel Kapsama",
+    "subtitle": "Dünya çapındaki ağımızla kıtalar arasında sorunsuz bağlantı kurun",
+    "mostPopular": "🔥 En Popüler",
+    "validFor": "Geçerlilik süresi",
+    "days": "gün"
+  },
+  "package": {
+    "validFor": "Geçerlilik süresi",
+    "days": "gün",
+    "hotspot": "Hotspot",
+    "allowed": "İzin Verilir",
+    "speed": "Hız",
+    "noLimit": "Limit Yok",
+    "europeanCoverage": "Avrupa Kapsamı",
+    "balkanCoverage": "Balkan Kapsamı",
+    "otherCoverage": "Diğer Kapsam",
+    "getStarted": "Hemen Başla",
+    "mostPopular": "En Popüler",
+    "bestValue": "En İyi Değer"
+  }
+}

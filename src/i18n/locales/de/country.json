@@ -1,0 +1,23 @@
+{
+  "starting.from": "Ab",
+  "packages.available": "verfügbare Pakete",
+  "view.details": "Details anzeigen",
+  "popular.badge": "Am Beliebtesten",
+  "best.value.badge": "Bestes Angebot",
+  "get.local.esim": "Holen Sie sich eine lokale {{country}} eSIM",
+  "downloadable.sim": "Beste {{country}} eSIM mit vorausbezahlten Daten für mehrfache Nutzung",
+  "network": "Netzwerk",
+  "hotspot": "Hotspot",
+  "hotspot.allowed": "Kudo Hotspot ist erlaubt",
+  "speed": "Geschwindigkeit",
+  "available.packages": "Verfügbare Pakete",
+  "features": "Funktionen",
+  "description": "Beschreibung",
+  "not.found": "Das gesuchte Land existiert nicht oder ist nicht verfügbar.",
+  "back": "Zurück zu Reisezielen",
+  "error": "Fehler",
+  "valid.for": "Gültig für",
+  "days": "Tage",
+  "most.popular": "Am Beliebtesten",
+  "best.value": "Bestes Angebot"
+}

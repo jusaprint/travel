@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KudoSIM - Global Connectivity for Modern Travelers</title>
+    
+    <!-- Resource hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://flagcdn.com">
+    <link rel="dns-prefetch" href="https://idlmdcspzrzcwbyqmbpc.supabase.co">
+    
+    <!-- Preconnect to critical domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://flagcdn.com" crossorigin>
+    <link rel="preconnect" href="https://idlmdcspzrzcwbyqmbpc.supabase.co" crossorigin>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/kudosim-logo.svg" as="image" type="image/svg+xml" fetchpriority="high">
+    <link rel="preload" href="/grid.svg" as="image" type="image/svg+xml" fetchpriority="high">
+    <link rel="preload" href="https://flagcdn.com/de.svg" as="image" fetchpriority="high">
+    <link rel="preload" href="https://flagcdn.com/fr.svg" as="image" fetchpriority="high">
+    <link rel="preload" href="https://flagcdn.com/it.svg" as="image" fetchpriority="high">
+    <link rel="preload" href="https://flagcdn.com/es.svg" as="image" fetchpriority="high">
+    <link rel="preload" href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Vodafone_2017_logo.svg/1200px-Vodafone_2017_logo.svg.png" as="image" fetchpriority="high">
+    <link rel="preload" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Telekom_Logo_2013.svg/2560px-Telekom_Logo_2013.svg.png" as="image" fetchpriority="high">
+    
+    <!-- Optimized font loading with font-display swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" 
+          rel="stylesheet"
+          media="print"
+          onload="this.media='all'"
+          fetchpriority="low"
+          crossorigin>
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" 
+            rel="stylesheet">
+    </noscript>
+    
+    <!-- Meta tags for better SEO and sharing -->
+    <meta name="description" content="Stay connected worldwide with KudoSIM eSIM technology. No physical SIM needed, just scan and connect.">
+    <meta property="og:title" content="KudoSIM - Global Connectivity for Modern Travelers">
+    <meta property="og:description" content="Stay connected worldwide with KudoSIM eSIM technology. No physical SIM needed, just scan and connect.">
+    <meta property="og:image" content="/og-image.jpg">
+    <meta name="theme-color" content="#690d89">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- PWA tags -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!-- Custom styles to prevent TrustIndex widget in footer -->
+    <style>
+      /* Hide TrustIndex widgets in the footer */
+      footer .trustindex-widget,
+      body > .trustindex-widget,
+      #root > .trustindex-widget,
+      .trustindex-widget:not(#trustindex-widget-container .trustindex-widget) {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        pointer-events: none !important;
+        z-index: -9999 !important;
+      }
+      
+      /* Ensure TrustIndex widget only appears in the designated container */
+      #trustindex-widget-container .trustindex-widget {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+        position: relative !important;
+        z-index: 10 !important;
+      }
+      
+      /* Make sure the widget is visible */
+      #trustindex-widget-container .ti-widget {
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+      }
+      
+      /* Critical CSS for initial render */
+      body {
+        margin: 0;
+        font-family: 'Poppins', system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      /* Content-visibility for off-screen content */
+      .content-visibility-auto {
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 1000px;
+      }
+      
+      /* Image loading optimizations */
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      
+      /* Prevent layout shifts with aspect ratio */
+      .aspect-ratio {
+        position: relative;
+        width: 100%;
+      }
+      
+      .aspect-ratio::before {
+        content: "";
+        display: block;
+        padding-top: var(--aspect-ratio, 56.25%); /* Default 16:9 */
+      }
+      
+      .aspect-ratio > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.jsx"></script>
+    
+    <!-- Script to clean up any TrustIndex widgets outside the container -->
+    <script>
+      // Function to clean up TrustIndex widgets
+      function cleanupTrustIndexWidgets() {
+        // Get all TrustIndex widgets
+        const widgets = document.querySelectorAll('.trustindex-widget, .ti-widget');
+        
+        // Check each widget
+        widgets.forEach(widget => {
+          // Check if widget is in the correct container
+          const isInContainer = widget.closest('#trustindex-widget-container');
+          
+          // If not in container, move it to the container
+          if (!isInContainer) {
+            const container = document.getElementById('trustindex-widget-container');
+            if (container && widget.parentNode) {
+              widget.parentNode.removeChild(widget);
+              container.appendChild(widget);
+            }
+          }
+        });
+      }
+      
+      // Run cleanup on DOMContentLoaded
+      document.addEventListener('DOMContentLoaded', cleanupTrustIndexWidgets);
+      
+      // Run cleanup periodically
+      const cleanupInterval = setInterval(cleanupTrustIndexWidgets, 1000);
+      
+      // Create MutationObserver to watch for new widgets
+      const observer = new MutationObserver((mutations) => {
+        let needsCleanup = false;
+        
+        mutations.forEach((mutation) => {
+          if (mutation.addedNodes.length) {
+            needsCleanup = true;
+          }
+        });
+        
+        if (needsCleanup) {
+          cleanupTrustIndexWidgets();
+        }
+      });
+      
+      // Start observing once DOM is loaded
+      document.addEventListener('DOMContentLoaded', () => {
+        observer.observe(document.body, { 
+          childList: true, 
+          subtree: true 
+        });
+        
+        // Cleanup after 10 seconds to avoid performance issues
+        setTimeout(() => {
+          clearInterval(cleanupInterval);
+          observer.disconnect();
+        }, 10000);
+      });
+      
+      // Preload critical images
+      const preloadImages = [
+        '/kudosim-logo.svg',
+        '/grid.svg',
+        'https://flagcdn.com/de.svg',
+        'https://flagcdn.com/fr.svg',
+        'https://flagcdn.com/it.svg',
+        'https://flagcdn.com/es.svg',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Vodafone_2017_logo.svg/1200px-Vodafone_2017_logo.svg.png',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Telekom_Logo_2013.svg/2560px-Telekom_Logo_2013.svg.png'
+      ];
+      
+      // Create image objects to preload
+      preloadImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+{
+  "seo": {
+    "title": "KudoSIM Business - Küresel Ağımıza Katılın",
+    "description": "KudoSIM'in iş programına katılın ve her eSIM satışı için %15'e kadar komisyon kazanın. Gelirinizi artırırken gezginlerin dünya çapında bağlantıda kalmalarına yardımcı olun."
+  },
+  "hero": {
+    "title": "Hoş Geldiniz",
+    "highlight": "KudoPartners!",
+    "subtitle": "Seyahat sektöründeki en ödüllendirici ortaklık programına katılın",
+    "cta": {
+      "join": "Şimdi Katılın",
+      "learn": "Daha Fazla Bilgi"
+    }
+  },
+  "benefits": {
+    "title": "Neden KudoSIM'e Katılmalı?",
+    "subtitle": "Seyahat sektöründeki en ödüllendirici ortaklık programına katılın",
+    "commission": {
+      "title": "Cömert Komisyonlar",
+      "description": "Her satışta %15'e kadar komisyon kazanın. Ne kadar çok satarsanız, komisyon seviyeniz o kadar yükselir!"
+    },
+    "setup": {
+      "title": "Hızlı Kurulum",
+      "description": "Kullanımı kolay platformumuzla dakikalar içinde başlayın. Teknik bilgi gerekmez!"
+    },
+    "support": {
+      "title": "7/24 Destek",
+      "description": "Özel iş ortağı destek ekibimiz, başarılı olmanıza yardımcı olmak için her zaman burada."
+    }
+  },
+  "rewards": {
+    "title": "Hediye verme bizim sevgi dilimizdir",
+    "subtitle": "KudoPartner olarak özel ödüller ve avantajların keyfini çıkarın",
+    "flights": {
+      "title": "Ücretsiz Uçuşlar",
+      "description": "Satış hedeflerine ulaştıkça ücretsiz uçuşlar ve diğer harika seyahat avantajları kazanın."
+    },
+    "events": {
+      "title": "Özel Etkinlikler",
+      "description": "Gizli etkinliklere davet edilin ve diğer ortaklarla ağ kurun."
+    },
+    "features": {
+      "title": "İlk Erişim",
+      "description": "Yeni özellikleri ve ürünleri herkesten önce deneyin."
+    }
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "KudoPartner programı hakkında bilmeniz gereken her şey",
+    "eligible": {
+      "question": "Kimler KudoPartner olabilir?",
+      "answer": "Seyahatle ilgilenen bir kitleye sahip herhangi bir işletme veya birey katılabilir. Buna seyahat bloggerları, acenteler, içerik oluşturucular ve daha fazlası dahildir."
+    },
+    "payment": {
+      "question": "Nasıl ödeme alırım?",
+      "answer": "Ödemeleri aylık olarak PayPal veya banka havalesi yoluyla işleme koyarız. Satın almayla sonuçlanan her başarılı yönlendirme için komisyon kazanacaksınız."
+    },
+    "commission": {
+      "question": "Komisyon yapısı nedir?",
+      "answer": "%5 komisyon kazanmaya başlayın ve satış performansınıza göre %15'e kadar artırın. Ne kadar çok satarsanız, komisyon seviyeniz o kadar yükselir!"
+    },
+    "tracking": {
+      "question": "Kazançlarımı nasıl takip ederim?",
+      "answer": "Tıklamaları, dönüşümleri ve kazançları gerçek zamanlı olarak takip edebileceğiniz kapsamlı bir gösterge paneline erişim elde edeceksiniz."
+    }
+  },
+  "cta": {
+    "title": "Kazanmaya hazır mısınız?",
+    "button": "Şimdi KudoPartners'a Katılın"
+  },
+  "no.minimums": "Minimum Yok",
+  "no.minimums.desc": "Minimum sipariş miktarı yok. Bir hesap oluşturun, bir eSIM satın alın ve başlayın. Fiyatlar açıkça listelenmiş, gizli ücret yok.",
+  "management.console": "Yönetim Konsolu",
+  "management.console.desc": "Kullanımı kolay web konsolumuzdan ekibinize veya müşterilerinize eSIM planları verin ve yönetin.",
+  "quick.start": "Hızlı Başlangıç",
+  "quick.start.desc": "Önceden oluşturulmuş bir eSIM mağazası satın alın veya mevcut e-Ticaret platformunuza Kodsuz bir entegrasyon ekleyin.",
+  "api.access": "API Erişimi",
+  "api.access.desc": "API'miz ile özel bir satış deneyimi oluşturun. API'mızdan eSIM'leri sipariş edin, yükleyin ve askıya alın.",
+  "powered.by.title": "Redtea Mobile Tarafından Desteklenmektedir",
+  "powered.by.subtitle": "eSIM ve Küresel Bağlantıda Lider",
+  "esim.since": "eSIM Başlangıcı",
+  "esim.since.desc": "eSIM teknolojisinde öncü",
+  "connections": "Bağlantılar",
+  "connections.desc": "Dünya çapında aktif eSIM bağlantıları",
+  "service.provider": "Servis Sağlayıcı",
+  "service.provider.value": "Küresel",
+  "service.provider.desc": "Dünya çapında işletmeler tarafından güvenilen",
+  "partner.telekom": "Deutsche Telekom",
+  "partner.telekom.value": "Ortak",
+  "partner.telekom.desc": "Stratejik ortaklık",
+  "certified": "Sertifikalı",
+  "certified.value": "GSMA",
+  "certified.desc": "Endüstri standardı uyumluluğu",
+  "funding": "Finansman",
+  "funding.value": "50M+",
+  "funding.desc": "Risk sermayesi destekli",
+  "endorsed.by.forbes": "Forbes tarafından \"En Müşteri Odaklı 100 Şirket\"ten biri olarak onaylandı.",
+  "trusted.partners": "İş Ortaklarımız Tarafından Güvenilen",
+  "plug.into.workflows": "Mevcut iş akışlarınıza entegre edin",
+  "start.nocode": "Kodsuz çözümümüzle başlayın",
+  "data.coverage.title": "Her yerde veri kapsamı",
+  "data.coverage.subtitle": "100'den fazla ülke ve bölgede fiyatlandırma gücümüzden yararlanın",
+  "large.small.title": "Büyük ve küçük, kısa ve uzun",
+  "large.small.desc": "Gezginler için 1GB, 3GB, 5GB, 10GB ve 20GB boyutlarında veri sunuyoruz. Ayrıca, ihtiyaçlarınıza uygun planlar özelleştirme yeteneğine sahibiz.",
+  "repeat.customers.title": "Tekrarlayan Müşteriler",
+  "repeat.customers.desc": "Planları tek kullanımlık olarak satın veya kullanıcıların mevcut kurulu eSIM'lerini ek verilerle yenilemelerine izin verin.",
+  "single.multi.title": "Tek veya çok ülkeli planlar",
+  "single.multi.desc": "Bir seyahatte birden fazla destinasyonu ziyaret eden kişiler için tek ülke veya çok ülkeli veri planları sunuyoruz.",
+  "multiple.networks.title": "Çoklu Ağlar",
+  "multiple.networks.desc": "Doğrudan küresel tier 1 operatörlerle çalışıyor, toplu alım yapıyor ve size rekabetçi oranlar sunuyoruz."
+}

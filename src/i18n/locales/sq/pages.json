@@ -1,0 +1,72 @@
+{
+  "home": {
+    "title": "Planet Globale të të Dhënave eSIM për Udhëtime Ndërkombëtare",
+    "description": "Qëndroni të lidhur globalisht me kartat dixhitale eSIM të KudoSIM. Nuk nevojitet SIM fizike, thjesht skanoni dhe lidhuni. Në dispozicion në më shumë se 200 vende."
+  },
+  "destinations": {
+    "title": "Gjeni eSIM-in më të Mirë për Destinacionin Tuaj",
+    "subtitle": "Qëndroni të lidhur në mbarë botën me shërbimin tonë të besueshëm eSIM",
+    "searchPlaceholder": "Kërkoni vendet...",
+    "filter": {
+      "all": "Të Gjitha Kategoritë",
+      "countries": "Vendet",
+      "regions": "Rajonet"
+    },
+    "empty": {
+      "title": "Nuk u gjetën destinacione",
+      "description": "Provoni të rregulloni kërkimin ose filtrat tuaj"
+    },
+    "back": "Kthehu te Destinacionet"
+  },
+  "popular": {
+    "title": "Destinacionet e Popullarizuara",
+    "subtitle": "Vendet më të vizituara me mbulim të besueshëm eSIM. Merrni qasje të menjëhershme në të dhëna mobile dhe qëndroni të lidhur gjatë udhëtimeve tuaja.",
+    "empty": {
+      "title": "Nuk u gjetën destinacione",
+      "description": "Ju lutemi kontrolloni më vonë për përditësime"
+    }
+  },
+  "regions": {
+    "title": "Rajonet e Mbulimit Global",
+    "subtitle": "Gjeni planin perfekt të të dhënave për destinacionin tuaj me mbulim gjithëpërfshirës rajonal. Qasuni në të dhëna mobile të besueshme në të gjitha rajonet me një eSIM të vetme.",
+    "empty": {
+      "title": "Nuk u gjetën rajone",
+      "description": "Ju lutemi kontrolloni më vonë për përditësime"
+    }
+  },
+  "country": {
+    "getLocalEsim": "Merrni një eSIM lokale për {{country}}",
+    "downloadableSim": "Kartë SIM e shkarkueshme për {{country}} me të dhëna të parapaguara",
+    "network": "Rrjeti",
+    "hotspot": "Hotspot",
+    "hotspotAllowed": "Kudo hotspot është i lejuar",
+    "speed": "Shpejtësia",
+    "availablePackages": "Paketat e Disponueshme",
+    "features": "Veçoritë",
+    "description": "Përshkrimi",
+    "notFound": "Vendi që po kërkoni nuk ekziston ose nuk është i disponueshëm."
+  },
+  "faq": {
+    "title": "Pyetjet më të Shpeshta",
+    "subtitle": "Gjeni përgjigje për pyetjet e zakonshme rreth KudoSIM dhe shërbimeve tona",
+    "searchPlaceholder": "Kërko pyetjet...",
+    "noResults": "Nuk u gjetën pyetje",
+    "tryAgain": "Provoni të rregulloni termat e kërkimit",
+    "helpCenter": "Qendra e Ndihmës",
+    "howCanHelp": "Si mund t'ju ndihmojmë?"
+  },
+  "contact": {
+    "title": "Kontaktoni KudoSIM - Mbështetje Globale 24/7 për Shërbimet eSIM",
+    "description": "Merrni mbështetje të menjëhershme për shërbimin tuaj eSIM KudoSIM. Në dispozicion 24/7 përmes chat-it live, email-it ose telefonit. Asistencë eksperte për udhëtarët në mbarë botën.",
+    "getInTouch": "Na Kontaktoni",
+    "hereToHelp": "Jemi këtu për t'ju ndihmuar",
+    "supportAvailable": "Ekipi ynë i mbështetjes është në dispozicion 24/7 për t'ju ndihmuar me çdo pyetje ose shqetësim"
+  },
+  "business": {
+    "title": "KudoSIM Biznes - Bashkohuni me Rrjetin Tonë Global",
+    "description": "Bashkohuni me programin e biznesit të KudoSIM dhe fitoni deri në 15% komision për çdo shitje eSIM. Ndihmoni udhëtarët të qëndrojnë të lidhur në mbarë botën ndërsa rritni të ardhurat tuaja.",
+    "heroTitle": "Mirë se vini në",
+    "heroHighlight": "KudoPartners!",
+    "heroSubtitle": "Bashkohuni me programin më shpërblyes të partneritetit në industrinë e udhëtimit"
+  }
+}

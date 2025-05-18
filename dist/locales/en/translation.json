@@ -1,0 +1,67 @@
+{
+  "common": {
+    "welcome": "Welcome to KudoSIM",
+    "tagline": "Global connectivity for modern travelers",
+    "search": "Search",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "selectLanguage": "Select Language",
+    "shop": "Shop",
+    "shopEsims": "Shop eSIMs"
+  },
+  "nav": {
+    "home": "Home",
+    "destinations": "Destinations",
+    "business": "For Business",
+    "support": "Support",
+    "myEsims": "My eSIMs"
+  },
+  "hero": {
+    "title": "Travel with KudoSIM in",
+    "subtitle": "Stay connected globally with instant digital SIM cards. No physical SIM needed, just scan and connect.",
+    "searchPlaceholder": "Where are you travelling to?",
+    "ctaPrimary": "Get Started",
+    "ctaSecondary": "Learn More"
+  },
+  "features": {
+    "title": "Travel Smarter with KudoSIM",
+    "subtitle": "Stay connected anywhere in the world with our reliable eSIM service",
+    "coverage": {
+      "title": "200+ destinations",
+      "description": "No more switching SIMs, install it once, keep it forever"
+    },
+    "support": {
+      "title": "Premium support",
+      "description": "We will always have your back, for good and for bad."
+    },
+    "lounge": {
+      "title": "Free lounge access",
+      "description": "Get lounge access if your flight delays, what a sweet deal!"
+    },
+    "bills": {
+      "title": "No more bill shocks",
+      "description": "Enjoy ultimate peace of mind and flexibility to top up anytime"
+    }
+  },
+  "coverage": {
+    "title": "Global Coverage at Your Fingertips",
+    "subtitle": "Connect seamlessly across continents with our worldwide network",
+    "mostPopular": "🔥 Most Popular",
+    "validFor": "Valid for",
+    "days": "days"
+  },
+  "package": {
+    "validFor": "Valid for",
+    "days": "days",
+    "hotspot": "Hotspot",
+    "allowed": "Allowed",
+    "speed": "Speed",
+    "noLimit": "No Limit",
+    "europeanCoverage": "European Coverage",
+    "balkanCoverage": "Balkan Coverage",
+    "otherCoverage": "Other Coverage",
+    "getStarted": "Get Started",
+    "mostPopular": "Most Popular",
+    "bestValue": "Best Value"
+  }
+}

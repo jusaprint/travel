@@ -1,0 +1,33 @@
+{
+  "check_your_balance": "Vérifiez Votre Solde eSIM",
+  "monitor_usage": "Surveillez votre consommation de données, vérifiez le solde restant et consultez les détails de votre forfait",
+  "subscriber_id": "ID d'Abonné",
+  "enter_subscriber_id": "Entrez votre ID d'abonné",
+  "find_subscriber_id": "Vous pouvez trouver votre ID d'abonné dans votre e-mail de confirmation d'achat ou dans votre tableau de bord de compte.",
+  "checking": "Vérification...",
+  "check_balance": "Vérifier le Solde",
+  "login_required": "Veuillez vous connecter pour vérifier votre solde eSIM",
+  "login": "Se Connecter",
+  "data_remaining": "Données Restantes",
+  "data_used": "Données Utilisées",
+  "expires_at": "Expire le",
+  "expires_in": "Expire dans",
+  "data_usage": "Utilisation des Données",
+  "used": "Utilisé",
+  "total_package": "Forfait Total",
+  "esim_details": "Détails de l'eSIM",
+  "status": "Statut",
+  "plan_name": "Nom du Forfait",
+  "total_package_size": "Taille Totale du Forfait",
+  "usage_percentage": "Pourcentage d'Utilisation",
+  "iccid": "ICCID",
+  "network": "Réseau",
+  "not_available": "N/D",
+  "days_remaining": "{{count}} jours",
+  "expired": "Expiré",
+  "top_up": "Recharger Votre eSIM",
+  "seo": {
+    "title": "Vérifier le Solde eSIM - KudoSIM",
+    "description": "Vérifiez votre solde KudoSIM eSIM, votre consommation de données et votre période de validité. Restez informé de vos données restantes et de l'expiration de votre forfait."
+  }
+}

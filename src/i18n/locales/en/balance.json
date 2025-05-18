@@ -1,0 +1,33 @@
+{
+  "check_your_balance": "Check Your eSIM Balance",
+  "monitor_usage": "Monitor your data usage, check remaining balance, and view plan details",
+  "subscriber_id": "Subscriber ID",
+  "enter_subscriber_id": "Enter your subscriber ID",
+  "find_subscriber_id": "You can find your Subscriber ID in your purchase confirmation email or in your account dashboard.",
+  "checking": "Checking...",
+  "check_balance": "Check Balance",
+  "login_required": "Please log in to check your eSIM balance",
+  "login": "Log In",
+  "data_remaining": "Data Remaining",
+  "data_used": "Data Used",
+  "expires_at": "Expires At",
+  "expires_in": "Expires In",
+  "data_usage": "Data Usage",
+  "used": "Used",
+  "total_package": "Total Package",
+  "esim_details": "eSIM Details",
+  "status": "Status",
+  "plan_name": "Plan Name",
+  "total_package_size": "Total Package Size",
+  "usage_percentage": "Usage Percentage",
+  "iccid": "ICCID",
+  "network": "Network",
+  "not_available": "N/A",
+  "days_remaining": "{{count}} days",
+  "expired": "Expired",
+  "top_up": "Top Up Your eSIM",
+  "seo": {
+    "title": "Check eSIM Balance - KudoSIM",
+    "description": "Check your KudoSIM eSIM balance, data usage, and validity period. Stay informed about your remaining data and plan expiration."
+  }
+}
