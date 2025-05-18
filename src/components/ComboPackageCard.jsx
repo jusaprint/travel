@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import Flag from 'react-world-flags';
 import { useTranslation } from 'react-i18next';
@@ -42,7 +42,7 @@ const FlagGroup = ({ countries, maxVisible = 6, onRemove }) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setShowAll(true)}
-          className="w-8 h-6 sm:w-10 sm:h-7 bg-[#ffc300] text-[#013D91] rounded-lg text-xs sm:text-sm font-bold hover:bg-white transition-colors duration-300 flex items-center justify-center shadow-lg"
+          className="w-8 h-6 sm:w-10 sm:h-7 bg-[#ffc300] text-white rounded-lg text-xs sm:text-sm font-bold hover:bg-white transition-colors duration-300 flex items-center justify-center shadow-lg"
         >
           +{remainingCount}
         </motion.button>
@@ -51,8 +51,8 @@ const FlagGroup = ({ countries, maxVisible = 6, onRemove }) => {
   );
 };
 
-export default function ComboPackageCard({ 
-  plan, 
+function ComboPackageCard({
+  plan,
   package: dataPackage,
   isEditing = false,
   onEdit,
@@ -67,16 +67,49 @@ export default function ComboPackageCard({
   // Load the package namespace
   const { isLoading } = useTranslationLoader(['package']);
 
-  const europeanCountries = dataPackage.countries.filter(country => 
-    ['DE', 'FR', 'IT', 'ES', 'PT', 'NL', 'BE', 'LU', 'AT', 'DK', 'SE', 'FI', 'GR', 'PL', 'CZ', 'HU', 'CH', 'TR'].includes(country.code)
-  );
-  
-  const balkanCountries = dataPackage.countries.filter(country => 
-    ['HR', 'RS', 'ME', 'MK', 'AL', 'GR', 'BG', 'RO', 'HU'].includes(country.code)
+  const europeanCountries = useMemo(
+    () =>
+      dataPackage.countries.filter((country) =>
+        [
+          'DE',
+          'FR',
+          'IT',
+          'ES',
+          'PT',
+          'NL',
+          'BE',
+          'LU',
+          'AT',
+          'DK',
+          'SE',
+          'FI',
+          'GR',
+          'PL',
+          'CZ',
+          'HU',
+          'CH',
+          'TR',
+        ].includes(country.code)
+      ),
+    [dataPackage.countries]
   );
 
-  const otherCountries = dataPackage.countries.filter(country => 
-    ['US', 'CA', 'AU'].includes(country.code)
+  const balkanCountries = useMemo(
+    () =>
+      dataPackage.countries.filter((country) =>
+        ['HR', 'RS', 'ME', 'MK', 'AL', 'GR', 'BG', 'RO', 'HU'].includes(
+          country.code
+        )
+      ),
+    [dataPackage.countries]
+  );
+
+  const otherCountries = useMemo(
+    () =>
+      dataPackage.countries.filter((country) =>
+        ['US', 'CA', 'AU'].includes(country.code)
+      ),
+    [dataPackage.countries]
   );
 
   const handleInputChange = (e) => {
@@ -96,7 +129,7 @@ export default function ComboPackageCard({
 
   if (isLoading) {
     return (
-      <div className="relative overflow-hidden rounded-[32px] bg-[#013D91] p-6 text-white shadow-xl">
+      <div className="relative overflow-hidden rounded-[32px] bg-[#6F2DA8] p-6 text-white shadow-xl">
         <div className="animate-pulse space-y-4">
           <div className="h-8 bg-white/20 rounded w-1/2"></div>
           <div className="h-12 bg-white/20 rounded"></div>
@@ -113,7 +146,7 @@ export default function ComboPackageCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ scale: 1.02 }}
-      className="relative overflow-hidden rounded-[32px] bg-[#013D91] p-6 text-white shadow-xl transition-all duration-300"
+      className="relative overflow-hidden rounded-[32px] bg-[#6F2DA8] p-6 text-white shadow-xl transition-all duration-300"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.15]" />
@@ -217,7 +250,7 @@ export default function ComboPackageCard({
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-8">
           <div className="grid grid-cols-2 gap-4">
             <div className="flex items-center gap-2 sm:gap-3">
-              <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#ffc300] text-[#013D91]">
+            <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#6F2DA8] text-white">
                 <svg className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -230,7 +263,7 @@ export default function ComboPackageCard({
                     fallback="Hotspot"
                   />
                 </h4>
-                <p className="text-sm sm:text-lg font-bold text-[#ffc300]">
+                <p className="text-sm sm:text-lg font-bold text-white">
                   <TranslatedText 
                     textKey="allowed" 
                     namespace="package" 
@@ -240,7 +273,7 @@ export default function ComboPackageCard({
               </div>
             </div>
             <div className="flex items-center gap-2 sm:gap-3">
-              <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#ffc300] text-[#013D91]">
+            <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#6F2DA8] text-white">
                 <svg className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -253,7 +286,7 @@ export default function ComboPackageCard({
                     fallback="Speed"
                   />
                 </h4>
-                <p className="text-sm sm:text-lg font-bold text-[#ffc300]">
+                <p className="text-sm sm:text-lg font-bold text-white">
                   <TranslatedText 
                     textKey="no.limit" 
                     namespace="package" 
@@ -326,7 +359,7 @@ export default function ComboPackageCard({
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => onSave(editedPackage)}
-              className="flex-1 bg-[#ffc300] text-[#013D91] rounded-xl py-3 font-bold text-base hover:bg-white transition-colors duration-300 shadow-lg"
+              className="flex-1 bg-[#ffc300] text-white rounded-xl py-3 font-bold text-base hover:bg-white transition-colors duration-300 shadow-lg"
             >
               {t('common.save')}
             </motion.button>
@@ -349,14 +382,14 @@ export default function ComboPackageCard({
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-[#ffc300] text-[#013D91] rounded-xl py-3 font-bold text-base hover:bg-white transition-colors duration-300 shadow-lg flex items-center justify-center gap-2"
+              className="w-full bg-[#ffc300] text-white rounded-xl py-3 font-bold text-base hover:bg-white transition-colors duration-300 shadow-lg flex items-center justify-center gap-2"
             >
               <TranslatedText 
                 textKey="get.started" 
                 namespace="package" 
                 fallback="Get Started"
               />
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-[#6F2DA8]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </motion.button>
@@ -366,3 +399,4 @@ export default function ComboPackageCard({
     </motion.div>
   );
 }
+export default React.memo(ComboPackageCard);

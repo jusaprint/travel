@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import Flag from 'react-world-flags';
 import { useTranslation } from 'react-i18next';
@@ -128,7 +128,7 @@ const FlagGroup = ({ countries, maxVisible = 6, onRemove }) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setShowAll(true)}
-          className="w-8 h-6 sm:w-10 sm:h-7 bg-[#ffc300] text-[#013D91] rounded-lg text-xs sm:text-sm font-bold hover:bg-white transition-colors duration-300 flex items-center justify-center shadow-lg"
+          className="w-8 h-6 sm:w-10 sm:h-7 bg-[#ffc300] text-white rounded-lg text-xs sm:text-sm font-bold hover:bg-white transition-colors duration-300 flex items-center justify-center shadow-lg"
         >
           +{remainingCount}
         </motion.button>
@@ -137,7 +137,7 @@ const FlagGroup = ({ countries, maxVisible = 6, onRemove }) => {
   );
 };
 
-export default function ComboPackageCard({ 
+function ComboPackageCard({
   plan, 
   package: dataPackage,
   isEditing = false,
@@ -150,16 +150,49 @@ export default function ComboPackageCard({
   const { t } = useTranslation();
   const [editedPackage, setEditedPackage] = useState(dataPackage);
 
-  const europeanCountries = editedPackage.countries.filter(country => 
-    ['DE', 'FR', 'IT', 'ES', 'PT', 'NL', 'BE', 'LU', 'AT', 'DK', 'SE', 'FI', 'GR', 'PL', 'CZ', 'HU', 'CH', 'TR'].includes(country.code)
-  );
-  
-  const balkanCountries = editedPackage.countries.filter(country => 
-    ['HR', 'RS', 'ME', 'MK', 'AL', 'GR', 'BG', 'RO', 'HU'].includes(country.code)
+  const europeanCountries = useMemo(
+    () =>
+      editedPackage.countries.filter((country) =>
+        [
+          'DE',
+          'FR',
+          'IT',
+          'ES',
+          'PT',
+          'NL',
+          'BE',
+          'LU',
+          'AT',
+          'DK',
+          'SE',
+          'FI',
+          'GR',
+          'PL',
+          'CZ',
+          'HU',
+          'CH',
+          'TR',
+        ].includes(country.code)
+      ),
+    [editedPackage.countries]
   );
 
-  const otherCountries = editedPackage.countries.filter(country => 
-    ['US', 'CA', 'AU'].includes(country.code)
+  const balkanCountries = useMemo(
+    () =>
+      editedPackage.countries.filter((country) =>
+        ['HR', 'RS', 'ME', 'MK', 'AL', 'GR', 'BG', 'RO', 'HU'].includes(
+          country.code
+        )
+      ),
+    [editedPackage.countries]
+  );
+
+  const otherCountries = useMemo(
+    () =>
+      editedPackage.countries.filter((country) =>
+        ['US', 'CA', 'AU'].includes(country.code)
+      ),
+    [editedPackage.countries]
   );
 
   const handleInputChange = (e) => {
@@ -191,7 +224,7 @@ export default function ComboPackageCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ scale: 1.02 }}
-      className="relative overflow-hidden rounded-[32px] bg-[#013D91] p-6 text-white shadow-xl transition-all duration-300"
+      className="relative overflow-hidden rounded-[32px] bg-[#6F2DA8] p-6 text-white shadow-xl transition-all duration-300"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.15]" />
@@ -277,25 +310,25 @@ export default function ComboPackageCard({
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-8">
           <div className="grid grid-cols-2 gap-4">
             <div className="flex items-center gap-2 sm:gap-3">
-              <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#ffc300] text-[#013D91]">
+              <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#6F2DA8] text-white">
                 <svg className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
               <div>
                 <h4 className="text-xs sm:text-sm font-semibold text-white/80">{t('package.hotspot')}</h4>
-                <p className="text-sm sm:text-lg font-bold text-[#ffc300]">{t('package.allowed')}</p>
+                <p className="text-sm sm:text-lg font-bold text-white">{t('package.allowed')}</p>
               </div>
             </div>
             <div className="flex items-center gap-2 sm:gap-3">
-              <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#ffc300] text-[#013D91]">
+              <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#6F2DA8] text-white">
                 <svg className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
               <div>
                 <h4 className="text-xs sm:text-sm font-semibold text-white/80">{t('package.speed')}</h4>
-                <p className="text-sm sm:text-lg font-bold text-[#ffc300]">{t('package.no.limit')}</p>
+                <p className="text-sm sm:text-lg font-bold text-white">{t('package.no.limit')}</p>
               </div>
             </div>
           </div>
@@ -350,7 +383,7 @@ export default function ComboPackageCard({
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => onSave(editedPackage)}
-              className="flex-1 bg-[#ffc300] text-[#013D91] rounded-xl py-3 font-bold text-base hover:bg-white transition-colors duration-300 shadow-lg"
+              className="flex-1 bg-[#ffc300] text-white rounded-xl py-3 font-bold text-base hover:bg-white transition-colors duration-300 shadow-lg"
             >
               {t('common.save')}
             </motion.button>
@@ -369,7 +402,7 @@ export default function ComboPackageCard({
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={onEdit}
-              className="flex-1 bg-[#ffc300] text-[#013D91] rounded-xl py-3 font-bold text-base hover:bg-white transition-colors duration-300 shadow-lg"
+              className="flex-1 bg-[#ffc300] text-white rounded-xl py-3 font-bold text-base hover:bg-white transition-colors duration-300 shadow-lg"
             >
               {t('common.edit')}
             </motion.button>
@@ -412,3 +445,4 @@ export default function ComboPackageCard({
     </motion.div>
   );
 }
+export default React.memo(ComboPackageCard);
