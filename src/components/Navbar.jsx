@@ -294,7 +294,7 @@ export default function Navbar() {
             <LanguageSwitcher />
           </div>
 
-          {/* Desktop CTA */}
+          {/* CTA Button Desktop */}
           <Link
             to="#"
             className="hidden md:inline-flex items-center gap-2 text-white font-medium px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-sm shadow-lg transition-all duration-300"
@@ -309,7 +309,7 @@ export default function Navbar() {
             </svg>
           </Link>
 
-          {/* Mobile CTA */}
+          {/* CTA Button Mobile */}
           <Link
             to="#"
             className="inline-flex md:hidden items-center gap-1 text-white font-medium px-3 py-2 rounded-full text-sm shadow-lg transition-all duration-300"
@@ -321,7 +321,7 @@ export default function Navbar() {
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
               <path d="M3,20.5V3.5C3,2.91 ... z" />
             </svg>
-            <span>Download App</span>
+            <TranslatedText textKey="buttons.getApp" namespace="common" fallback="Download App" />
           </Link>
 
           {/* Mobile Menu Button */}
@@ -333,7 +333,7 @@ export default function Navbar() {
             aria-label="Menu"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
             </svg>
           </button>
         </div>
@@ -436,9 +436,9 @@ export default function Navbar() {
                       <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 ... z" />
                     </svg>
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12 ... z" />
+                      <path d="M3,20.5V3.5C3,2.91 ... z" />
                     </svg>
-                    <span>Download App</span>
+                    <TranslatedText textKey="buttons.getApp" namespace="common" fallback="Download App" />
                   </Link>
                 </div>
               </div>
