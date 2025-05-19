@@ -94,9 +94,8 @@ const PlansTitle = memo(() => {
   );
 });
 
-// Always use these local images for the hero section visuals
+// Default hero images
 const DEFAULT_BG_IMAGE = '/kudosimheroimage.jpeg';
-// Use the local telefoni.webp image from the public directory
 const DEFAULT_PHONE_IMAGE = '/telefoni.webp';
 
 const Hero = () => {
@@ -136,22 +135,18 @@ const Hero = () => {
   const { i18n } = useTranslation('hero');
   const { currentLanguage } = useLanguage();
 
-  // Fetch CMS translations once
+  // Load translations from session or Supabase
   useEffect(() => {
     async function load() {
       const cached = sessionStorage.getItem('kudosim_hero_translations');
-
       if (cached) {
         try {
-          const translations = JSON.parse(cached);
           setHeroSettings(prev => ({
             ...prev,
-            translations,
-            background_image: DEFAULT_BG_IMAGE,
-            phone_image: DEFAULT_PHONE_IMAGE
+            translations: JSON.parse(cached)
           }));
-        } catch (err) {
-          console.warn('Failed to parse cached hero translations:', err);
+        } catch {
+          console.warn('Failed to parse cached hero translations');
         }
       } else {
         try {
@@ -159,7 +154,6 @@ const Hero = () => {
             .from('cms_hero_settings')
             .select('translations')
             .single();
-
           if (!error && data?.translations) {
             sessionStorage.setItem(
               'kudosim_hero_translations',
@@ -167,28 +161,27 @@ const Hero = () => {
             );
             setHeroSettings(prev => ({
               ...prev,
-              translations: data.translations,
-              background_image: DEFAULT_BG_IMAGE,
-              phone_image: DEFAULT_PHONE_IMAGE
+              translations: data.translations
             }));
           } else if (error) {
-            console.warn('Failed to fetch hero translations:', error.message);
+            console.warn('Error fetching hero translations:', error.message);
           }
         } catch (err) {
           console.warn('Error fetching hero translations:', err);
         }
       }
     }
-
     load();
+  }, []);
 
+  // Rotate country flag every 5 seconds
+  useEffect(() => {
     const iv = setInterval(() => {
       setCurrentCountry(prev => {
         const idx = europeanCountries.findIndex(c => c.code === prev.code);
         return europeanCountries[(idx + 1) % europeanCountries.length];
       });
     }, 5000);
-
     return () => clearInterval(iv);
   }, []);
 
@@ -205,7 +198,7 @@ const Hero = () => {
     [heroSettings.translations, currentLanguage]
   );
 
-  // framer-motion variants
+  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
@@ -225,9 +218,6 @@ const Hero = () => {
     hover: { scale: 1.1, rotate: 5 }
   };
 
-  const bgImage = heroSettings.background_image;
-  const phoneImage = heroSettings.phone_image;
-
   return (
     <>
       <div className="relative w-full overflow-hidden z-0 lg:min-h-[65vh]">
@@ -235,9 +225,14 @@ const Hero = () => {
         <div className="absolute inset-0 z-0">
           <div
             className="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover"
-            style={{ backgroundImage: `url('${bgImage}')` }}
+            style={{ backgroundImage: `url('${heroSettings.background_image}')` }}
           />
-          <link rel="preload" href={bgImage} as="image" fetchPriority="high" />
+          <link
+            rel="preload"
+            href={heroSettings.background_image}
+            as="image"
+            fetchPriority="high"
+          />
           <div className="absolute inset-0 bg-[#690d89]/50" />
           <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-[0.15]" />
         </div>
@@ -246,23 +241,23 @@ const Hero = () => {
         <div className="relative z-10 flex flex-col">
           <Container className="flex-1 pt-28 sm:pt-32 lg:pt-32 pb-12 lg:pb-6 flex flex-col justify-center">
             <motion.div
-              className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center h-full" 
               variants={containerVariants}
               initial="hidden"
               animate="visible"
+              className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center h-full"
             >
-              {/* Left */}
+              {/* Left Column */}
               <div className="text-center lg:text-left max-w-2xl mx-auto lg:mx-0 mt-8 lg:mt-0">
                 <motion.h1
-                  className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight flex flex-wrap items-center justify-center lg:justify-start gap-2"
                   variants={itemVariants}
+                  className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight flex flex-wrap items-center justify-center lg:justify-start gap-2"
                 >
                   {getTitle()}
                   {currentCountry && (
                     <motion.div
-                      className="relative inline-flex w-16 h-12 sm:w-20 sm:h-14"
                       variants={flagVariants}
                       whileHover="hover"
+                      className="relative inline-flex w-16 h-12 sm:w-20 sm:h-14"
                     >
                       <img
                         src={`https://flagcdn.com/${currentCountry.code.toLowerCase()}.svg`}
@@ -277,13 +272,13 @@ const Hero = () => {
                 </motion.h1>
 
                 <motion.p
-                  className="text-base sm:text-lg lg:text-xl text-white mb-6 sm:mb-8"
                   variants={itemVariants}
+                  className="text-base sm:text-lg lg:text-xl text-white mb-6 sm:mb-8"
                 >
                   {getSubtitle()}
                 </motion.p>
 
-                <motion.div className="mb-6 sm:mb-8" variants={itemVariants}>
+                <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
                   <SearchCountries
                     placeholder={{
                       en: 'Where are you travelling to?',
@@ -295,7 +290,10 @@ const Hero = () => {
                   />
                 </motion.div>
 
-                <motion.div className="mb-6 sm:mb-8 flex justify-center lg:justify-start" variants={itemVariants}>
+                <motion.div
+                  variants={itemVariants}
+                  className="mb-6 sm:mb-8 flex justify-center lg:justify-start"
+                >
                   <StarRating />
                 </motion.div>
 
@@ -304,13 +302,20 @@ const Hero = () => {
                 </motion.div>
               </div>
 
-              {/* Right phone */}
-              <motion.div className="relative hidden lg:flex justify-center items-center" variants={itemVariants}>
-                <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse' }} className="relative z-10">
+              {/* Right Column */}
+              <motion.div
+                variants={itemVariants}
+                className="relative hidden lg:flex justify-center items-center"
+              >
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse' }}
+                  className="relative z-10"
+                >
                   <motion.img
-                    src={phoneImage}
+                    src={heroSettings.phone_image}
                     alt="eSIM Device"
-                    className="w-full h-full object-contain mx-auto"
+                    className="w-full h-auto mx-auto"
                     width="224"
                     height="448"
                     loading="eager"
@@ -325,7 +330,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Suggested plans */}
+      {/* Suggested Plans Section */}
       <div className="bg-white w-full">
         <Container>
           <PlansTitle />
