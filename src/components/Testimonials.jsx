@@ -12,7 +12,7 @@ const StarRating = ({ rating }) => {
       {[...Array(5)].map((_, i) => (
         <svg
           key={i}
-          className={`w-5 h-5 ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}
+          className={`w-6 h-6 ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -32,25 +32,25 @@ const TestimonialCard = ({ testimonial }) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 h-full flex flex-col min-w-[280px] sm:min-w-[350px] flex-shrink-0"
+      className="bg-gradient-to-br from-white via-purple-50 to-white rounded-3xl shadow-xl p-6 sm:p-8 h-full flex flex-col min-w-[280px] sm:min-w-[350px] flex-shrink-0 hover:shadow-2xl hover:-translate-y-1 transition"
     >
       <div className="mb-6">
         <StarRating rating={testimonial.rating} />
       </div>
       
       <p className="text-gray-700 flex-grow mb-6 text-lg leading-relaxed">
-        "{testimonial.content}"
+        &quot;{testimonial.content}&quot;
       </p>
       
       <div className="flex items-center mt-auto">
         {testimonial.image ? (
-          <img 
-            src={testimonial.image} 
-            alt={testimonial.author} 
-            className="w-12 h-12 rounded-full object-cover"
+          <img
+            src={testimonial.image}
+            alt={testimonial.author}
+            className="w-12 h-12 rounded-full object-cover ring-2 ring-purple-200"
           />
         ) : (
-          <div className="w-12 h-12 rounded-full bg-[#690d89] text-white flex items-center justify-center font-bold text-lg">
+          <div className="w-12 h-12 rounded-full bg-[#690d89] text-white flex items-center justify-center font-bold text-lg ring-2 ring-purple-200">
             {testimonial.author.charAt(0)}
           </div>
         )}
@@ -129,7 +129,8 @@ export default function Testimonials() {
           .from('cms_testimonials')
           .select('*')
           .eq('status', 'approved')
-          .order('created_at', { ascending: false });
+          .order('created_at', { ascending: false })
+          .limit(6);
 
         if (fetchError) throw fetchError;
         setTestimonials(data || []);
@@ -208,7 +209,7 @@ export default function Testimonials() {
           </motion.div>
           
           <div className="text-center py-12 bg-white rounded-2xl shadow-lg">
-            <p className="text-gray-600">Add testimonials from the admin panel to display them here.</p>
+            <p className="text-gray-600">No testimonials available at the moment. Please check back later.</p>
           </div>
         </Container>
       </section>
