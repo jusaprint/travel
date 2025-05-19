@@ -44,10 +44,12 @@ const TestimonialCard = ({ testimonial }) => {
       
       <div className="flex items-center mt-auto">
         {testimonial.image ? (
-          <img 
-            src={testimonial.image} 
-            alt={testimonial.author} 
+          <img
+            src={testimonial.image}
+            alt={testimonial.author}
             className="w-12 h-12 rounded-full object-cover"
+            width="48"
+            height="48"
           />
         ) : (
           <div className="w-12 h-12 rounded-full bg-[#690d89] text-white flex items-center justify-center font-bold text-lg">

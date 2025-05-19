@@ -579,10 +579,12 @@ export default function DeviceChecker() {
                 transition={{ delay: 0.2 }}
                 className="w-full max-w-xs"
               >
-                <img 
-                  src="/esimcards.png" 
-                  alt="eSIM Cards" 
+                <img
+                  src="/esimcards.png"
+                  alt="eSIM Cards"
                   className="w-full h-auto drop-shadow-xl"
+                  width="1410"
+                  height="1485"
                 />
               </motion.div>
             </div>

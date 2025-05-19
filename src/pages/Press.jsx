@@ -13,10 +13,12 @@ const PressCard = ({ article }) => (
   >
     <a href={article.source_url} target="_blank" rel="noopener noreferrer">
       <div className="aspect-video overflow-hidden">
-        <img 
-          src={article.image_url} 
+        <img
+          src={article.image_url}
           alt={article.title}
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          width="1280"
+          height="720"
         />
       </div>
       <div className="p-6">

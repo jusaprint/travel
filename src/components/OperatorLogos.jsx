@@ -85,6 +85,8 @@ export default function OperatorLogos() {
                     className="max-w-full max-h-full"
                     loading="lazy"
                     style={{ objectFit: 'contain' }}
+                    width="350"
+                    height="130"
                   />
                 </div>
               </motion.div>

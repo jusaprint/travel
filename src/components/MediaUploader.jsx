@@ -83,10 +83,12 @@ const MediaUploader = ({
         {/* Current Image Preview */}
         {currentImage && (
           <div className={`relative ${previewSize} rounded-lg overflow-hidden`}>
-            <img 
-              src={currentImage} 
-              alt="Preview" 
+            <img
+              src={currentImage}
+              alt="Preview"
               className="w-full h-full object-cover"
+              width="128"
+              height="96"
             />
           </div>
         )}

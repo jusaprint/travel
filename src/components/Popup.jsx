@@ -152,17 +152,21 @@ const Popup = () => {
             <div className="flex flex-col md:flex-row">
               <div className="w-full md:w-1/2 relative">
                 {popupSettings.background_image ? (
-                  <img 
-                    src={popupSettings.background_image} 
-                    alt="App promotion" 
+                  <img
+                    src={popupSettings.background_image}
+                    alt="App promotion"
                     className="w-full h-full object-cover"
+                    width="600"
+                    height="400"
                   />
                 ) : (
                   <div className="w-full h-full min-h-[200px] bg-gradient-to-br from-[#690d89] to-[#8B5CF6] flex items-center justify-center">
-                    <img 
-                      src="/telefoni.webp" 
-                      alt="Mobile device" 
+                    <img
+                      src="/telefoni.webp"
+                      alt="Mobile device"
                       className="max-h-[200px] md:max-h-full object-contain"
+                      width="640"
+                      height="1426"
                     />
                   </div>
                 )}
