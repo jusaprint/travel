@@ -113,13 +113,22 @@ const Hero = () => {
         const parsed = JSON.parse(cached);
         setHeroSettings({ ...parsed, phone_image: '/telefoni.webp' });
       } else {
-        const { data, error } = await supabase
-          .from('cms_hero_settings')
-          .select('*')
-          .single();
-        if (!error && data) {
-          sessionStorage.setItem('kudosim_hero_settings', JSON.stringify(data));
-          setHeroSettings({ ...data, phone_image: '/telefoni.webp' });
+        try {
+          const { data, error } = await supabase
+            .from('cms_hero_settings')
+            .select('*')
+            .single();
+          if (!error && data) {
+            sessionStorage.setItem(
+              'kudosim_hero_settings',
+              JSON.stringify(data)
+            );
+            setHeroSettings({ ...data, phone_image: '/telefoni.webp' });
+          } else if (error) {
+            console.warn('Failed to fetch hero settings:', error.message);
+          }
+        } catch (err) {
+          console.warn('Error fetching hero settings:', err);
         }
       }
     }
