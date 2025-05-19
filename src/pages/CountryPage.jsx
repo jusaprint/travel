@@ -68,7 +68,7 @@ const PackageCard = ({ pkg, badge, t, isSelected, onSelect }) => (
           {pkg.name.match(/\d+/)?.[0] || '0'}GB
         </h3>
         <div className="text-sm text-gray-500 mb-4">
-          Valid for {pkg.validity_days} days
+          {t('valid.for', 'Valid for')} {pkg.validity_days} {t('days', 'days')}
         </div>
       </div>
 
@@ -473,7 +473,9 @@ export default function CountryPage() {
             </div>
 
             {/* Packages grid - Updated to 4-per-row on desktop */}
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Select Your Data Package</h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-4">
+              {t('select.data.package', 'Select Your Data Package')}
+            </h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-24">
               {packages.map((pkg) => (
                 <PackageCard

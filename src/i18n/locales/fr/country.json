@@ -10,6 +10,7 @@
   "hotspot": "Point d'accès",
   "hotspot.allowed": "Le point d'accès Kudo est autorisé",
   "speed": "Vitesse",
+  "select.data.package": "Sélectionnez votre forfait de données",
   "available.packages": "Forfaits Disponibles",
   "features": "Caractéristiques",
   "description": "Description",
