@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { SettingsProvider } from './context/SettingsContext';
@@ -7,19 +7,19 @@ import { TranslationProvider } from './context/TranslationContext';
 import { MotionConfigProvider } from './components/motion-config';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import Destinations from './pages/Destinations';
-import CountryPage from './pages/CountryPage';
-import PopularDestinations from './pages/destinations/PopularDestinations';
-import RegionsOverview from './pages/destinations/RegionsOverview';
-import About from './pages/About';
-import Business from './pages/Business';
-import Contact from './pages/Contact';
-import FAQ from './pages/FAQ';
-import Press from './pages/Press';
-import Affiliates from './pages/Affiliates';
-import CheckBalance from './pages/CheckBalance';
-import DeviceChecker from './pages/DeviceChecker';
+const HomePage = lazy(() => import('./pages/HomePage'));
+const Destinations = lazy(() => import('./pages/Destinations'));
+const CountryPage = lazy(() => import('./pages/CountryPage'));
+const PopularDestinations = lazy(() => import('./pages/destinations/PopularDestinations'));
+const RegionsOverview = lazy(() => import('./pages/destinations/RegionsOverview'));
+const About = lazy(() => import('./pages/About'));
+const Business = lazy(() => import('./pages/Business'));
+const Contact = lazy(() => import('./pages/Contact'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+const Press = lazy(() => import('./pages/Press'));
+const Affiliates = lazy(() => import('./pages/Affiliates'));
+const CheckBalance = lazy(() => import('./pages/CheckBalance'));
+const DeviceChecker = lazy(() => import('./pages/DeviceChecker'));
 import LocalCountriesGrid from './components/LocalCountriesGrid';
 import RegionsGrid from './components/RegionsGrid';
 import Popup from './components/Popup';
@@ -39,6 +39,7 @@ function App() {
                 <Popup />
                 
                 {/* Admin Routes */}
+                <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
                   {/* Admin section */}
                   <Route path="/admin/*" element={<AdminRoutes />} />
@@ -89,6 +90,7 @@ function App() {
                     </div>
                   } />
                 </Routes>
+                </Suspense>
               </MotionConfigProvider>
             </TranslationProvider>
           </LanguageProvider>
