@@ -1,4 +1,3 @@
-// src/components/Hero.jsx
 import React, { useState, useEffect, useCallback, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
@@ -100,28 +99,7 @@ const Hero = () => {
   const [heroSettings, setHeroSettings] = useState({
     background_image: '/kudosimheroimage.jpeg',
     phone_image: '/telefoni.webp',
-    translations: {
-      en: {
-        title: 'Travel with KudoSIM in',
-        subtitle: 'Stay connected globally with instant digital SIM cards. No physical SIM needed, just scan and connect.'
-      },
-      sq: {
-        title: 'Udhëtoni me KudoSIM në',
-        subtitle: 'Qëndroni të lidhur globalisht me karta SIM dixhitale të menjëhershme. Nuk nevojitet SIM fizike, thjesht skanoni dhe lidhuni.'
-      },
-      fr: {
-        title: 'Voyagez avec KudoSIM en',
-        subtitle: 'Restez connecté mondialement avec des cartes SIM numériques instantanées. Pas de SIM physique nécessaire, scannez et connectez-vous.'
-      },
-      de: {
-        title: 'Reisen Sie mit KudoSIM in',
-        subtitle: 'Bleiben Sie weltweit mit sofortigen digitalen SIM-Karten verbunden. Keine physische SIM erforderlich, einfach scannen und verbinden.'
-      },
-      tr: {
-        title: 'KudoSIM ile şurada seyahat edin:',
-        subtitle: 'Anında dijital SIM kartlarla dünya çapında bağlantıda kalın. Fiziksel SIM gerekmez, sadece tarayın ve bağlanın.'
-      }
-    }
+    translations: {/*...*/}
   });
   const { settings } = useSettings();
   const { i18n } = useTranslation('hero');
@@ -166,27 +144,9 @@ const Hero = () => {
   );
 
   // framer-motion variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
-    }
-  };
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 10 } }
-  };
-  const flagVariants = {
-    hidden: { opacity: 0, scale: 0.8, rotate: -5 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      rotate: 0,
-      transition: { type: 'spring', stiffness: 200, damping: 15 }
-    },
-    hover: { scale: 1.1, rotate: 5 }
-  };
+  const containerVariants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } } };
+  const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 10 } } };
+  const flagVariants = { hidden: { opacity: 0, scale: 0.8, rotate: -5 }, visible: { opacity: 1, scale: 1, rotate: 0, transition: { type: 'spring', stiffness: 200, damping: 15 } }, hover: { scale: 1.1, rotate: 5 } };
 
   return (
     <>
@@ -195,17 +155,10 @@ const Hero = () => {
         <div className="absolute inset-0 z-0">
           <div
             className="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover"
-            style={{ backgroundImage: "url('/kudosimheroimage.jpeg')" }}
+            style={{ backgroundImage: `url('${heroSettings.background_image}')` }}
           />
-          <link
-            rel="preload"
-            href="/kudosimheroimage.jpeg"
-            as="image"
-            fetchPriority="high"
-          />
-          {/* Brand overlay */}
+          <link rel="preload" href={heroSettings.background_image} as="image" fetchPriority="high" />
           <div className="absolute inset-0 bg-[#690d89]/50" />
-          {/* Pattern */}
           <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-[0.15]" />
         </div>
 
@@ -220,17 +173,10 @@ const Hero = () => {
             >
               {/* Left */}
               <div className="text-center lg:text-left max-w-2xl mx-auto lg:mx-0 mt-8 lg:mt-0">
-                <motion.h1
-                  className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight flex flex-wrap items-center justify-center lg:justify-start gap-2"
-                  variants={itemVariants}
-                >
+                <motion.h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight flex flex-wrap items-center justify-center lg:justify-start gap-2" variants={itemVariants}>
                   {getTitle()}
                   {currentCountry && (
-                    <motion.div
-                      className="relative inline-flex w-16 h-12 sm:w-20 sm:h-14"
-                      variants={flagVariants}
-                      whileHover="hover"
-                    >
+                    <motion.div className="relative inline-flex w-16 h-12 sm:w-20 sm:h-14" variants={flagVariants} whileHover="hover">
                       <img
                         src={`https://flagcdn.com/${currentCountry.code.toLowerCase()}.svg`}
                         alt={currentCountry.name}
@@ -243,31 +189,15 @@ const Hero = () => {
                   )}
                 </motion.h1>
 
-                <motion.p
-                  className="text-base sm:text-lg lg:text-xl text-white mb-6 sm:mb-8"
-                  variants={itemVariants}
-                >
+                <motion.p className="text-base sm:text-lg lg:text-xl text-white mb-6 sm:mb-8" variants={itemVariants}>
                   {getSubtitle()}
                 </motion.p>
 
                 <motion.div className="mb-6 sm:mb-8" variants={itemVariants}>
-                  <SearchCountries
-                    placeholder={
-                      {
-                        en: 'Where are you travelling to?',
-                        sq: 'Ku po udhëtoni?',
-                        fr: 'Où voyagez-vous ?',
-                        de: 'Wohin reisen Sie?',
-                        tr: 'Nereye seyahat ediyorsunuz?'
-                      }[i18n.language] || 'Where are you travelling to?'
-                    }
-                  />
+                  <SearchCountries placeholder={{ en: 'Where are you travelling to?', sq: 'Ku po udhëtoni?', fr: 'Où voyagez-vous ?', de: 'Wohin reisen Sie?', tr: 'Nereye seyahat ediyorsunuz?' }[i18n.language] || 'Where are you travelling to?'} />
                 </motion.div>
 
-                <motion.div
-                  className="mb-6 sm:mb-8 flex justify-center lg:justify-start"
-                  variants={itemVariants}
-                >
+                <motion.div className="mb-6 sm:mb-8 flex justify-center lg:justify-start" variants={itemVariants}>
                   <StarRating />
                 </motion.div>
 
@@ -277,15 +207,8 @@ const Hero = () => {
               </div>
 
               {/* Right phone */}
-              <motion.div
-                className="relative hidden lg:flex justify-center items-center"
-                variants={itemVariants}
-              >
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse' }}
-                  className="relative z-10"
-                >
+              <motion.div className="relative hidden lg:flex justify-center items-center" variants={itemVariants}>
+                <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse' }} className="relative z-10">
                   <motion.img
                     src={heroSettings.phone_image}
                     alt="eSIM Device"
