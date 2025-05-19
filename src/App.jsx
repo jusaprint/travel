@@ -7,6 +7,7 @@ import { TranslationProvider } from './context/TranslationContext';
 import { MotionConfigProvider } from './components/motion-config';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import Destinations from './pages/Destinations';
 import CountryPage from './pages/CountryPage';
@@ -30,6 +31,7 @@ import AdminRoutes from './admin/AdminRoutes';
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <HelmetProvider>
         <SettingsProvider>
           <LanguageProvider>
