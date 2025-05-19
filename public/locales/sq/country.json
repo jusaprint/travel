@@ -13,5 +13,15 @@
   "available.packages": "Paketat e Disponueshme",
   "features": "Veçoritë",
   "description": "Përshkrimi",
-  "not.found": "Vendi që po kërkoni nuk ekziston ose nuk është i disponueshëm."
+  "not.found": "Vendi që po kërkoni nuk ekziston ose nuk është i disponueshëm.",
+  "back": "Kthehu te Destinacionet",
+  "error": "Gabim",
+  "valid.for": "E vlefshme për",
+  "days": "ditë",
+  "most.popular": "Më i Popullarizuar",
+  "best.value": "Vlera më e Mirë",
+  "phone": "Telefoni",
+  "calling.texting": "Thirrje & Mesazhe",
+  "speed.value": "LTE/5G",
+  "select.package": "Zgjidh Paketën e të Dhënave"
 }

@@ -13,5 +13,15 @@
   "available.packages": "Available Packages",
   "features": "Features",
   "description": "Description",
-  "not.found": "The country you're looking for doesn't exist or is not available."
+  "not.found": "The country you're looking for doesn't exist or is not available.",
+  "back": "Back to Destinations",
+  "error": "Error",
+  "valid.for": "Valid for",
+  "days": "days",
+  "most.popular": "Most Popular",
+  "best.value": "Best Value",
+  "phone": "Phone",
+  "calling.texting": "Calling & Texting",
+  "speed.value": "LTE/5G",
+  "select.package": "Select Your Data Package"
 }
