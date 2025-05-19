@@ -96,7 +96,8 @@ const PlansTitle = memo(() => {
 
 // Always use these local images for the hero section visuals
 const DEFAULT_BG_IMAGE = '/kudosimheroimage.jpeg';
-const DEFAULT_PHONE_IMAGE = '/telefoni.webp';
+// Use the local telefoni.webp image bundled in the public folder
+const DEFAULT_PHONE_IMAGE = '/public/telefoni.webp';
 
 const Hero = () => {
   const [currentCountry, setCurrentCountry] = useState(europeanCountries[0]);
