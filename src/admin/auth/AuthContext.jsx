@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../services/supabaseService';
+import devLog from '../../utils/devLog';
 
 // Create the authentication context
 const AuthContext = createContext(null);
@@ -36,9 +37,9 @@ export const AuthProvider = ({ children }) => {
           };
           
           setUser(fullUser);
-          console.log('User authenticated:', fullUser);
+          devLog('User authenticated:', fullUser);
         } else {
-          console.log('No authenticated user');
+          devLog('No authenticated user');
         }
       } catch (error) {
         console.error('Error checking auth status:', error);

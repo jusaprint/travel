@@ -1,5 +1,6 @@
 import { supabase } from '../lib/cms';
 import { localStorageService } from './LocalStorageService';
+import devLog from '../utils/devLog';
 
 /**
  * Service for handling file uploads to external storage providers
@@ -13,7 +14,7 @@ class StorageService {
     this.netlifyApiUrl = import.meta.env.VITE_NETLIFY_API_URL || 'https://api.netlify.com/api/v1';
     this.siteId = import.meta.env.VITE_NETLIFY_SITE_ID;
     
-    console.log('StorageService initialized with type:', this.storageType);
+    devLog('StorageService initialized with type:', this.storageType);
   }
 
   /**
@@ -34,7 +35,7 @@ class StorageService {
     // Force storage type from options if provided
     const storageType = options.storageType || this.storageType;
     
-    console.log(`Uploading file to ${storageType} storage:`, finalFileName);
+    devLog(`Uploading file to ${storageType} storage:`, finalFileName);
     
     // Determine which storage provider to use
     if (storageType === 'local') {
@@ -52,7 +53,7 @@ class StorageService {
    */
   async uploadToNetlify(file, folder, fileName, onProgress) {
     try {
-      console.log('Attempting Netlify upload with credentials:', {
+      devLog('Attempting Netlify upload with credentials:', {
         tokenExists: !!this.netlifyToken,
         siteId: this.siteId,
         apiUrl: this.netlifyApiUrl
@@ -71,7 +72,7 @@ class StorageService {
       formData.append('file', file);
       formData.append('path', `${folder}/${fileName}`);
 
-      console.log('Uploading to Netlify URL:', `${this.netlifyApiUrl}/sites/${this.siteId}/files`);
+      devLog('Uploading to Netlify URL:', `${this.netlifyApiUrl}/sites/${this.siteId}/files`);
       
       // Use fetch API with manual progress tracking
       const response = await fetch(`${this.netlifyApiUrl}/sites/${this.siteId}/files`, {
@@ -92,7 +93,7 @@ class StorageService {
       }
       
       const responseData = await response.json();
-      console.log('Netlify upload response:', responseData);
+      devLog('Netlify upload response:', responseData);
       
       if (!responseData.url) {
         throw new Error('No URL returned from Netlify');
@@ -116,11 +117,11 @@ class StorageService {
       // Complete progress
       if (onProgress) onProgress(100);
       
-      console.log('Successfully uploaded to Netlify:', fileUrl);
+      devLog('Successfully uploaded to Netlify:', fileUrl);
       return fileUrl;
     } catch (error) {
       console.error('Error uploading to Netlify:', error);
-      console.log('Falling back to local storage');
+      devLog('Falling back to local storage');
       return localStorageService.uploadFile(file, { folder, fileName, onProgress });
     }
   }
@@ -131,7 +132,7 @@ class StorageService {
    */
   async uploadToSupabase(file, folder, fileName, onProgress) {
     try {
-      console.log('Uploading to Supabase Storage');
+      devLog('Uploading to Supabase Storage');
       
       // Start with 10% progress indication
       if (onProgress) onProgress(10);
@@ -151,7 +152,7 @@ class StorageService {
         throw uploadError;
       }
       
-      console.log('Supabase upload successful:', data);
+      devLog('Supabase upload successful:', data);
       
       // Update progress to 70%
       if (onProgress) onProgress(70);
@@ -161,7 +162,7 @@ class StorageService {
         .from('media')
         .getPublicUrl(filePath);
       
-      console.log('Supabase public URL:', publicUrl);
+      devLog('Supabase public URL:', publicUrl);
       
       // Update progress to 90%
       if (onProgress) onProgress(90);
@@ -182,7 +183,7 @@ class StorageService {
       return publicUrl;
     } catch (error) {
       console.error('Error uploading to Supabase:', error);
-      console.log('Falling back to local storage');
+      devLog('Falling back to local storage');
       return localStorageService.uploadFile(file, { folder, fileName, onProgress });
     }
   }
@@ -193,7 +194,7 @@ class StorageService {
    */
   async recordFileInDatabase(fileData) {
     try {
-      console.log('Recording file in database:', fileData);
+      devLog('Recording file in database:', fileData);
       
       // Create a database-compatible record
       const dbRecord = {
@@ -231,7 +232,7 @@ class StorageService {
         }
         
         localStorage.setItem('kudosim_media_files', JSON.stringify(existingFiles));
-        console.log('File recorded in local storage successfully');
+        devLog('File recorded in local storage successfully');
         return;
       }
       
@@ -244,7 +245,7 @@ class StorageService {
       if (error) {
         console.warn('Error recording file in database:', error);
       } else {
-        console.log('File recorded in database successfully:', data);
+        devLog('File recorded in database successfully:', data);
       }
     } catch (error) {
       console.warn('Error recording file in database:', error);

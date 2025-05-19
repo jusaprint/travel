@@ -5,6 +5,7 @@ import { supabase } from '../lib/cms';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
 import { useTranslationLoader } from '../i18n/hooks/useTranslationLoader';
+import devLog from '../utils/devLog';
 
 // Loading skeleton component
 const Skeleton = ({ className = "" }) => (
@@ -217,7 +218,7 @@ export default function CheckBalance() {
 
       // Get eSIM status using the partner API with the correct query parameter
       const statusUrl = `https://kudo-backend-5tbuztsmmq-ey.a.run.app/partner/esim-status?id=${id}`;
-      console.log('Fetching eSIM status from:', statusUrl);
+      devLog('Fetching eSIM status from:', statusUrl);
       
       let statusData;
       let detailsData;
@@ -234,7 +235,7 @@ export default function CheckBalance() {
         if (!statusResponse.ok) {
           const errorText = await statusResponse.text();
           console.error('API Error Response:', errorText);
-          console.log('Using mock data due to API error');
+          devLog('Using mock data due to API error');
           statusData = mockResponse;
           setDataSource('mock');
         } else {
@@ -242,24 +243,24 @@ export default function CheckBalance() {
           
           // If the response is empty, use mock data
           if (!statusData || (Array.isArray(statusData) && statusData.length === 0)) {
-            console.log('API returned empty response, using mock data');
+            devLog('API returned empty response, using mock data');
             statusData = mockResponse;
             setDataSource('mock');
           } else {
-            console.log('Using real data from API response');
+            devLog('Using real data from API response');
             setDataSource('real');
           }
         }
       } catch (error) {
         console.error('Error fetching status:', error);
-        console.log('Using mock data due to fetch error');
+        devLog('Using mock data due to fetch error');
         statusData = mockResponse;
         setDataSource('mock');
       }
       
       // Get subscriber details using the partner API with the correct query parameter
       const detailsUrl = `https://kudo-backend-5tbuztsmmq-ey.a.run.app/partner/subscriber?subscriber_id=${id}`;
-      console.log('Fetching subscriber details from:', detailsUrl);
+      devLog('Fetching subscriber details from:', detailsUrl);
       
       try {
         const detailsResponse = await fetch(detailsUrl, {
@@ -282,8 +283,8 @@ export default function CheckBalance() {
         detailsData = { iccid: "8944123456789012345" };
       }
       
-      console.log('Status Data:', statusData);
-      console.log('Details Data:', detailsData);
+      devLog('Status Data:', statusData);
+      devLog('Details Data:', detailsData);
       
       // Process data based on the API response format
       if (Array.isArray(statusData) && statusData.length > 0) {
@@ -338,17 +339,17 @@ export default function CheckBalance() {
         
         // If both are 0 or missing, create sample data
         if (dataUsed === 0 && dataRemaining === 0) {
-          console.log('Both used and remaining data are 0, creating sample data');
+          devLog('Both used and remaining data are 0, creating sample data');
           dataUsed = Math.floor(packageSizeBytes * 0.3); // 30% used
           dataRemaining = packageSizeBytes - dataUsed;
         }
         // If only one is missing, calculate the other
         else if (dataUsed === 0 && dataRemaining > 0) {
-          console.log('Used data is 0, calculating from remaining data');
+          devLog('Used data is 0, calculating from remaining data');
           dataUsed = packageSizeBytes - dataRemaining;
         }
         else if (dataUsed > 0 && dataRemaining === 0) {
-          console.log('Remaining data is 0, calculating from used data');
+          devLog('Remaining data is 0, calculating from used data');
           dataRemaining = packageSizeBytes - dataUsed;
         }
         
