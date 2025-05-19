@@ -195,11 +195,11 @@ const Hero = () => {
         <div className="absolute inset-0 z-0">
           <div
             className="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover"
-            style={{ backgroundImage: `url('/kudosimheroimage.jpeg')` }}
+            style={{ backgroundImage: `url('${heroSettings.background_image}')` }}
           />
           <link
             rel="preload"
-            href="/kudosimheroimage.jpeg"
+            href={heroSettings.background_image}
             as="image"
             fetchPriority="high"
           />
@@ -289,7 +289,7 @@ const Hero = () => {
                   <motion.img
                     src={heroSettings.phone_image}
                     alt="eSIM Device"
-                    className="w-full max-w-[224px] mx-auto"
+                    className="w-full mx-auto"
                     width="224"
                     height="448"
                     loading="eager"
