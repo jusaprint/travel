@@ -1,3 +1,5 @@
+import devLog from '../utils/devLog';
+
 /**
  * Service for handling file uploads to local storage
  * This is a browser-based solution that stores files in IndexedDB
@@ -26,7 +28,7 @@ class LocalStorageService {
 
       request.onsuccess = (event) => {
         this.db = event.target.result;
-        console.log('IndexedDB initialized successfully');
+        devLog('IndexedDB initialized successfully');
         resolve();
       };
 
@@ -39,7 +41,7 @@ class LocalStorageService {
           store.createIndex('filename', 'filename', { unique: false });
           store.createIndex('folder', 'folder', { unique: false });
           store.createIndex('createdAt', 'createdAt', { unique: false });
-          console.log('Created files object store');
+          devLog('Created files object store');
         }
       };
     });
@@ -70,7 +72,7 @@ class LocalStorageService {
     // Generate a unique filename if not provided
     const finalFileName = fileName || `${Date.now()}-${Math.random().toString(36).substring(2)}-${file.name}`;
     
-    console.log(`Uploading file to local storage:`, finalFileName);
+    devLog(`Uploading file to local storage:`, finalFileName);
     
     try {
       await this.ensureDbReady();
@@ -118,7 +120,7 @@ class LocalStorageService {
       // Complete progress
       if (onProgress) onProgress(100);
       
-      console.log('Successfully uploaded to local storage:', url);
+      devLog('Successfully uploaded to local storage:', url);
       return url;
     } catch (error) {
       console.error('Error uploading to local storage:', error);
@@ -187,7 +189,7 @@ class LocalStorageService {
    */
   async recordFileInDatabase(fileData) {
     try {
-      console.log('Recording file in local database:', fileData);
+      devLog('Recording file in local database:', fileData);
       
       // Store in localStorage for persistence
       const existingFiles = JSON.parse(localStorage.getItem('kudosim_media_files') || '[]');
@@ -215,7 +217,7 @@ class LocalStorageService {
       }
       
       localStorage.setItem('kudosim_media_files', JSON.stringify(existingFiles));
-      console.log('File recorded in local database successfully');
+      devLog('File recorded in local database successfully');
       
       // Also try to save to Supabase if available
       try {
@@ -228,11 +230,11 @@ class LocalStorageService {
           if (error) {
             console.warn('Error recording file in Supabase:', error);
           } else {
-            console.log('File recorded in Supabase successfully:', data);
+            devLog('File recorded in Supabase successfully:', data);
           }
         }
       } catch (e) {
-        console.log('Supabase not available, skipping database record');
+        devLog('Supabase not available, skipping database record');
       }
     } catch (error) {
       console.warn('Error recording file in local database:', error);

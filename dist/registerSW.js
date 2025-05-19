@@ -8,9 +8,7 @@ if('serviceWorker' in navigator) {
       // First, unregister any existing service workers
       navigator.serviceWorker.getRegistrations().then(registrations => {
         for (let registration of registrations) {
-          registration.unregister().then(() => {
-            console.log('ServiceWorker unregistered');
-          }).catch(error => {
+          registration.unregister().catch(error => {
             console.error('ServiceWorker unregistration failed: ', error);
           });
         }
@@ -22,8 +20,6 @@ if('serviceWorker' in navigator) {
               return caches.delete(cacheName);
             })
           );
-        }).then(() => {
-          console.log('Caches cleared');
         }).catch(error => {
           console.error('Error clearing caches:', error);
         });
@@ -35,19 +31,16 @@ if('serviceWorker' in navigator) {
             updateViaCache: 'none' // Never use cache for updates
           })
             .then(registration => {
-              console.log('SW registered: ', registration);
-              
               // Check for updates immediately
               registration.update();
-              
+
               // Set up periodic updates
               setInterval(() => {
                 registration.update();
-                console.log('Checking for SW updates');
               }, 60 * 60 * 1000); // Check every hour
             })
             .catch(registrationError => {
-              console.log('SW registration failed: ', registrationError);
+              console.error('SW registration failed: ', registrationError);
             });
         }, 2000); // Delay registration to ensure page loads first
       });
@@ -55,7 +48,6 @@ if('serviceWorker' in navigator) {
     
     // Handle service worker updates
     navigator.serviceWorker.addEventListener('controllerchange', () => {
-      console.log('New service worker activated, reloading for fresh content');
       window.location.reload();
     });
   }

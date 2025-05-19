@@ -5,6 +5,7 @@ import './index.css'
 import './i18n' // Import i18n configuration
 import { LanguageProvider } from './context/LanguageContext'
 import { TranslationProvider } from './context/TranslationContext'
+import devLog from './utils/devLog'
 
 // Use createRoot API
 const container = document.getElementById('root');
@@ -37,7 +38,7 @@ if (process.env.NODE_ENV === 'production') {
   };
 
   // Log performance metrics
-  reportWebVitals(console.log);
+  reportWebVitals(devLog);
 }
 
 // Only register service worker if not in StackBlitz
@@ -49,7 +50,7 @@ if ('serviceWorker' in navigator && !isStackBlitz) {
       const registrations = await navigator.serviceWorker.getRegistrations();
       for (const registration of registrations) {
         await registration.unregister();
-        console.log('ServiceWorker unregistered');
+        devLog('ServiceWorker unregistered');
       }
       
       // Clear caches
@@ -59,7 +60,7 @@ if ('serviceWorker' in navigator && !isStackBlitz) {
           return caches.delete(cacheName);
         })
       );
-      console.log('Caches cleared');
+      devLog('Caches cleared');
       
       // Register a new service worker
       setTimeout(async () => {
@@ -68,7 +69,7 @@ if ('serviceWorker' in navigator && !isStackBlitz) {
             scope: '/',
             updateViaCache: 'none' // Never use cache for updates
           });
-          console.log('SW registered:', registration);
+          devLog('SW registered:', registration);
           
           // Force update check
           registration.update();
@@ -83,7 +84,7 @@ if ('serviceWorker' in navigator && !isStackBlitz) {
   
   // Handle service worker updates
   navigator.serviceWorker.addEventListener('controllerchange', () => {
-    console.log('New service worker activated, reloading for fresh content');
+    devLog('New service worker activated, reloading for fresh content');
     window.location.reload();
   });
 }
