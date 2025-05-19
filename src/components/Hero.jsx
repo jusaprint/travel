@@ -128,6 +128,7 @@ const Hero = () => {
       }
     }
   });
+
   const { settings } = useSettings();
   const { i18n } = useTranslation('hero');
   const { currentLanguage } = useLanguage();
@@ -135,18 +136,14 @@ const Hero = () => {
   // Fetch CMS translations once
   useEffect(() => {
     async function load() {
-      const cached = sessionStorage.getItem('kudosim_hero_settings');
+      const cached = sessionStorage.getItem('kudosim_hero_translations');
+
       if (cached) {
         try {
-          const parsed = JSON.parse(cached);
-          if (parsed.translations) {
-            setHeroSettings(prev => ({
-              ...prev,
-              translations: parsed.translations
-            }));
-          }
+          const translations = JSON.parse(cached);
+          setHeroSettings(prev => ({ ...prev, translations }));
         } catch (err) {
-          console.warn('Failed to parse cached hero settings:', err);
+          console.warn('Failed to parse cached hero translations:', err);
         }
       } else {
         try {
@@ -154,20 +151,25 @@ const Hero = () => {
             .from('cms_hero_settings')
             .select('translations')
             .single();
-          if (!error && data && data.translations) {
-            sessionStorage.setItem('kudosim_hero_settings', JSON.stringify(data));
+
+          if (!error && data?.translations) {
+            sessionStorage.setItem(
+              'kudosim_hero_translations',
+              JSON.stringify(data.translations)
+            );
             setHeroSettings(prev => ({
               ...prev,
               translations: data.translations
             }));
           } else if (error) {
-            console.warn('Failed to fetch hero settings:', error.message);
+            console.warn('Failed to fetch hero translations:', error.message);
           }
         } catch (err) {
-          console.warn('Error fetching hero settings:', err);
+          console.warn('Error fetching hero translations:', err);
         }
       }
     }
+
     load();
 
     const iv = setInterval(() => {
@@ -176,6 +178,7 @@ const Hero = () => {
         return europeanCountries[(idx + 1) % europeanCountries.length];
       });
     }, 5000);
+
     return () => clearInterval(iv);
   }, []);
 
@@ -233,7 +236,7 @@ const Hero = () => {
         <div className="relative z-10 flex flex-col">
           <Container className="flex-1 pt-28 sm:pt-32 lg:pt-32 pb-12 lg:pb-6 flex flex-col justify-center">
             <motion.div
-              className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center h-full"
+              className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center h-full" 
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -293,11 +296,7 @@ const Hero = () => {
 
               {/* Right phone */}
               <motion.div className="relative hidden lg:flex justify-center items-center" variants={itemVariants}>
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse' }}
-                  className="relative z-10"
-                >
+                <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse' }} className="relative z-10">
                   <motion.img
                     src={phoneImage}
                     alt="eSIM Device"
