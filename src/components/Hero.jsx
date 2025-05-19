@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useCallback, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { useSettings } from '../context/SettingsContext';
 import { supabase } from '../lib/cms';
 import SearchCountries from './SearchCountries';
 import Container from './Container';
@@ -95,11 +94,15 @@ const PlansTitle = memo(() => {
   );
 });
 
+// Always use these local images for the hero section visuals
+const DEFAULT_BG_IMAGE = '/kudosimheroimage.jpeg';
+const DEFAULT_PHONE_IMAGE = '/telefoni.webp';
+
 const Hero = () => {
   const [currentCountry, setCurrentCountry] = useState(europeanCountries[0]);
   const [heroSettings, setHeroSettings] = useState({
-    background_image: '/kudosimheroimage.jpeg',
-    phone_image: '/telefoni.webp',
+    background_image: DEFAULT_BG_IMAGE,
+    phone_image: DEFAULT_PHONE_IMAGE,
     translations: {
       en: {
         title: 'Travel with KudoSIM in',
@@ -129,7 +132,6 @@ const Hero = () => {
     }
   });
 
-  const { settings } = useSettings();
   const { i18n } = useTranslation('hero');
   const { currentLanguage } = useLanguage();
 
@@ -141,7 +143,12 @@ const Hero = () => {
       if (cached) {
         try {
           const translations = JSON.parse(cached);
-          setHeroSettings(prev => ({ ...prev, translations }));
+          setHeroSettings(prev => ({
+            ...prev,
+            translations,
+            background_image: DEFAULT_BG_IMAGE,
+            phone_image: DEFAULT_PHONE_IMAGE
+          }));
         } catch (err) {
           console.warn('Failed to parse cached hero translations:', err);
         }
@@ -159,7 +166,9 @@ const Hero = () => {
             );
             setHeroSettings(prev => ({
               ...prev,
-              translations: data.translations
+              translations: data.translations,
+              background_image: DEFAULT_BG_IMAGE,
+              phone_image: DEFAULT_PHONE_IMAGE
             }));
           } else if (error) {
             console.warn('Failed to fetch hero translations:', error.message);
