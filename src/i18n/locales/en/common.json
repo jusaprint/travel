@@ -17,7 +17,8 @@
     "getStarted": "Get Started",
     "learnMore": "Learn More",
     "back": "Back",
-    "next": "Next"
+    "next": "Next",
+    "getApp": "Get App"
   },
   "search": {
     "placeholder": "Search Countries...",
