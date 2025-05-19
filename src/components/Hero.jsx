@@ -99,7 +99,33 @@ const Hero = () => {
   const [heroSettings, setHeroSettings] = useState({
     background_image: '/kudosimheroimage.jpeg',
     phone_image: '/telefoni.webp',
-    translations: {/*...*/}
+    translations: {
+      en: {
+        title: 'Travel with KudoSIM in',
+        subtitle:
+          'Stay connected globally with instant digital SIM cards. No physical SIM needed, just scan and connect.'
+      },
+      sq: {
+        title: 'Udhëtoni me KudoSIM në',
+        subtitle:
+          'Qëndroni të lidhur globalisht me karta SIM dixhitale të menjëhershme. Nuk nevojitet SIM fizike, thjesht skanoni dhe lidhuni.'
+      },
+      fr: {
+        title: 'Voyagez avec KudoSIM en',
+        subtitle:
+          'Restez connecté mondialement avec des cartes SIM numériques instantanées. Pas de SIM physique nécessaire, scannez et connectez-vous.'
+      },
+      de: {
+        title: 'Reisen Sie mit KudoSIM in',
+        subtitle:
+          'Bleiben Sie weltweit mit sofortigen digitalen SIM-Karten verbunden. Keine physische SIM erforderlich, einfach scannen und verbinden.'
+      },
+      tr: {
+        title: 'KudoSIM ile şurada seyahat edin:',
+        subtitle:
+          'Anında dijital SIM kartlarla dünya çapında bağlantıda kalın. Fiziksel SIM gerekmez, sadece tarayın ve bağlanın.'
+      }
+    }
   });
   const { settings } = useSettings();
   const { i18n } = useTranslation('hero');
@@ -108,27 +134,33 @@ const Hero = () => {
   // Fetch CMS settings once
   useEffect(() => {
     async function load() {
-      const cached = sessionStorage.getItem('kudosim_hero_settings');
+      const cached = sessionStorage.getItem('kudosim_hero_translations');
       if (cached) {
-        const parsed = JSON.parse(cached);
-        setHeroSettings({ ...parsed, phone_image: '/telefoni.webp' });
+        const translations = JSON.parse(cached);
+        setHeroSettings(prev => ({
+          ...prev,
+          translations
+        }));
       } else {
         try {
           const { data, error } = await supabase
             .from('cms_hero_settings')
-            .select('*')
+            .select('translations')
             .single();
-          if (!error && data) {
+          if (!error && data?.translations) {
             sessionStorage.setItem(
-              'kudosim_hero_settings',
-              JSON.stringify(data)
+              'kudosim_hero_translations',
+              JSON.stringify(data.translations)
             );
-            setHeroSettings({ ...data, phone_image: '/telefoni.webp' });
+            setHeroSettings(prev => ({
+              ...prev,
+              translations: data.translations
+            }));
           } else if (error) {
-            console.warn('Failed to fetch hero settings:', error.message);
+            console.warn('Failed to fetch hero translations:', error.message);
           }
         } catch (err) {
-          console.warn('Error fetching hero settings:', err);
+          console.warn('Error fetching hero translations:', err);
         }
       }
     }
@@ -144,11 +176,17 @@ const Hero = () => {
   }, []);
 
   const getTitle = useCallback(
-    () => heroSettings.translations[currentLanguage]?.title || heroSettings.translations.en.title,
+    () =>
+      heroSettings.translations?.[currentLanguage]?.title ||
+      heroSettings.translations?.en?.title ||
+      '',
     [heroSettings.translations, currentLanguage]
   );
   const getSubtitle = useCallback(
-    () => heroSettings.translations[currentLanguage]?.subtitle || heroSettings.translations.en.subtitle,
+    () =>
+      heroSettings.translations?.[currentLanguage]?.subtitle ||
+      heroSettings.translations?.en?.subtitle ||
+      '',
     [heroSettings.translations, currentLanguage]
   );
 
