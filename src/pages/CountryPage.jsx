@@ -167,19 +167,7 @@ export default function CountryPage() {
   // Get multilingual subtitle text
   const getSubtitleText = () => {
     const countryName = getTranslatedCountryName();
-    
-    switch(i18n.language) {
-      case 'sq':
-        return `Downloadable ${countryName} SIM card with prepaid data`;
-      case 'fr':
-        return `Carte SIM téléchargeable ${countryName} avec données prépayées`;
-      case 'de':
-        return `Herunterladbare ${countryName} SIM-Karte mit vorausbezahlten Daten`;
-      case 'tr':
-        return `Ön ödemeli veriye sahip indirilebilir ${countryName} SIM kartı`;
-      default: // English and fallback
-        return `Downloadable ${countryName} SIM card with prepaid data`;
-    }
+    return t('downloadable.sim', { country: countryName });
   };
 
   // Handle package selection
@@ -437,7 +425,7 @@ export default function CountryPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Network</p>
+                    <p className="text-sm text-gray-500">{t('network')}</p>
                     <p className="font-medium text-gray-900">Vodafone</p>
                   </div>
                 </div>
@@ -451,8 +439,8 @@ export default function CountryPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Phone</p>
-                    <p className="font-medium text-gray-900">Calling & Texting</p>
+                    <p className="text-sm text-gray-500">{t('phone')}</p>
+                    <p className="font-medium text-gray-900">{t('calling.texting')}</p>
                   </div>
                 </div>
               </div>
@@ -465,15 +453,15 @@ export default function CountryPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Speed</p>
-                    <p className="font-medium text-gray-900">LTE/5G</p>
+                    <p className="text-sm text-gray-500">{t('speed')}</p>
+                    <p className="font-medium text-gray-900">{t('speed.value')}</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Packages grid - Updated to 4-per-row on desktop */}
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Select Your Data Package</h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-4">{t('select.package')}</h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-24">
               {packages.map((pkg) => (
                 <PackageCard
