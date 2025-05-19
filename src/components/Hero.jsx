@@ -137,7 +137,11 @@ const Hero = () => {
       const cached = sessionStorage.getItem('kudosim_hero_settings');
       if (cached) {
         const parsed = JSON.parse(cached);
-        setHeroSettings({ ...parsed, phone_image: '/telefoni.webp' });
+        setHeroSettings({
+          ...parsed,
+          background_image: parsed.background_image || '/kudosimheroimage.jpeg',
+          phone_image: parsed.phone_image || '/telefoni.webp'
+        });
       } else {
         try {
           const { data, error } = await supabase
@@ -149,7 +153,11 @@ const Hero = () => {
               'kudosim_hero_settings',
               JSON.stringify(data)
             );
-            setHeroSettings({ ...data, phone_image: '/telefoni.webp' });
+            setHeroSettings({
+              ...data,
+              background_image: data.background_image || '/kudosimheroimage.jpeg',
+              phone_image: data.phone_image || '/telefoni.webp'
+            });
           } else if (error) {
             console.warn('Failed to fetch hero settings:', error.message);
           }
