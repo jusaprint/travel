@@ -148,6 +148,9 @@ const Hero = () => {
   const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 10 } } };
   const flagVariants = { hidden: { opacity: 0, scale: 0.8, rotate: -5 }, visible: { opacity: 1, scale: 1, rotate: 0, transition: { type: 'spring', stiffness: 200, damping: 15 } }, hover: { scale: 1.1, rotate: 5 } };
 
+  const bgImage = heroSettings.background_image || '/kudosimheroimage.jpeg';
+  const phoneImage = heroSettings.phone_image || '/telefoni.webp';
+
   return (
     <>
       <div className="relative w-full overflow-hidden z-0 lg:min-h-[65vh]">
@@ -155,9 +158,9 @@ const Hero = () => {
         <div className="absolute inset-0 z-0">
           <div
             className="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover"
-            style={{ backgroundImage: `url('${heroSettings.background_image}')` }}
+            style={{ backgroundImage: `url('${bgImage}')` }}
           />
-          <link rel="preload" href={heroSettings.background_image} as="image" fetchPriority="high" />
+          <link rel="preload" href={bgImage} as="image" fetchPriority="high" />
           <div className="absolute inset-0 bg-[#690d89]/50" />
           <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-[0.15]" />
         </div>
@@ -210,7 +213,7 @@ const Hero = () => {
               <motion.div className="relative hidden lg:flex justify-center items-center" variants={itemVariants}>
                 <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse' }} className="relative z-10">
                   <motion.img
-                    src={heroSettings.phone_image}
+                    src={phoneImage}
                     alt="eSIM Device"
                     className="w-full h-auto mx-auto"
                     width="224"
