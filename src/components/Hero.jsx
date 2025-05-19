@@ -96,6 +96,7 @@ const PlansTitle = memo(() => {
 
 // Always use these local images for the hero section visuals
 const DEFAULT_BG_IMAGE = '/kudosimheroimage.jpeg';
+// Use the telefoni.webp image from the project root
 const DEFAULT_PHONE_IMAGE = '/telefoni.webp';
 
 const Hero = () => {
