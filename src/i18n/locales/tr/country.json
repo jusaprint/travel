@@ -19,5 +19,9 @@
   "valid.for": "Geçerlilik süresi",
   "days": "gün",
   "most.popular": "En Popüler",
-  "best.value": "En İyi Değer"
+  "best.value": "En İyi Değer",
+  "phone": "Telefon",
+  "calling.texting": "Arama & Mesajlaşma",
+  "speed.value": "LTE/5G",
+  "select.package": "Veri Paketinizi Seçin"
 }

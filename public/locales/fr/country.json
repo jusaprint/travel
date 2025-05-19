@@ -13,5 +13,15 @@
   "available.packages": "Forfaits Disponibles",
   "features": "Caractéristiques",
   "description": "Description",
-  "not.found": "Le pays que vous recherchez n'existe pas ou n'est pas disponible."
+  "not.found": "Le pays que vous recherchez n'existe pas ou n'est pas disponible.",
+  "back": "Retour aux Destinations",
+  "error": "Erreur",
+  "valid.for": "Valable pour",
+  "days": "jours",
+  "most.popular": "Plus Populaire",
+  "best.value": "Meilleur Rapport Qualité-Prix",
+  "phone": "Téléphone",
+  "calling.texting": "Appels & SMS",
+  "speed.value": "LTE/5G",
+  "select.package": "Sélectionnez Votre Forfait Data"
 }

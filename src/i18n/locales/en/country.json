@@ -19,5 +19,9 @@
   "valid.for": "Valid for",
   "days": "days",
   "most.popular": "Most Popular",
-  "best.value": "Best Value"
+  "best.value": "Best Value",
+  "phone": "Phone",
+  "calling.texting": "Calling & Texting",
+  "speed.value": "LTE/5G",
+  "select.package": "Select Your Data Package"
 }

@@ -13,5 +13,15 @@
   "available.packages": "Mevcut Paketler",
   "features": "Özellikler",
   "description": "Açıklama",
-  "not.found": "Aradığınız ülke mevcut değil veya kullanılamıyor."
+  "not.found": "Aradığınız ülke mevcut değil veya kullanılamıyor.",
+  "back": "Destinasyonlara Geri Dön",
+  "error": "Hata",
+  "valid.for": "Geçerlilik süresi",
+  "days": "gün",
+  "most.popular": "En Popüler",
+  "best.value": "En İyi Değer",
+  "phone": "Telefon",
+  "calling.texting": "Arama & Mesajlaşma",
+  "speed.value": "LTE/5G",
+  "select.package": "Veri Paketinizi Seçin"
 }
