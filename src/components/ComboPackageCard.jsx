@@ -11,7 +11,7 @@ const FlagGroup = ({ countries, maxVisible = 6, onRemove }) => {
   const remainingCount = countries.length - maxVisible;
 
   return (
-    <div className="flex flex-wrap gap-1 sm:gap-2">
+    <div className="grid grid-cols-5 gap-2">
       {visibleCountries.map((country) => (
         <motion.div
           key={country.code}
@@ -42,7 +42,7 @@ const FlagGroup = ({ countries, maxVisible = 6, onRemove }) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setShowAll(true)}
-          className="w-8 h-6 sm:w-10 sm:h-7 bg-[#ffc300] text-white rounded-lg text-xs sm:text-sm font-bold hover:bg-white transition-colors duration-300 flex items-center justify-center shadow-lg"
+          className="w-8 h-6 sm:w-10 sm:h-7 bg-yellow-400 text-black rounded-full text-xs sm:text-sm font-bold hover:bg-yellow-500 transition-colors duration-300 flex items-center justify-center shadow"
         >
           +{remainingCount}
         </motion.button>
@@ -129,7 +129,7 @@ function ComboPackageCard({
 
   if (isLoading) {
     return (
-      <div className="relative overflow-hidden rounded-[32px] bg-[#6F2DA8] p-6 text-white shadow-xl">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#7c3aed] to-[#a855f7] p-6 text-white shadow-xl">
         <div className="animate-pulse space-y-4">
           <div className="h-8 bg-white/20 rounded w-1/2"></div>
           <div className="h-12 bg-white/20 rounded"></div>
@@ -146,7 +146,7 @@ function ComboPackageCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ scale: 1.02 }}
-      className="relative overflow-hidden rounded-[32px] bg-[#6F2DA8] p-6 text-white shadow-xl transition-all duration-300"
+      className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#7c3aed] to-[#a855f7] p-6 text-white shadow-xl transition-all duration-300"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.15]" />
@@ -169,7 +169,7 @@ function ComboPackageCard({
                 <h3 className="text-2xl font-bold">{dataPackage.name}</h3>
               )}
             </div>
-            <div className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full font-semibold text-sm">
+            <div className="inline-block bg-white/10 px-3 py-1 rounded-full text-sm text-white">
               Europe + Balkan
             </div>
           </div>
@@ -187,7 +187,7 @@ function ComboPackageCard({
                   className="text-2xl font-bold bg-transparent border-b border-white/20 focus:border-white focus:outline-none w-24 text-right"
                 />
               ) : (
-                <div className="text-2xl font-bold">{dataPackage.price}</div>
+                <div className="inline-block bg-white/10 px-3 py-1 rounded-full text-sm text-white font-bold">{dataPackage.price}</div>
               )}
               <div className="text-blue-100 text-xs">
                 {isEditing ? (
@@ -250,13 +250,13 @@ function ComboPackageCard({
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-8">
           <div className="grid grid-cols-2 gap-4">
             <div className="flex items-center gap-2 sm:gap-3">
-            <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#6F2DA8] text-white">
+            <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#7c3aed] text-white shadow">
                 <svg className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
               <div>
-                <h4 className="text-xs sm:text-sm font-semibold text-white/80">
+                <h4 className="text-xs sm:text-sm font-semibold text-white/80 uppercase">
                   <TranslatedText 
                     textKey="hotspot" 
                     namespace="package" 
@@ -273,13 +273,13 @@ function ComboPackageCard({
               </div>
             </div>
             <div className="flex items-center gap-2 sm:gap-3">
-            <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#6F2DA8] text-white">
+            <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#7c3aed] text-white shadow">
                 <svg className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
               <div>
-                <h4 className="text-xs sm:text-sm font-semibold text-white/80">
+                <h4 className="text-xs sm:text-sm font-semibold text-white/80 uppercase">
                   <TranslatedText 
                     textKey="speed" 
                     namespace="package" 
@@ -302,7 +302,7 @@ function ComboPackageCard({
         <div className="space-y-6 mb-8">
           {europeanCountries.length > 0 && (
             <div className="space-y-2">
-              <h4 className="text-base font-semibold text-white/90">
+              <h4 className="text-sm uppercase font-semibold text-white/80">
                 <TranslatedText 
                   textKey="european.coverage" 
                   namespace="package" 
@@ -319,7 +319,7 @@ function ComboPackageCard({
           
           {balkanCountries.length > 0 && (
             <div className="space-y-2">
-              <h4 className="text-base font-semibold text-white/90">
+              <h4 className="text-sm uppercase font-semibold text-white/80">
                 <TranslatedText 
                   textKey="balkan.coverage" 
                   namespace="package" 
@@ -336,7 +336,7 @@ function ComboPackageCard({
 
           {otherCountries.length > 0 && (
             <div className="space-y-2">
-              <h4 className="text-base font-semibold text-white/90">
+              <h4 className="text-sm uppercase font-semibold text-white/80">
                 <TranslatedText 
                   textKey="other.coverage" 
                   namespace="package" 
@@ -359,7 +359,7 @@ function ComboPackageCard({
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => onSave(editedPackage)}
-              className="flex-1 bg-[#ffc300] text-white rounded-xl py-3 font-bold text-base hover:bg-white transition-colors duration-300 shadow-lg"
+              className="flex-1 bg-yellow-400 text-black rounded-full py-3 font-bold text-base hover:bg-yellow-500 transition-colors duration-300 shadow"
             >
               {t('common.save')}
             </motion.button>
@@ -367,7 +367,7 @@ function ComboPackageCard({
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={onCancel}
-              className="flex-1 bg-white/20 backdrop-blur-sm text-white rounded-xl py-3 font-bold text-base hover:bg-white/30 transition-colors duration-300"
+              className="flex-1 bg-white/20 backdrop-blur-sm text-white rounded-full py-3 font-bold text-base hover:bg-white/30 transition-colors duration-300"
             >
               {t('common.cancel')}
             </motion.button>
@@ -382,7 +382,7 @@ function ComboPackageCard({
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-[#ffc300] text-white rounded-xl py-3 font-bold text-base hover:bg-white transition-colors duration-300 shadow-lg flex items-center justify-center gap-2"
+              className="w-full bg-yellow-400 text-black rounded-full py-3 font-bold text-base hover:bg-yellow-500 transition-colors duration-300 shadow flex items-center justify-center gap-2"
             >
               <TranslatedText 
                 textKey="get.started" 
