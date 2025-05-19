@@ -18,7 +18,7 @@ export default function SEO({
 
   const siteTitle = settings?.site?.title || 'KudoSIM';
   const siteDescription = settings?.site?.tagline || 'Global Connectivity for Modern Travelers';
-  const siteUrl = 'https://kudosim.com'; // Replace with your actual domain
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://kudosim.com';
 
   const seo = {
     title: title ? `${title} | ${siteTitle}` : siteTitle,
