@@ -5,6 +5,34 @@ import { useTranslationLoader } from '../i18n/hooks/useTranslationLoader';
 import { supabase } from '../lib/cms';
 import Container from './Container';
 
+// Hard-coded testimonials shown immediately for fast loading
+const initialTestimonials = [
+  {
+    id: 1,
+    author: 'Sara B.',
+    location: 'USA',
+    flag: '🇺🇸',
+    rating: 5,
+    content: 'Amazing service and super easy to use!'
+  },
+  {
+    id: 2,
+    author: 'Liam K.',
+    location: 'UK',
+    flag: '🇬🇧',
+    rating: 5,
+    content: 'The best travel eSIM I have tried so far.'
+  },
+  {
+    id: 3,
+    author: 'Elira M.',
+    location: 'Albania',
+    flag: '🇦🇱',
+    rating: 4,
+    content: 'Great connectivity during my trip across Europe.'
+  }
+];
+
 // Star rating component
 const StarRating = ({ rating }) => {
   return (
@@ -12,7 +40,7 @@ const StarRating = ({ rating }) => {
       {[...Array(5)].map((_, i) => (
         <svg
           key={i}
-          className={`w-5 h-5 ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}
+          className={`w-6 h-6 ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -32,17 +60,18 @@ const TestimonialCard = ({ testimonial }) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 h-full flex flex-col min-w-[280px] sm:min-w-[350px] flex-shrink-0"
+      className="relative p-[1px] rounded-2xl bg-gradient-to-br from-[#690d89] to-[#8B5CF6] shadow-xl min-w-[280px] sm:min-w-[350px] flex-shrink-0"
     >
-      <div className="mb-6">
-        <StarRating rating={testimonial.rating} />
-      </div>
+      <div className="bg-white rounded-[inherit] p-6 sm:p-8 h-full flex flex-col">
+        <div className="mb-6">
+          <StarRating rating={testimonial.rating} />
+        </div>
       
       <p className="text-gray-700 flex-grow mb-6 text-lg leading-relaxed">
-        "{testimonial.content}"
+        &ldquo;{testimonial.content}&rdquo;
       </p>
       
-      <div className="flex items-center mt-auto">
+        <div className="flex items-center mt-auto">
         {testimonial.image ? (
           <img 
             src={testimonial.image} 
@@ -63,6 +92,7 @@ const TestimonialCard = ({ testimonial }) => {
           </div>
         </div>
       </div>
+    </div>
     </motion.div>
   );
 };
@@ -110,7 +140,7 @@ const TrustBadge = ({ icon, title, description }) => (
 
 export default function Testimonials() {
   const { t, i18n } = useTranslation('testimonials');
-  const [testimonials, setTestimonials] = useState([]);
+  const [testimonials, setTestimonials] = useState(initialTestimonials);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -132,7 +162,9 @@ export default function Testimonials() {
           .order('created_at', { ascending: false });
 
         if (fetchError) throw fetchError;
-        setTestimonials(data || []);
+        if (data && data.length > 0) {
+          setTestimonials(data);
+        }
       } catch (err) {
         console.error('Error loading testimonials:', err);
         setError(err.message);
@@ -178,42 +210,6 @@ export default function Testimonials() {
     );
   }
 
-  // If no testimonials found, show a message
-  if (testimonials.length === 0) {
-    return (
-      <section className="bg-gradient-to-b from-white to-gray-50 py-16 lg:py-24 w-full">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
-              {i18n.language === 'en' ? "What Our Happy Customers Say" : 
-               i18n.language === 'sq' ? "Çfarë Thonë Klientët Tanë të Kënaqur" :
-               i18n.language === 'fr' ? "Ce que Disent Nos Clients Satisfaits" :
-               i18n.language === 'de' ? "Was Unsere Zufriedenen Kunden Sagen" :
-               i18n.language === 'tr' ? "Mutlu Müşterilerimiz Ne Diyor" :
-               "What Our Happy Customers Say"}
-            </h2>
-            <p className="text-xl text-gray-600">
-              {i18n.language === 'en' ? "Real experiences from travelers like you" : 
-               i18n.language === 'sq' ? "Përvoja të vërteta nga udhëtarë si ju" :
-               i18n.language === 'fr' ? "Expériences réelles de voyageurs comme vous" :
-               i18n.language === 'de' ? "Echte Erfahrungen von Reisenden wie Ihnen" :
-               i18n.language === 'tr' ? "Sizin gibi gezginlerden gerçek deneyimler" :
-               "Real experiences from travelers like you"}
-            </p>
-          </motion.div>
-          
-          <div className="text-center py-12 bg-white rounded-2xl shadow-lg">
-            <p className="text-gray-600">Add testimonials from the admin panel to display them here.</p>
-          </div>
-        </Container>
-      </section>
-    );
-  }
 
   return (
     <section className="bg-gradient-to-b from-white to-gray-50 py-16 lg:py-24 w-full">
