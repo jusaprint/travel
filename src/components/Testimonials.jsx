@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback, useMemo, memo } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useTranslationLoader } from '../i18n/hooks/useTranslationLoader';
@@ -94,7 +94,7 @@ const CarouselButton = ({ direction, onClick, disabled }) => (
 
 // Trust badge component
 const TrustBadge = ({ icon, title, description }) => (
-  <motion.div 
+  <motion.div
     whileHover={{ y: -5 }}
     className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center"
   >
@@ -107,6 +107,33 @@ const TrustBadge = ({ icon, title, description }) => (
     <p className="text-sm text-gray-600">{description}</p>
   </motion.div>
 );
+
+const defaultTestimonials = [
+  {
+    id: 'default-1',
+    rating: 5,
+    content: 'KudoSIM kept me connected across Europe without hassle.',
+    author: 'Emily R.',
+    location: 'United States',
+    flag: '🇺🇸'
+  },
+  {
+    id: 'default-2',
+    rating: 5,
+    content: 'Activation was super easy. No more searching for local SIM cards!',
+    author: 'Carlos M.',
+    location: 'Spain',
+    flag: '🇪🇸'
+  },
+  {
+    id: 'default-3',
+    rating: 4,
+    content: 'Great coverage and support during my trip to Asia.',
+    author: 'Li Wei',
+    location: 'China',
+    flag: '🇨🇳'
+  }
+];
 
 export default function Testimonials() {
   const { t, i18n } = useTranslation('testimonials');
@@ -132,7 +159,11 @@ export default function Testimonials() {
           .order('created_at', { ascending: false });
 
         if (fetchError) throw fetchError;
-        setTestimonials(data || []);
+        if (data && data.length > 0) {
+          setTestimonials(data);
+        } else {
+          setTestimonials(defaultTestimonials);
+        }
       } catch (err) {
         console.error('Error loading testimonials:', err);
         setError(err.message);
@@ -178,42 +209,6 @@ export default function Testimonials() {
     );
   }
 
-  // If no testimonials found, show a message
-  if (testimonials.length === 0) {
-    return (
-      <section className="bg-gradient-to-b from-white to-gray-50 py-16 lg:py-24 w-full">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
-              {i18n.language === 'en' ? "What Our Happy Customers Say" : 
-               i18n.language === 'sq' ? "Çfarë Thonë Klientët Tanë të Kënaqur" :
-               i18n.language === 'fr' ? "Ce que Disent Nos Clients Satisfaits" :
-               i18n.language === 'de' ? "Was Unsere Zufriedenen Kunden Sagen" :
-               i18n.language === 'tr' ? "Mutlu Müşterilerimiz Ne Diyor" :
-               "What Our Happy Customers Say"}
-            </h2>
-            <p className="text-xl text-gray-600">
-              {i18n.language === 'en' ? "Real experiences from travelers like you" : 
-               i18n.language === 'sq' ? "Përvoja të vërteta nga udhëtarë si ju" :
-               i18n.language === 'fr' ? "Expériences réelles de voyageurs comme vous" :
-               i18n.language === 'de' ? "Echte Erfahrungen von Reisenden wie Ihnen" :
-               i18n.language === 'tr' ? "Sizin gibi gezginlerden gerçek deneyimler" :
-               "Real experiences from travelers like you"}
-            </p>
-          </motion.div>
-          
-          <div className="text-center py-12 bg-white rounded-2xl shadow-lg">
-            <p className="text-gray-600">Add testimonials from the admin panel to display them here.</p>
-          </div>
-        </Container>
-      </section>
-    );
-  }
 
   return (
     <section className="bg-gradient-to-b from-white to-gray-50 py-16 lg:py-24 w-full">
