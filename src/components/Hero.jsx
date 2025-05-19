@@ -1,3 +1,4 @@
+// src/components/Hero.jsx
 import React, { useState, useEffect, useCallback, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
@@ -131,33 +132,34 @@ const Hero = () => {
   const { i18n } = useTranslation('hero');
   const { currentLanguage } = useLanguage();
 
-  // Fetch CMS settings once
+  // Fetch CMS translations once
   useEffect(() => {
     async function load() {
       const cached = sessionStorage.getItem('kudosim_hero_settings');
       if (cached) {
-        const parsed = JSON.parse(cached);
-        setHeroSettings({
-          ...parsed,
-          background_image: parsed.background_image || '/kudosimheroimage.jpeg',
-          phone_image: parsed.phone_image || '/telefoni.webp'
-        });
+        try {
+          const parsed = JSON.parse(cached);
+          if (parsed.translations) {
+            setHeroSettings(prev => ({
+              ...prev,
+              translations: parsed.translations
+            }));
+          }
+        } catch (err) {
+          console.warn('Failed to parse cached hero settings:', err);
+        }
       } else {
         try {
           const { data, error } = await supabase
             .from('cms_hero_settings')
-            .select('*')
+            .select('translations')
             .single();
-          if (!error && data) {
-            sessionStorage.setItem(
-              'kudosim_hero_settings',
-              JSON.stringify(data)
-            );
-            setHeroSettings({
-              ...data,
-              background_image: data.background_image || '/kudosimheroimage.jpeg',
-              phone_image: data.phone_image || '/telefoni.webp'
-            });
+          if (!error && data && data.translations) {
+            sessionStorage.setItem('kudosim_hero_settings', JSON.stringify(data));
+            setHeroSettings(prev => ({
+              ...prev,
+              translations: data.translations
+            }));
           } else if (error) {
             console.warn('Failed to fetch hero settings:', error.message);
           }
@@ -180,25 +182,38 @@ const Hero = () => {
   const getTitle = useCallback(
     () =>
       heroSettings.translations[currentLanguage]?.title ||
-      heroSettings.translations?.en?.title ||
-      '',
+      heroSettings.translations.en.title,
     [heroSettings.translations, currentLanguage]
   );
   const getSubtitle = useCallback(
     () =>
       heroSettings.translations[currentLanguage]?.subtitle ||
-      heroSettings.translations?.en?.subtitle ||
-      '',
+      heroSettings.translations.en.subtitle,
     [heroSettings.translations, currentLanguage]
   );
 
   // framer-motion variants
-  const containerVariants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } } };
-  const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 10 } } };
-  const flagVariants = { hidden: { opacity: 0, scale: 0.8, rotate: -5 }, visible: { opacity: 1, scale: 1, rotate: 0, transition: { type: 'spring', stiffness: 200, damping: 15 } }, hover: { scale: 1.1, rotate: 5 } };
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
+  };
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 10 } }
+  };
+  const flagVariants = {
+    hidden: { opacity: 0, scale: 0.8, rotate: -5 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: { type: 'spring', stiffness: 200, damping: 15 }
+    },
+    hover: { scale: 1.1, rotate: 5 }
+  };
 
-  const bgImage = heroSettings.background_image || '/kudosimheroimage.jpeg';
-  const phoneImage = heroSettings.phone_image || '/telefoni.webp';
+  const bgImage = heroSettings.background_image;
+  const phoneImage = heroSettings.phone_image;
 
   return (
     <>
@@ -225,10 +240,17 @@ const Hero = () => {
             >
               {/* Left */}
               <div className="text-center lg:text-left max-w-2xl mx-auto lg:mx-0 mt-8 lg:mt-0">
-                <motion.h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight flex flex-wrap items-center justify-center lg:justify-start gap-2" variants={itemVariants}>
+                <motion.h1
+                  className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight flex flex-wrap items-center justify-center lg:justify-start gap-2"
+                  variants={itemVariants}
+                >
                   {getTitle()}
                   {currentCountry && (
-                    <motion.div className="relative inline-flex w-16 h-12 sm:w-20 sm:h-14" variants={flagVariants} whileHover="hover">
+                    <motion.div
+                      className="relative inline-flex w-16 h-12 sm:w-20 sm:h-14"
+                      variants={flagVariants}
+                      whileHover="hover"
+                    >
                       <img
                         src={`https://flagcdn.com/${currentCountry.code.toLowerCase()}.svg`}
                         alt={currentCountry.name}
@@ -241,12 +263,23 @@ const Hero = () => {
                   )}
                 </motion.h1>
 
-                <motion.p className="text-base sm:text-lg lg:text-xl text-white mb-6 sm:mb-8" variants={itemVariants}>
+                <motion.p
+                  className="text-base sm:text-lg lg:text-xl text-white mb-6 sm:mb-8"
+                  variants={itemVariants}
+                >
                   {getSubtitle()}
                 </motion.p>
 
                 <motion.div className="mb-6 sm:mb-8" variants={itemVariants}>
-                  <SearchCountries placeholder={{ en: 'Where are you travelling to?', sq: 'Ku po udhëtoni?', fr: 'Où voyagez-vous ?', de: 'Wohin reisen Sie?', tr: 'Nereye seyahat ediyorsunuz?' }[i18n.language] || 'Where are you travelling to?'} />
+                  <SearchCountries
+                    placeholder={{
+                      en: 'Where are you travelling to?',
+                      sq: 'Ku po udhëtoni?',
+                      fr: 'Où voyagez-vous ?',
+                      de: 'Wohin reisen Sie?',
+                      tr: 'Nereye seyahat ediyorsunuz?'
+                    }[i18n.language]}
+                  />
                 </motion.div>
 
                 <motion.div className="mb-6 sm:mb-8 flex justify-center lg:justify-start" variants={itemVariants}>
@@ -260,7 +293,11 @@ const Hero = () => {
 
               {/* Right phone */}
               <motion.div className="relative hidden lg:flex justify-center items-center" variants={itemVariants}>
-                <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse' }} className="relative z-10">
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse' }}
+                  className="relative z-10"
+                >
                   <motion.img
                     src={phoneImage}
                     alt="eSIM Device"
