@@ -427,50 +427,6 @@ export default function CountryPage() {
               </div>
             </div>
 
-            {/* Network info cards - Updated to match the screenshot */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-[#f3e9ff]">
-                    <svg className="w-6 h-6 text-[#6a0dad]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Network</p>
-                    <p className="font-medium text-gray-900">Vodafone</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-[#f3e9ff]">
-                    <svg className="w-6 h-6 text-[#6a0dad]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Phone</p>
-                    <p className="font-medium text-gray-900">Calling & Texting</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-white rounded-xl p-4 shadow-sm">
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-[#f3e9ff]">
-                    <svg className="w-6 h-6 text-[#6a0dad]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Speed</p>
-                    <p className="font-medium text-gray-900">LTE/5G</p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             {/* Packages grid - Updated to 4-per-row on desktop */}
             <h2 className="text-xl font-bold text-gray-900 mb-4">
