@@ -96,6 +96,7 @@ const PlansTitle = memo(() => {
 
 // Always use these local images for the hero section visuals
 const DEFAULT_BG_IMAGE = '/kudosimheroimage.jpeg';
+// Use the telefoni.webp image from the project root and ensure it scales nicely
 const DEFAULT_PHONE_IMAGE = '/telefoni.webp';
 
 const Hero = () => {
@@ -309,7 +310,7 @@ const Hero = () => {
                   <motion.img
                     src={phoneImage}
                     alt="eSIM Device"
-                    className="w-full h-auto mx-auto"
+                    className="w-full h-full object-contain mx-auto"
                     width="224"
                     height="448"
                     loading="eager"
