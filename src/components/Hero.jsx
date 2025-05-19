@@ -96,7 +96,7 @@ const PlansTitle = memo(() => {
 
 // Always use these local images for the hero section visuals
 const DEFAULT_BG_IMAGE = '/kudosimheroimage.jpeg';
-// Use the telefoni.webp image from the project root
+// Use the telefoni.webp image from the project root and ensure it scales nicely
 const DEFAULT_PHONE_IMAGE = '/telefoni.webp';
 
 const Hero = () => {
@@ -288,7 +288,7 @@ const Hero = () => {
                     placeholder={{
                       en: 'Where are you travelling to?',
                       sq: 'Ku po udhëtoni?',
-                      fr: 'Où voyagez-vous ?',
+                      fr: 'Où voyagez-vous ?',  
                       de: 'Wohin reisen Sie?',
                       tr: 'Nereye seyahat ediyorsunuz?'
                     }[i18n.language]}
@@ -310,7 +310,7 @@ const Hero = () => {
                   <motion.img
                     src={phoneImage}
                     alt="eSIM Device"
-                    className="w-full h-auto mx-auto"
+                    className="w-full h-full object-contain mx-auto"
                     width="224"
                     height="448"
                     loading="eager"
