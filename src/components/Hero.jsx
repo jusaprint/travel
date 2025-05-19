@@ -246,7 +246,7 @@ const Hero = () => {
         <div className="relative z-10 flex flex-col">
           <Container className="flex-1 pt-28 sm:pt-32 lg:pt-32 pb-12 lg:pb-6 flex flex-col justify-center">
             <motion.div
-              className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center h-full" 
+              className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center h-full"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
