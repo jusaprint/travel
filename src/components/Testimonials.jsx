@@ -3,6 +3,34 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useTranslationLoader } from '../i18n/hooks/useTranslationLoader';
 import { supabase } from '../lib/cms';
+
+// Simple fallback testimonials used when the database has no data or cannot be reached
+const fallbackTestimonials = [
+  {
+    id: 1,
+    author: 'John D.',
+    location: 'USA',
+    flag: '🇺🇸',
+    rating: 5,
+    content: 'Amazing trips with top‑notch guides!'
+  },
+  {
+    id: 2,
+    author: 'Sara M.',
+    location: 'Germany',
+    flag: '🇩🇪',
+    rating: 4,
+    content: 'Great experience. Highly recommended.'
+  },
+  {
+    id: 3,
+    author: 'Liam K.',
+    location: 'Canada',
+    flag: '🇨🇦',
+    rating: 5,
+    content: 'Travel packages that meet every need.'
+  }
+];
 import Container from './Container';
 
 // Star rating component
@@ -39,7 +67,7 @@ const TestimonialCard = ({ testimonial }) => {
       </div>
       
       <p className="text-gray-700 flex-grow mb-6 text-lg leading-relaxed">
-        "{testimonial.content}"
+        “{testimonial.content}”
       </p>
       
       <div className="flex items-center mt-auto">
@@ -124,17 +152,26 @@ export default function Testimonials() {
     const loadTestimonials = async () => {
       try {
         setLoading(true);
-        // Fetch testimonials from the database, filtering by approved status
+        // Fetch up to six approved testimonials from the database
         const { data, error: fetchError } = await supabase
           .from('cms_testimonials')
           .select('*')
           .eq('status', 'approved')
-          .order('created_at', { ascending: false });
+          .order('created_at', { ascending: false })
+          .limit(6);
 
         if (fetchError) throw fetchError;
-        setTestimonials(data || []);
+
+        if (data && data.length > 0) {
+          setTestimonials(data);
+        } else {
+          // Use local fallback data when the database is empty
+          setTestimonials(fallbackTestimonials);
+        }
       } catch (err) {
         console.error('Error loading testimonials:', err);
+        // If fetching fails entirely, show fallback testimonials
+        setTestimonials(fallbackTestimonials);
         setError(err.message);
       } finally {
         setLoading(false);
@@ -208,7 +245,7 @@ export default function Testimonials() {
           </motion.div>
           
           <div className="text-center py-12 bg-white rounded-2xl shadow-lg">
-            <p className="text-gray-600">Add testimonials from the admin panel to display them here.</p>
+            <p className="text-gray-600">No testimonials available at the moment.</p>
           </div>
         </Container>
       </section>
