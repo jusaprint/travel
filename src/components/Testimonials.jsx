@@ -5,6 +5,34 @@ import { useTranslationLoader } from '../i18n/hooks/useTranslationLoader';
 import { supabase } from '../lib/cms';
 import Container from './Container';
 
+// Fallback testimonials shown if none are loaded from the database
+const sampleTestimonials = [
+  {
+    id: 1,
+    rating: 5,
+    content: 'This eSIM made my travels so much easier!',
+    author: 'Jane Doe',
+    location: 'USA',
+    flag: '🇺🇸'
+  },
+  {
+    id: 2,
+    rating: 4,
+    content: 'Great coverage and simple setup.',
+    author: 'Pierre Dupont',
+    location: 'France',
+    flag: '🇫🇷'
+  },
+  {
+    id: 3,
+    rating: 5,
+    content: 'I stayed connected the whole trip!',
+    author: 'Ayşe Yılmaz',
+    location: 'Turkey',
+    flag: '🇹🇷'
+  }
+];
+
 // Star rating component
 const StarRating = ({ rating }) => {
   return (
@@ -39,7 +67,7 @@ const TestimonialCard = ({ testimonial }) => {
       </div>
       
       <p className="text-gray-700 flex-grow mb-6 text-lg leading-relaxed">
-        "{testimonial.content}"
+        &ldquo;{testimonial.content}&rdquo;
       </p>
       
       <div className="flex items-center mt-auto">
@@ -132,10 +160,15 @@ export default function Testimonials() {
           .order('created_at', { ascending: false });
 
         if (fetchError) throw fetchError;
-        setTestimonials(data || []);
+        if (data && data.length > 0) {
+          setTestimonials(data);
+        } else {
+          setTestimonials(sampleTestimonials);
+        }
       } catch (err) {
         console.error('Error loading testimonials:', err);
         setError(err.message);
+        setTestimonials(sampleTestimonials);
       } finally {
         setLoading(false);
       }
