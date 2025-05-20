@@ -32,7 +32,8 @@
   /* Prevent image layout shifts */
   img {
     height: auto;
-    aspect-ratio: attr(width) / attr(height);
+    /* Fallback aspect ratio for browsers without attr() support */
+    aspect-ratio: 16 / 9;
   }
   
   /* Hero section styles */
