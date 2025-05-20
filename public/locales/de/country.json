@@ -13,5 +13,11 @@
   "available.packages": "Verfügbare Pakete",
   "features": "Funktionen",
   "description": "Beschreibung",
-  "not.found": "Das gesuchte Land existiert nicht oder ist nicht verfügbar."
+  "not.found": "Das gesuchte Land existiert nicht oder ist nicht verfügbar.",
+  "back": "Zurück zu Reisezielen",
+  "error": "Fehler",
+  "valid.for": "Gültig für",
+  "days": "Tage",
+  "most.popular": "Am Beliebtesten",
+  "best.value": "Bestes Angebot"
 }
