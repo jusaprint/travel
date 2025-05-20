@@ -18,7 +18,6 @@ const fadeInVariants = getOptimizedVariants({
   animate: { opacity: 1 },
   exit: { opacity: 0 }
 });
-
 const slideInVariants = getOptimizedVariants({
   initial: { x: '100%' },
   animate: { x: 0 },
@@ -30,11 +29,11 @@ const LanguageSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { languages, currentLanguage, changeLanguage, isChangingLanguage } = useLanguage();
   const dropdownRef = useRef(null);
-  const currentLang = languages.find(lang => lang.code === currentLanguage);
+  const currentLang = languages.find(l => l.code === currentLanguage);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = e => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setIsOpen(false);
       }
     };
@@ -42,18 +41,16 @@ const LanguageSwitcher = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleLanguageChange = (langCode) => {
-    if (isChangingLanguage || langCode === currentLanguage) return;
+  const onSelect = code => {
+    if (isChangingLanguage || code === currentLanguage) return;
     setIsOpen(false);
-    requestAnimationFrame(() => {
-      setTimeout(() => changeLanguage(langCode), 0);
-    });
+    requestAnimationFrame(() => setTimeout(() => changeLanguage(code), 0));
   };
 
   return (
     <div className="relative" ref={dropdownRef}>
       <motion.button
-        onClick={() => !isChangingLanguage && setIsOpen(!isOpen)}
+        onClick={() => !isChangingLanguage && setIsOpen(open => !open)}
         className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100/50 transition-colors"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -63,11 +60,11 @@ const LanguageSwitcher = () => {
           <Flag
             code={currentLang?.flag}
             className="w-full h-full object-cover"
-            loading="lazy"
             width="20"
             height="16"
+            loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/5 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/5 to-transparent" />
         </div>
         <span className="text-sm font-medium text-gray-700">{currentLang?.code.toUpperCase()}</span>
         <motion.svg
@@ -89,38 +86,36 @@ const LanguageSwitcher = () => {
             animate="animate"
             exit="exit"
             transition={{ type: 'spring', duration: 0.3 }}
-            className="absolute right-0 mt-2 w-48 rounded-xl bg-white shadow-lg ring-1 ring-black/5 z-50 overflow-hidden"
+            className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg ring-1 ring-black/5 z-50 overflow-hidden"
           >
-            <div className="py-1">
-              {languages.map(lang => (
-                <motion.button
-                  key={lang.code}
-                  onClick={() => handleLanguageChange(lang.code)}
-                  className="flex items-center gap-3 w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                  whileHover={{ x: 4 }}
-                  disabled={isChangingLanguage}
-                >
-                  <div className="relative w-5 h-4 overflow-hidden rounded-sm shadow-sm">
-                    <Flag
-                      code={lang.flag}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      width="20"
-                      height="16"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/5 to-transparent"></div>
-                  </div>
-                  <span>{lang.name}</span>
-                  {currentLanguage === lang.code && (
-                    <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="ml-auto">
-                      <svg className="w-4 h-4 text-[#690d89]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </motion.div>
-                  )}
-                </motion.button>
-              ))}
-            </div>
+            {languages.map(lang => (
+              <motion.button
+                key={lang.code}
+                onClick={() => onSelect(lang.code)}
+                className="flex items-center gap-3 w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                whileHover={{ x: 4 }}
+                disabled={isChangingLanguage}
+              >
+                <div className="relative w-5 h-4 overflow-hidden rounded-sm shadow-sm">
+                  <Flag
+                    code={lang.flag}
+                    className="w-full h-full object-cover"
+                    width="20"
+                    height="16"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/5 to-transparent" />
+                </div>
+                <span>{lang.name}</span>
+                {lang.code === currentLanguage && (
+                  <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="ml-auto">
+                    <svg className="w-4 h-4 text-[#690d89]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </motion.div>
+                )}
+              </motion.button>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
@@ -132,22 +127,22 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuItems, setMenuItems] = useState([
-    { id: '1', name: 'Destinations', href: '/destinations', icon: 'globe', order: 1, submenu: [] },
-    { id: '2', name: 'For Business', href: '/business', icon: 'briefcase', order: 2, submenu: [] },
-    { id: '3', name: 'Support', href: '/support', icon: 'support', order: 3, submenu: [] },
-    { id: '4', name: 'My eSIMs', href: '/my-esims', icon: 'sim', order: 4, submenu: [] }
+    { id: '1', name: 'Destinations', href: '/destinations', icon: 'globe', submenu: [] },
+    { id: '2', name: 'For Business', href: '/business', icon: 'briefcase', submenu: [] },
+    { id: '3', name: 'Support', href: '/support', icon: 'support', submenu: [] },
+    { id: '4', name: 'My eSIMs', href: '/my-esims', icon: 'sim', submenu: [] },
   ]);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
   const { settings } = useSettings();
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const { languages, currentLanguage, changeLanguage, isChangingLanguage } = useLanguage();
   const menuItemsCache = useRef(null);
 
   // Load translations
-  const { isLoading } = useTranslationLoader(['common']);
+  useTranslationLoader(['common']);
 
-  // Load menu items from CMS
+  // Fetch menu items from CMS once
   useEffect(() => {
     (async () => {
       if (menuItemsCache.current) {
@@ -169,14 +164,14 @@ export default function Navbar() {
     })();
   }, []);
 
-  // Scroll effect
+  // Change header style on scroll
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Prevent background scroll when menu open
+  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';
   }, [isOpen]);
@@ -184,26 +179,53 @@ export default function Navbar() {
   const isActive = path =>
     path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
 
+  // Icon mapping
   const getIcon = name => {
     const icons = {
       globe: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945
+               M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0
+               2 2 0 012-2h1.064
+               M15 20.488V18a2 2 0 012-2h3.064
+               M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
       briefcase: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+            d="M21 13.255A23.931 23.931 0 0112 15
+               c-3.183 0-6.22-.62-9-1.745
+               M16 6V4a2 2 0 00-2-2h-4
+               a2 2 0 00-2 2v2m4 6h.01
+               M5 20h14a2 2 0 002-2V8
+               a2 2 0 00-2-2H5
+               a2 2 0 00-2 2v10
+               a2 2 0 002 2z" />
         </svg>
       ),
       support: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+            d="M18.364 5.636l-3.536 3.536
+               m0 5.656l3.536 3.536
+               M9.172 9.172L5.636 5.636
+               m3.536 9.192l-3.536 3.536
+               M21 12a9 9 0 11-18 0
+               9 9 0 0118 0
+               zm-5 0a4 4 0 11-8 0
+               4 4 0 018 0z" />
         </svg>
       ),
       sim: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+            d="M12 18h.01
+               M8 21h8a2 2 0 002-2V5
+               a2 2 0 00-2-2H8
+               a2 2 0 00-2 2v14
+               a2 2 0 002 2z" />
         </svg>
       )
     };
@@ -218,13 +240,18 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white/80 backdrop-blur-sm'
+        scrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-lg'
+          : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
+      {/* animated underline */}
       <div
-        className={`absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#690d89]/20 to-transparent transition-opacity duration-300 ${
-          scrolled ? 'opacity-100' : 'opacity-0'
-        }`}
+        className={`absolute bottom-0 left-0 right-0 h-[1px]
+          bg-gradient-to-r from-transparent via-[#690d89]/20 to-transparent
+          transition-opacity duration-300 ${
+            scrolled ? 'opacity-100' : 'opacity-0'
+          }`}
       />
 
       <Container className="flex items-center justify-between p-4">
@@ -239,7 +266,7 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop Nav */}
+        {/* desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           {menuItems.map(item => (
             <div key={item.id} className="relative group">
@@ -263,8 +290,6 @@ export default function Navbar() {
                   />
                 )}
               </Link>
-
-              {/* Submenu */}
               {item.submenu.length > 0 && (
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="bg-white rounded-lg shadow-lg py-2 min-w-[200px]">
@@ -288,13 +313,13 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Right Section */}
+        {/* right side */}
         <div className="flex items-center gap-2 sm:gap-4">
           <div className="hidden md:block">
             <LanguageSwitcher />
           </div>
 
-          {/* Desktop CTA */}
+          {/* desktop CTA */}
           <Link
             to="#"
             className="hidden md:inline-flex items-center gap-2 text-white font-medium px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-sm shadow-lg transition-all duration-300"
@@ -305,21 +330,24 @@ export default function Navbar() {
             </span>{' '}
             <TranslatedText textKey="Shop eSIMs" namespace="common" fallback="Shop eSIMs" />
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </Link>
 
-          {/* Mobile CTA */}
+          {/* mobile CTA (Download App) */}
           <Link
             to="#"
-            className="inline-flex md:hidden items-center gap-1 text-white font-medium px-3 py-2 rounded-full text-sm shadow-lg transition-all duration-300"
+            className="inline-flex md:hidden items-center gap-2 text-white font-medium px-3 py-2 rounded-full text-sm shadow-lg transition-all duration-300"
             style={{ backgroundColor: settings?.site?.primaryColor || '#690d89' }}
           >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 ... z" />
+            {/* Apple icon */}
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16.365 1.43c-.98.1-2.06.67-2.71 1.41-.59.69-1.1 1.89-.94 2.96 1.01.05 2.06-.54 2.75-1.28.6-.65 1.08-1.75.9-2.79zM12 5c-3.14 0-4.5 2.58-4.5 5.5S8.86 16 12 16s4.5-2.58 4.5-5.5S15.14 5 12 5z" />
             </svg>
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3,20.5V3.5C3,2.91 ... z" />
+            {/* Android/Play icon */}
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 2l18 10-18 10V2z" />
             </svg>
             <TranslatedText
               textKey="getApp"
@@ -328,22 +356,23 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Mobile Menu Button */}
+          {/* mobile menu button */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen(open => !open)}
             className={`md:hidden p-2 rounded-lg hover:bg-gray-100/50 transition-colors ${
               scrolled ? 'text-gray-600' : 'text-gray-900'
             }`}
             aria-label="Menu"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
             </svg>
           </button>
         </div>
       </Container>
 
-      {/* Mobile Menu */}
+      {/* mobile slide-in menu */}
       <AnimatePresence>
         {isOpen && (
           <>
@@ -366,17 +395,28 @@ export default function Navbar() {
             >
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b border-gray-100">
-                  <img src="/kudosim-logo.svg" alt={settings?.site?.title || 'KudoSIM'} className="h-6 w-auto" width="120" height="24" />
-                  <button onClick={() => setIsOpen(false)} className="p-2 rounded-lg text-gray-500 hover:text-[#690d89] hover:bg-[#690d89]/5" aria-label="Close menu">
+                  <img
+                    src="/kudosim-logo.svg"
+                    alt={settings?.site?.title || 'KudoSIM'}
+                    className="h-6 w-auto"
+                    width="120"
+                    height="24"
+                  />
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="p-2 rounded-lg text-gray-500 hover:text-[#690d89] hover:bg-[#690d89]/5"
+                    aria-label="Close menu"
+                  >
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
                 </div>
 
-                {/* Language in mobile */}
+                {/* language selector in mobile */}
                 <div className="px-4 py-3 border-b border-gray-100">
-                  <p className="text-sm font-medium text-gray-500 mb-3">
+                  <p className="mb-3 text-sm font-medium text-gray-500">
                     <TranslatedText textKey="Select Language" namespace="common" fallback="Select Language" />
                   </p>
                   <div className="grid grid-cols-2 gap-2">
@@ -389,9 +429,13 @@ export default function Navbar() {
                           }
                         }}
                         disabled={isChangingLanguage}
-                        className={`flex items-center gap-3 p-3 rounded-xl text-left transition-all ${
-                          currentLanguage === lang.code ? 'bg-[#690d89] text-white' : 'bg-gray-50 text-gray-900 hover:bg-gray-100'
-                        } ${isChangingLanguage ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        className={`
+                          flex items-center gap-3 p-3 rounded-xl text-left transition-all
+                          ${currentLanguage === lang.code
+                            ? 'bg-[#690d89] text-white'
+                            : 'bg-gray-50 text-gray-900 hover:bg-gray-100'}
+                          ${isChangingLanguage ? 'opacity-50 cursor-not-allowed' : ''}
+                        `}
                       >
                         <Flag code={lang.flag} className="w-6 h-4 object-cover rounded-sm shadow-sm" loading="lazy" width="24" height="16" />
                         <span className="font-medium text-sm">{lang.name}</span>
@@ -400,13 +444,16 @@ export default function Navbar() {
                   </div>
                 </div>
 
+                {/* mobile menu items */}
                 <div className="flex-1 overflow-y-auto py-4">
                   {menuItems.map(item => (
                     <React.Fragment key={item.id}>
                       <Link
                         to={item.href}
                         className={`flex items-center gap-3 px-4 py-3 text-lg font-medium ${
-                          isActive(item.href) ? 'text-[#690d89] bg-[#690d89]/5' : 'text-gray-900 hover:bg-gray-50'
+                          isActive(item.href)
+                            ? 'text-[#690d89] bg-[#690d89]/5'
+                            : 'text-gray-900 hover:bg-gray-50'
                         }`}
                         onClick={() => setIsOpen(false)}
                       >
@@ -418,7 +465,9 @@ export default function Navbar() {
                           key={sub.id}
                           to={sub.href}
                           className={`flex items-center gap-3 px-8 py-2 text-base ${
-                            isActive(sub.href) ? 'text-[#690d89] bg-[#690d89]/5' : 'text-gray-700 hover:bg-gray-50'
+                            isActive(sub.href)
+                              ? 'text-[#690d89] bg-[#690d89]/5'
+                              : 'text-gray-700 hover:bg-gray-50'
                           }`}
                           onClick={() => setIsOpen(false)}
                         >
@@ -430,6 +479,7 @@ export default function Navbar() {
                   ))}
                 </div>
 
+                {/* download app at bottom */}
                 <div className="p-4 border-t border-gray-100">
                   <Link
                     to="#"
@@ -437,10 +487,10 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                   >
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 ... z" />
+                      <path d="M16.365 1.43c-.98.1-2.06.67-2.71 1.41-.59.69-1.1 1.89-.94 2.96 1.01.05 2.06-.54 2.75-1.28.6-.65 1.08-1.75.9-2.79zM12 5c-3.14 0-4.5 2.58-4.5 5.5S8.86 16 12 16s4.5-2.58 4.5-5.5S15.14 5 12 5z" />
                     </svg>
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12 ... z" />
+                      <path d="M3 2l18 10-18 10V2z" />
                     </svg>
                     <TranslatedText
                       textKey="getApp"
