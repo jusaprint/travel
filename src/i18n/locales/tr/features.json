@@ -6,8 +6,8 @@
     "description": "Artık SIM kart değiştirmeye gerek yok, bir kez kurun, sonsuza kadar saklayın"
   },
   "support": {
-    "title": "Premium destek",
-    "description": "İyi günde de kötü günde de her zaman yanınızda olacağız."
+    "title": "7/24 Müşteri Desteği",
+    "description": "Sorularınız mı var? Destek ekibimiz e-posta veya canlı sohbet ile 7/24 hizmetinizde."
   },
   "lounge": {
     "title": "Ücretsiz lounge erişimi",
@@ -29,5 +29,25 @@
     "networks": "Ağ Ortakları",
     "users": "Mutlu Kullanıcılar",
     "support": "7/24 Support"
+  },
+  "customize": {
+    "title": "Planını Özelleştir",
+    "description": "Seyahatine uygun olarak eSIM plan süresini ve veri miktarını ayarla. Kullanılmayan günlere ödeme yapma, erkenden bitme sorunu yaşama."
+  },
+  "unlimited": {
+    "title": "Limitsiz Veri Paketleri",
+    "description": "Kosova'da ön ödemeli limitsiz internetin tadını çıkar. Yenileme yok, endişe yok — gün boyu bağlı kal."
+  },
+  "whatsapp": {
+    "title": "WhatsApp Numaranı Koru",
+    "description": "WhatsApp'ını evdeymiş gibi kullan. Yurtdışında numara değiştirmeden iletişimde kal."
+  },
+  "delivery": {
+    "title": "Anında Teslimat",
+    "description": "eSIM'in e-posta ile anında gönderilir. İster yurtdışında ol ister hazırlıkta, saniyeler içinde bağlan."
+  },
+  "sharing": {
+    "title": "Aile ile Veri Paylaşımı",
+    "description": "Günde 500MB'a kadar hotspot kurarak dilediğin yerde arkadaşların veya ailenle veri paylaş."
   }
 }
