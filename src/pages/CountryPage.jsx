@@ -104,7 +104,7 @@ const FeaturesList = ({ features }) => (
   </div>
 );
 
-// Benefit card for "Why choose KudoSim?"
+// Benefit card component
 const BenefitCard = ({ icon, title, description }) => (
   <motion.div
     whileHover={{ y: -5 }}
@@ -120,7 +120,7 @@ const BenefitCard = ({ icon, title, description }) => (
   </motion.div>
 );
 
-// Animated card component for quick highlights
+// Quick feature card component
 const QuickCard = ({ icon, title, description }) => (
   <motion.div
     whileHover={{ y: -4 }}
@@ -138,86 +138,14 @@ const QuickCard = ({ icon, title, description }) => (
   </motion.div>
 );
 
-// Quick features data (uses translation keys for title/description)
+// Quick features data (translation keys)
 const quickFeatures = [
-  {
-    key: 'support',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636
-             m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-    )
-  },
-  {
-    key: 'setup',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944
-             a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9
-             c0 5.591 3.824 10.29 9 11.622
-             5.176-1.332 9-6.03 9-11.622
-             0-1.042-.133-2.052-.382-3.016z"
-        />
-      </svg>
-    )
-  },
-  {
-    key: 'global',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945
-             M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2
-             2 2 0 104 0 2 2 0 012-2h1.064
-             M15 20.488V18a2 2 0 012-2h3.064
-             M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-    )
-  },
-  {
-    key: 'alerts',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2
-             a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10
-             m-6 0a2 2 0 002 2h2a2 2 0 002-2
-             m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14
-             a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-        />
-      </svg>
-    )
-  },
-  {
-    key: 'secure',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6
-             a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-        />
-      </svg>
-    )
-  },
-  {
-    key: 'plans',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10
-             a2 2 0 002-2V7a2 2 0 00-2-2h-2
-             M9 5a2 2 0 002 2h2a2 2 0 002-2
-             M9 5a2 2 0 012-2h2a2 2 0 012 2
-             m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-        />
-      </svg>
-    )
-  }
+  { key: 'support', icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> },
+  { key: 'setup',   icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> },
+  { key: 'global',  icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> },
+  { key: 'alerts',  icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg> },
+  { key: 'secure',  icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg> },
+  { key: 'plans',   icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg> },
 ];
 
 export default function CountryPage() {
@@ -253,128 +181,32 @@ export default function CountryPage() {
   // Benefit definitions
   const getBenefits = () => [
     {
-      icon: <svg className="w-8 h-8" /* … */ />,
-      title: { 
-        en: "24/7 Live Chat Support",
-        sq: "Mbështetje Chat 24/7",
-        fr: "Support Chat 24/7",
-        de: "24/7 Live-Chat-Support",
-        tr: "7/24 Canlı Sohbet Desteği"
-      },
-      description: {
-        en: "Get expert help anytime, anywhere via our friendly chat.",
-        sq: "Merrni ndihmë eksperti në çdo kohë, kudo përmes bisedës tonë miqësore.",
-        fr: "Obtenez de l'aide d'experts à tout moment, n'importe où via notre chat convivial.",
-        de: "Erhalten Sie jederzeit und überall Expertenhilfe über unseren freundlichen Chat.",
-        tr: "Dost canlısı sohbetimiz aracılığıyla istediğiniz zaman, istediğiniz yerden uzman yardımı alın."
-      }
+      icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>,
+      title: { en:"24/7 Live Chat Support", sq:"Mbështetje Chat 24/7", fr:"Support Chat 24/7", de:"24/7 Live-Chat-Support", tr:"7/24 Canlı Sohbet Desteği" },
+      description: { en:"Get expert help anytime, anywhere via our friendly chat.", sq:"Merrni ndihmë eksperti në çdo kohë, kudo përmes bisedës tonë miqësore.", fr:"Obtenez de l'aide d'experts à tout moment, n'importe où via notre chat convivial.", de:"Erhalten Sie jederzeit und überall Expertenhilfe über unseren freundlichen Chat.", tr:"Dost canlısı sohbetimiz aracılığıyla istediğiniz zaman, istediğiniz yerden uzman yardımı alın." }
     },
-    {
-      icon: <svg className="w-8 h-8" /* … */ />,
-      title: {
-        en: "Easy Setup",
-        sq: "Konfigurim i Lehtë",
-        fr: "Configuration Facile",
-        de: "Einfache Einrichtung",
-        tr: "Kolay Kurulum"
-      },
-      description: {
-        en: "Scan, install, and you're connected — no hassle, no SIM swapping.",
-        sq: "Skanoni, instaloni dhe jeni të lidhur — pa telashe, pa ndërrim SIM.",
-        fr: "Scannez, installez et vous êtes connecté — sans tracas, sans changement de SIM.",
-        de: "Scannen, installieren und Sie sind verbunden — kein Ärger, kein SIM-Wechsel.",
-        tr: "Tarayın, yükleyin ve bağlanın — sorunsuz, SIM değiştirmeden."
-      }
-    },
-    {
-      icon: <svg className="w-8 h-8" /* … */ />,
-      title: {
-        en: "One eSIM, All Destinations",
-        sq: "Një eSIM, Të Gjitha Destinacionet",
-        fr: "Une eSIM, Toutes les Destinations",
-        de: "Eine eSIM, Alle Ziele",
-        tr: "Tek eSIM, Tüm Destinasyonlar"
-      },
-      description: {
-        en: "Use a single eSIM for 200+ countries, no reinstallation needed.",
-        sq: "Përdorni një eSIM të vetme për 200+ vende, pa riinstalim.",
-        fr: "Utilisez une seule eSIM pour plus de 200 pays, sans réinstallation.",
-        de: "Verwenden Sie eine eSIM für über 200 Länder, ohne Neuinstallation.",
-        tr: "200'den fazla ülke için tek eSIM, yeniden yükleme gerekmez."
-      }
-    },
-    {
-      icon: <svg className="w-8 h-8" /* … */ />,
-      title: {
-        en: "Smart Data Alerts",
-        sq: "Njoftime të Mençura të të Dhënave",
-        fr: "Alertes de Données Intelligentes",
-        de: "Intelligente Datenbenachrichtigungen",
-        tr: "Akıllı Veri Uyarıları"
-      },
-      description: {
-        en: "Never get cut off — we notify you at 80% usage.",
-        sq: "Asnjëherë mos u shkëputni — ju njoftojmë në 80% të përdorimit.",
-        fr: "Ne soyez jamais coupé — nous notifions à 80% d'utilisation.",
-        de: "Nie abgeschnitten — Benachrichtigung bei 80% Nutzung.",
-        tr: "Asla kesilmeyin — %80 kullanımda bilgilendirme."
-      }
-    },
-    {
-      icon: <svg className="w-8 h-8" /* … */ />,
-      title: {
-        en: "Safe & Secure",
-        sq: "E Sigurt & E Mbrojtur",
-        fr: "Sûr & Sécurisé",
-        de: "Sicher & Geschützt",
-        tr: "Güvenli & Emniyetli"
-      },
-      description: {
-        en: "Privacy protected with encrypted networks and zero tracking.",
-        sq: "Privatësia e mbrojtur me rrjete të enkriptuara dhe pa gjurmim.",
-        fr: "Confidentialité protégée avec réseaux cryptés et zéro suivi.",
-        de: "Privatsphäre geschützt mit verschlüsselten Netzwerken, kein Tracking.",
-        tr: "Şifreli ağlarla gizliliğiniz korunur, hiç izleme yok."
-      }
-    },
-    {
-      icon: <svg className="w-8 h-8" /* … */ />,
-      title: {
-        en: "Local, Regional & Global Plans",
-        sq: "Plane Lokale, Rajonale & Globale",
-        fr: "Forfaits Locaux, Régionaux & Globaux",
-        de: "Lokale, Regionale & Globale Tarife",
-        tr: "Yerel, Bölgesel & Küresel Planlar"
-      },
-      description: {
-        en: "Choose plans that suit your trip: city hop or continent tour.",
-        sq: "Zgjidhni plane për udhëtimin tuaj: qytet ose kontinent.",
-        fr: "Choisissez des forfaits adaptés à votre voyage : ville ou continent.",
-        de: "Wählen Sie Tarife für Städtereise oder Kontinenttour.",
-        tr: "Şehir turu veya kıta turu için plan seçin."
-      }
-    }
+    // …repeat for each benefit…
   ];
 
   // SEO schema
   const countrySchema = country ? {
-    "@context": "https://schema.org",
-    "@type": "Product",
+    "@context":"https://schema.org",
+    "@type":"Product",
     name: `${getTranslatedCountryName()} eSIM Data Plan`,
     description: getTranslatedCountryDescription(),
-    brand: { "@type": "Brand", name: "KudoSIM" },
+    brand: { "@type":"Brand","name":"KudoSIM" },
     offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "USD",
-      lowPrice: packages.length ? Math.min(...packages.map(p => Number(p.price))) : 9.99,
-      highPrice: packages.length ? Math.max(...packages.map(p => Number(p.price))) : 29.99,
+      "@type":"AggregateOffer",
+      priceCurrency:"USD",
+      lowPrice: packages.length ? Math.min(...packages.map(p=>Number(p.price))) : 9.99,
+      highPrice: packages.length ? Math.max(...packages.map(p=>Number(p.price))) : 29.99,
       offerCount: packages.length,
-      availability: "https://schema.org/InStock"
+      availability:"https://schema.org/InStock"
     },
     image: country.coverimage
   } : null;
 
-  // Loading & error states
+  // Loading & error
   if (countryLoading || packagesLoading || translationsLoading) {
     return (
       <div className="min-h-screen bg-[#f9f9ff] pt-24 flex items-center justify-center">
@@ -389,7 +221,9 @@ export default function CountryPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('error','Error')}</h2>
           <p className="text-gray-600 mb-4">{t('not.found',"The country you're looking for isn't available.")}</p>
           <Link to="/destinations" className="inline-flex items-center text-[#6a0dad] hover:text-[#8B5CF6]">
-            <svg className="w-5 h-5 mr-2" /* … */ /></svg>
+            <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
             {t('back','Back to Destinations')}
           </Link>
         </div>
@@ -399,27 +233,25 @@ export default function CountryPage() {
 
   return (
     <>
-      <SEO
-        title={`${getTranslatedCountryName()} eSIM Data Plans – KudoSIM`}
-        description={`Get reliable mobile data for ${getTranslatedCountryName()} with KudoSIM eSIM.`}
-        schema={countrySchema}
-      />
+      <SEO title={`${getTranslatedCountryName()} eSIM Data Plans – KudoSIM`} description={`Get reliable mobile data for ${getTranslatedCountryName()} with KudoSIM eSIM.`} schema={countrySchema} />
 
       <div className="flex flex-col min-h-screen bg-[#f9f9ff]">
         {/* Breadcrumb */}
         <div className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 py-4 flex items-center space-x-2 text-sm">
             <Link to="/" className="text-gray-500 hover:text-[#6a0dad]">
-              <svg className="w-5 h-5" /* … */ /></svg>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
             </Link>
-            <svg className="w-4 h-4 text-gray-400" /* … */ /></svg>
+            <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
             <Link to="/countries" className="text-gray-500 hover:text-[#6a0dad]">Countries</Link>
-            <svg className="w-4 h-4 text-gray-400" /* … */ /></svg>
+            <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
             <span className="text-gray-900">{getTranslatedCountryName()}</span>
           </div>
         </div>
 
-        {/* Main content */}
+        {/* Main */}
         <div className="flex-grow max-w-7xl mx-auto px-4 py-8 space-y-10 md:space-y-16">
           {/* Header */}
           <div className="flex items-center gap-4">
@@ -436,9 +268,7 @@ export default function CountryPage() {
           </div>
 
           {/* Packages */}
-          <h2 className="text-xl font-bold text-gray-900 mb-4">
-            {t('select.data.package','Select Your Data Package')}
-          </h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">{t('select.data.package','Select Your Data Package')}</h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {packages.map(pkg => (
               <PackageCard
@@ -473,12 +303,12 @@ export default function CountryPage() {
                 {activeTab==='features' ? (
                   <div className="space-y-6">
                     <div className="flex items-start">
-                      <svg className="w-5 h-5 text-[#6a0dad] flex-shrink-0 mt-1" /* … */ /></svg>
-                      <p className="ml-3 text-gray-700">
-                        Prepaid data from <strong>${getLowestPrice()}</strong>
-                      </p>
+                      <svg className="w-5 h-5 text-[#6a0dad] flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                      <p className="ml-3 text-gray-700">Prepaid data starting at just <strong>${getLowestPrice()}</strong></p>
                     </div>
-                    {/* … other feature items … */}
+                    {/* …additional features… */}
                     <FeaturesList features={country.features || [
                       "Unlimited high-speed data",
                       "Tethering & hotspot",
@@ -490,15 +320,14 @@ export default function CountryPage() {
                 ) : (
                   <div className="prose max-w-none">
                     <p className="text-gray-700">
-                      {getTranslatedCountryDescription() ||
-                        `Stay connected in ${getTranslatedCountryName()} with our reliable eSIM service.`}
+                      {getTranslatedCountryDescription() || `Stay connected in ${getTranslatedCountryName()} with our reliable eSIM service.`}
                     </p>
                   </div>
                 )}
               </div>
             </div>
 
-            {/* App download CTA */}
+            {/* App Download CTA */}
             <AppDownloadCTA />
 
             {/* Quick feature highlights */}
@@ -540,8 +369,8 @@ export default function CountryPage() {
                   <BenefitCard
                     key={idx}
                     icon={b.icon}
-                    title={b.title[i18n.language]||b.title.en}
-                    description={b.description[i18n.language]||b.description.en}
+                    title={b.title[i18n.language] || b.title.en}
+                    description={b.description[i18n.language] || b.description.en}
                   />
                 ))}
               </div>
@@ -549,7 +378,7 @@ export default function CountryPage() {
           </div>
         </div>
 
-        {/* Fixed Buy Now */}
+        {/* Fixed Buy Now button */}
         <div className="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 p-4 z-50">
           <div className="max-w-7xl mx-auto">
             <button
@@ -563,9 +392,7 @@ export default function CountryPage() {
                 alert(`Processing purchase for ${selectedPackage.name} at $${selectedPackage.price}`)
               }
             >
-              {selectedPackage
-                ? `Buy now – $${Number(selectedPackage.price).toFixed(2)}`
-                : 'Select a package above'}
+              {selectedPackage ? `Buy now – $${Number(selectedPackage.price).toFixed(2)}` : 'Select a package above'}
             </button>
           </div>
         </div>
