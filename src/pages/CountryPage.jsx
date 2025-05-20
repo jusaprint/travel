@@ -433,7 +433,7 @@ export default function CountryPage() {
             <h2 className="text-xl font-bold text-gray-900 mb-4">
               {t('select.data.package', 'Select Your Data Package')}
             </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-24">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10 md:mb-16">
               {packages.map((pkg) => (
                 <PackageCard
                   key={pkg.id}
@@ -450,8 +450,9 @@ export default function CountryPage() {
               ))}
             </div>
 
-            {/* Features and Description Section */}
-            <div className="mt-8 mb-24">
+            <div className="space-y-10 md:space-y-16">
+              {/* Features and Description Section */}
+              <div>
               <div className="border-b border-gray-200 mb-6">
                 <div className="flex space-x-8">
                   <TabButton 
@@ -521,12 +522,12 @@ export default function CountryPage() {
             </div>
 
             {/* App download call to action */}
-            <div className="mb-24">
+            <div>
               <AppDownloadCTA />
             </div>
 
             {/* Why choose KudoSim section */}
-            <div className="py-16 bg-gradient-to-b from-white to-[#f9f9ff] rounded-2xl mb-24">
+            <div className="py-16 md:py-20 bg-gradient-to-b from-white to-[#f9f9ff] rounded-2xl">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-gray-900 mb-3">
                   {i18n.language === 'en' ? "Why choose KudoSim for your eSIM?" : 
@@ -558,7 +559,7 @@ export default function CountryPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div>{/* end stacked sections */}
 
         {/* Fixed Buy Now Button */}
         <div className="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 p-4 z-50">
