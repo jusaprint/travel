@@ -224,7 +224,7 @@ function ComboPackageCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ scale: 1.02 }}
-      className="relative overflow-hidden rounded-[32px] bg-[#6F2DA8] p-6 text-white shadow-xl transition-all duration-300"
+      className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#572d83] to-[#2e1054] p-6 text-white shadow-xl transition-all duration-300"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.15]" />
@@ -310,7 +310,7 @@ function ComboPackageCard({
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-8">
           <div className="grid grid-cols-2 gap-4">
             <div className="flex items-center gap-2 sm:gap-3">
-              <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#6F2DA8] text-white">
+              <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#7c3aed] text-white shadow">
                 <svg className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -321,7 +321,7 @@ function ComboPackageCard({
               </div>
             </div>
             <div className="flex items-center gap-2 sm:gap-3">
-              <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#6F2DA8] text-white">
+              <div className="h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-[#7c3aed] text-white shadow">
                 <svg className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
