@@ -321,7 +321,11 @@ export default function Navbar() {
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
               <path d="M3,20.5V3.5C3,2.91 ... z" />
             </svg>
-            <span>Download App</span>
+            <TranslatedText
+              textKey="getApp"
+              namespace="common"
+              fallback="Get App"
+            />
           </Link>
 
           {/* Mobile Menu Button */}
@@ -438,7 +442,11 @@ export default function Navbar() {
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12 ... z" />
                     </svg>
-                    <span>Download App</span>
+                    <TranslatedText
+                      textKey="getApp"
+                      namespace="common"
+                      fallback="Get App"
+                    />
                   </Link>
                 </div>
               </div>
