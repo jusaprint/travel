@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { useTranslationLoader } from '../i18n/hooks/useTranslationLoader';
 import SEO from '../components/SEO';
 import Container from '../components/Container';
+import AppDownloadCTA from '../components/AppDownloadCTA';
 
 // Network info card component with improved styling to match the screenshot
 const NetworkInfoCard = ({ icon, label, value }) => (
@@ -517,6 +518,11 @@ export default function CountryPage() {
                   </div>
                 )}
               </div>
+            </div>
+
+            {/* App download call to action */}
+            <div className="mb-24">
+              <AppDownloadCTA />
             </div>
 
             {/* Why choose KudoSim section */}
