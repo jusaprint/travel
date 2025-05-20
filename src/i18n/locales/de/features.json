@@ -6,8 +6,8 @@
     "description": "Kein SIM-Karten-Wechsel mehr, einmal installieren, für immer behalten"
   },
   "support": {
-    "title": "Premium Support",
-    "description": "Wir stehen immer hinter Ihnen, in guten wie in schlechten Zeiten."
+    "title": "24/7 Kundenservice",
+    "description": "Sie haben Fragen? Unser Support-Team ist 24/7 per E-Mail oder Live-Chat für Sie da."
   },
   "lounge": {
     "title": "Kostenloser Lounge-Zugang",
@@ -29,5 +29,25 @@
     "networks": "Netzwerkpartner",
     "users": "Zufriedene Nutzer",
     "support": "24/7 Support"
+  },
+  "customize": {
+    "title": "Plan anpassen",
+    "description": "Passen Sie Laufzeit und Datenmenge Ihrer eSIM an Ihre Reise an. Keine ungenutzten Tage mehr bezahlen oder zu früh aufbrauchen."
+  },
+  "unlimited": {
+    "title": "Unbegrenzte Datentarife",
+    "description": "Genießen Sie unbegrenztes Prepaid-Internet in Kosovo. Kein Aufladen, keine Sorgen – bleiben Sie den ganzen Tag verbunden."
+  },
+  "whatsapp": {
+    "title": "Behalten Sie Ihre WhatsApp-Nummer",
+    "description": "Telefonieren und chatten Sie mit Ihrer vertrauten WhatsApp-Nummer. Bleiben Sie im Ausland in Kontakt, ohne Nummernwechsel."
+  },
+  "delivery": {
+    "title": "Sofortige Lieferung",
+    "description": "Ihre eSIM wird sofort per E-Mail geliefert. Ob Sie bereits im Ausland sind oder noch packen – verbinden Sie sich in Sekunden."
+  },
+  "sharing": {
+    "title": "Daten mit Familie teilen",
+    "description": "Nutzen Sie bis zu 500MB/Tag als Hotspot und teilen Sie Daten jederzeit unterwegs mit Freunden oder Familie."
   }
 }

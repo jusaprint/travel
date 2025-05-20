@@ -110,32 +110,84 @@ const FeaturesList = ({ features }) => (
   </div>
 );
 
-// Benefit card component for "Why choose KudoSim" section
-const BenefitCard = ({ icon, title, description }) => (
+
+// Animated card component for quick highlights
+const QuickCard = ({ icon, title, description }) => (
   <motion.div
-    whileHover={{ y: -5 }}
-    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
+    whileHover={{ scale: 1.02 }}
+    className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition"
   >
-    <div className="flex flex-col items-center text-center">
-      <div className="w-16 h-16 rounded-full bg-[#f3e9ff] flex items-center justify-center mb-4">
-        <div className="text-[#6a0dad]">
-          {icon}
-        </div>
-      </div>
-      <h3 className="text-lg font-bold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-600 text-sm">{description}</p>
-    </div>
+    <motion.div
+      className="w-12 h-12 rounded-lg mb-4 flex items-center justify-center text-white bg-gradient-to-br from-[#690d89] to-purple-500"
+      animate={{ scale: [1, 1.1, 1] }}
+      transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+    >
+      {icon}
+    </motion.div>
+    <h4 className="text-base font-bold text-gray-900 mb-1 uppercase">{title}</h4>
+    <p className="text-sm text-gray-600">{description}</p>
   </motion.div>
 );
 
+const quickFeatures = [
+
+  {
+    key: 'customize',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
+      </svg>
+    )
+  },
+  {
+    key: 'unlimited',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 12h16M12 4v16" />
+      </svg>
+    )
+  },
+  {
+    key: 'whatsapp',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 9h8M8 13h6m-6 4h4" />
+      </svg>
+    )
+  },
+  {
+    key: 'support',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    )
+  },
+  {
+    key: 'delivery',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    )
+  },
+  {
+    key: 'sharing',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    )
+  }
+];
 export default function CountryPage() {
   const { countryCode } = useParams();
   const [activeTab, setActiveTab] = useState('features');
   const [selectedPackage, setSelectedPackage] = useState(null);
-  const { t, i18n } = useTranslation(['country', 'package']);
+  const { t, i18n } = useTranslation(['country', 'package', 'features']);
   
   // Load the necessary translation namespaces
-  const { isLoading: translationsLoading } = useTranslationLoader(['country', 'package']);
+  const { isLoading: translationsLoading } = useTranslationLoader(['country', 'package', 'features']);
   
   const { country, loading: countryLoading, error: countryError } = useCountry(countryCode);
   const { packages, loading: packagesLoading, error: packagesError } = usePackages({ 
@@ -188,139 +240,6 @@ export default function CountryPage() {
     setSelectedPackage(pkg);
   };
 
-  // Get translated benefit titles and descriptions
-  const getBenefits = () => {
-    const benefits = [
-      {
-        icon: (
-          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg>
-        ),
-        title: {
-          en: "24/7 Live Chat Support",
-          sq: "Mbështetje Chat 24/7",
-          fr: "Support Chat 24/7",
-          de: "24/7 Live-Chat-Support",
-          tr: "7/24 Canlı Sohbet Desteği"
-        },
-        description: {
-          en: "Get expert help anytime, anywhere via our friendly chat.",
-          sq: "Merrni ndihmë eksperti në çdo kohë, kudo përmes bisedës sonë miqësore.",
-          fr: "Obtenez de l'aide d'experts à tout moment, n'importe où via notre chat convivial.",
-          de: "Erhalten Sie jederzeit und überall Expertenhilfe über unseren freundlichen Chat.",
-          tr: "Dost canlısı sohbetimiz aracılığıyla istediğiniz zaman, istediğiniz yerden uzman yardımı alın."
-        }
-      },
-      {
-        icon: (
-          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-          </svg>
-        ),
-        title: {
-          en: "Easy Setup",
-          sq: "Konfigurim i Lehtë",
-          fr: "Configuration Facile",
-          de: "Einfache Einrichtung",
-          tr: "Kolay Kurulum"
-        },
-        description: {
-          en: "Scan, install, and you're connected — no hassle, no SIM swapping.",
-          sq: "Skanoni, instaloni dhe jeni të lidhur — pa telashe, pa ndërrim SIM.",
-          fr: "Scannez, installez et vous êtes connecté — sans tracas, sans changer de SIM.",
-          de: "Scannen, installieren und Sie sind verbunden — kein Ärger, kein SIM-Wechsel.",
-          tr: "Tarayın, yükleyin ve bağlanın — sorunsuz, SIM değiştirmeden."
-        }
-      },
-      {
-        icon: (
-          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        ),
-        title: {
-          en: "One eSIM, All Destinations",
-          sq: "Një eSIM, Të Gjitha Destinacionet",
-          fr: "Une eSIM, Toutes les Destinations",
-          de: "Eine eSIM, Alle Ziele",
-          tr: "Tek eSIM, Tüm Destinasyonlar"
-        },
-        description: {
-          en: "Use a single eSIM for 200+ countries, no reinstallation needed.",
-          sq: "Përdorni një eSIM të vetme për 200+ vende, nuk nevojitet riinstalim.",
-          fr: "Utilisez une seule eSIM pour plus de 200 pays, sans réinstallation nécessaire.",
-          de: "Verwenden Sie eine einzige eSIM für über 200 Länder, keine Neuinstallation erforderlich.",
-          tr: "200'den fazla ülke için tek bir eSIM kullanın, yeniden yükleme gerekmez."
-        }
-      },
-      {
-        icon: (
-          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-          </svg>
-        ),
-        title: {
-          en: "Smart Data Alerts",
-          sq: "Njoftime të Mençura të të Dhënave",
-          fr: "Alertes de Données Intelligentes",
-          de: "Intelligente Datenbenachrichtigungen",
-          tr: "Akıllı Veri Uyarıları"
-        },
-        description: {
-          en: "Never get cut off — we notify you at 80% usage.",
-          sq: "Asnjëherë mos u shkëputni — ju njoftojmë në 80% të përdorimit.",
-          fr: "Ne soyez jamais coupé — nous vous notifions à 80% d'utilisation.",
-          de: "Werden Sie nie abgeschnitten — wir benachrichtigen Sie bei 80% Nutzung.",
-          tr: "Asla kesilmeyin — %80 kullanımda sizi bilgilendiriyoruz."
-        }
-      },
-      {
-        icon: (
-          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-          </svg>
-        ),
-        title: {
-          en: "Safe & Secure",
-          sq: "E Sigurt & E Mbrojtur",
-          fr: "Sûr & Sécurisé",
-          de: "Sicher & Geschützt",
-          tr: "Güvenli & Emniyetli"
-        },
-        description: {
-          en: "We protect your privacy with encrypted networks and zero tracking.",
-          sq: "Ne mbrojmë privatësinë tuaj me rrjete të enkriptuara dhe zero gjurmim.",
-          fr: "Nous protégeons votre vie privée avec des réseaux cryptés et zéro suivi.",
-          de: "Wir schützen Ihre Privatsphäre mit verschlüsselten Netzwerken und ohne Tracking.",
-          tr: "Gizliliğinizi şifreli ağlar ve sıfır izleme ile koruyoruz."
-        }
-      },
-      {
-        icon: (
-          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-          </svg>
-        ),
-        title: {
-          en: "Local, Regional & Global Plans",
-          sq: "Plane Lokale, Rajonale & Globale",
-          fr: "Plans Locaux, Régionaux & Globaux",
-          de: "Lokale, Regionale & Globale Pläne",
-          tr: "Yerel, Bölgesel & Küresel Planlar"
-        },
-        description: {
-          en: "Choose plans that suit your trip: city hop or continent tour.",
-          sq: "Zgjidhni plane që përshtaten me udhëtimin tuaj: qytet ose tur kontinenti.",
-          fr: "Choisissez des forfaits adaptés à votre voyage: saut de ville ou tour de continent.",
-          de: "Wählen Sie Pläne, die zu Ihrer Reise passen: Städtehopping oder Kontinenttour.",
-          tr: "Seyahatinize uygun planlar seçin: şehir gezisi veya kıta turu."
-        }
-      }
-    ];
-
-    return benefits;
-  };
 
   // Prepare schema markup for SEO
   const countrySchema = country ? {
@@ -526,38 +445,22 @@ export default function CountryPage() {
               <AppDownloadCTA />
             </div>
 
-            {/* Why choose KudoSim section */}
-            <div className="py-16 md:py-20 bg-gradient-to-b from-white to-[#f9f9ff] rounded-2xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-3">
-                  {i18n.language === 'en' ? "Why choose KudoSim for your eSIM?" : 
-                   i18n.language === 'sq' ? "Pse të zgjidhni KudoSim për eSIM-in tuaj?" :
-                   i18n.language === 'fr' ? "Pourquoi choisir KudoSim pour votre eSIM ?" :
-                   i18n.language === 'de' ? "Warum KudoSim für Ihre eSIM wählen?" :
-                   i18n.language === 'tr' ? "eSIM'iniz için neden KudoSim'i seçmelisiniz?" :
-                   "Why choose KudoSim for your eSIM?"}
-                </h2>
-                <p className="text-gray-600 max-w-3xl mx-auto">
-                  {i18n.language === 'en' ? "KudoSim gives you more than just data – it gives you freedom, peace of mind, and unmatched support." : 
-                   i18n.language === 'sq' ? "KudoSim ju jep më shumë se thjesht të dhëna - ju jep liri, qetësi mendore dhe mbështetje të pakrahasueshme." :
-                   i18n.language === 'fr' ? "KudoSim vous offre plus que de simples données - il vous offre liberté, tranquillité d'esprit et un support inégalé." :
-                   i18n.language === 'de' ? "KudoSim bietet Ihnen mehr als nur Daten – es bietet Ihnen Freiheit, Seelenfrieden und unvergleichliche Unterstützung." :
-                   i18n.language === 'tr' ? "KudoSim size sadece veri değil - özgürlük, huzur ve eşsiz destek sunar." :
-                   "KudoSim gives you more than just data – it gives you freedom, peace of mind, and unmatched support."}
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
-                {getBenefits().map((benefit, index) => (
-                  <BenefitCard
-                    key={index}
-                    icon={benefit.icon}
-                    title={benefit.title[i18n.language] || benefit.title.en}
-                    description={benefit.description[i18n.language] || benefit.description.en}
-                  />
-                ))}
-              </div>
+            {/* Quick feature highlights */}
+            <div className="py-16">
+              <Container>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {quickFeatures.map((item, idx) => (
+                    <QuickCard
+                      key={idx}
+                      icon={item.icon}
+                      title={t(`features.${item.key}.title`)}
+                      description={t(`features.${item.key}.description`)}
+                    />
+                  ))}
+                </div>
+              </Container>
             </div>
+
           </div>
         </div>
 

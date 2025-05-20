@@ -6,8 +6,8 @@
     "description": "Jo më ndërrim SIM-esh, instalojeni një herë, mbajeni përgjithmonë"
   },
   "support": {
-    "title": "Mbështetje premium",
-    "description": "Ne do të jemi gjithmonë me ju, për mirë dhe për keq."
+    "title": "Mbështetje 24/7",
+    "description": "Pyetje? Ekipa jonë mbështetës është këtu 24/7 me email ose chat të drejtpërdrejtë."
   },
   "lounge": {
     "title": "Qasje falas në lounge",
@@ -29,5 +29,25 @@
     "networks": "Partnerë Rrjeti",
     "users": "Përdorues të Kënaqur",
     "support": "Mbështetje 24/7"
+  },
+  "customize": {
+    "title": "Personalizo Planin",
+    "description": "Përshtat kohëzgjatjen dhe sasinë e të dhënave sipas udhëtimit. Pa paguar për ditë të papërdorura apo mbaruar herët."
+  },
+  "unlimited": {
+    "title": "Plane me Internet të Pakufizuar",
+    "description": "Shijo internet të pakufizuar me parapagesë në Kosovë. Pa mbushje, pa shqetësime — qëndro i lidhur gjithë ditën."
+  },
+  "whatsapp": {
+    "title": "Ruaj Numrin e WhatsApp",
+    "description": "Telefononi dhe mesazhoni sikur jeni në shtëpi. Qëndroni në kontakt jashtë vendit pa ndërruar numrin."
+  },
+  "delivery": {
+    "title": "Dërgesë e Menjëhershme",
+    "description": "eSIM-i dërgohet menjëherë në email. Qofsh jashtë vendit ose duke u përgatitur, lidhu në sekonda."
+  },
+  "sharing": {
+    "title": "Ndani të Dhënat me Familjen",
+    "description": "Përdor deri në 500MB/ditë për hotspot dhe ndaj të dhëna me miq ose familje në çdo kohë."
   }
 }

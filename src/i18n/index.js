@@ -17,6 +17,8 @@ import sqFeatures from './locales/sq/features.json';
 import frFeatures from './locales/fr/features.json';
 import deFeatures from './locales/de/features.json';
 import trFeatures from './locales/tr/features.json';
+import hrFeatures from './locales/hr/features.json';
+import mkFeatures from './locales/mk/features.json';
 
 // Import component translations
 import enComponents from './locales/en/components.json';
@@ -249,6 +251,12 @@ i18n
           "best.value": "En İyi Değer",
           "checkout.url": "Ödeme URL'si"
         }
+      },
+      hr: {
+        features: hrFeatures
+      },
+      mk: {
+        features: mkFeatures
       }
     },
     fallbackLng: 'en',
