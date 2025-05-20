@@ -128,6 +128,87 @@ const BenefitCard = ({ icon, title, description }) => (
   </motion.div>
 );
 
+// Animated card component for quick highlights
+const QuickCard = ({ icon, title, description }) => (
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    className="rounded-2xl p-6 bg-gradient-to-br from-[#690d89] to-[#8B5CF6] text-white shadow-md hover:shadow-xl transition-transform"
+  >
+    <motion.div
+      className="w-12 h-12 mb-4 flex items-center justify-center rounded-xl bg-white/20"
+      animate={{ scale: [1, 1.1, 1] }}
+      transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+    >
+      {icon}
+    </motion.div>
+    <h4 className="text-lg font-bold mb-1 uppercase">{title}</h4>
+    <p className="text-sm opacity-90">{description}</p>
+  </motion.div>
+);
+
+const quickFeatures = [
+  {
+    title: 'Support',
+    description:
+      '24/7 expert help via live chat — get support whenever and wherever you travel with KudoSim.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 10c0-3.866-3.582-7-8-7S2 6.134 2 10c0 1.657.672 3.156 1.758 4.318L3 19l4.228-1.689A9.99 9.99 0 0010 18c4.418 0 8-3.134 8-7z" />
+      </svg>
+    )
+  },
+  {
+    title: 'Setup',
+    description:
+      'Activate your eSIM instantly. Just scan and connect — no physical SIM, no hassle.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
+      </svg>
+    )
+  },
+  {
+    title: 'Global',
+    description:
+      'One eSIM, 200+ countries. Stay connected worldwide with a single digital SIM.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 0v20m10-10H2" />
+      </svg>
+    )
+  },
+  {
+    title: 'Alert',
+    description:
+      'Smart data notifications keep you informed before you run out — never lose signal unexpectedly.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z" />
+      </svg>
+    )
+  },
+  {
+    title: 'Secure',
+    description:
+      'Bank-level encryption and zero tracking. Your data is private, always protected with KudoSim.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3zm0 2c-2.21 0-4 1.79-4 4v1h8v-1c0-2.21-1.79-4-4-4z" />
+      </svg>
+    )
+  },
+  {
+    title: 'Plans',
+    description:
+      'Flexible internet plans for city trips or full Euro tours — local, regional, and global.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 6H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-4m-6-4h6v4H9V2z" />
+      </svg>
+    )
+  }
+];
+
 export default function CountryPage() {
   const { countryCode } = useParams();
   const [activeTab, setActiveTab] = useState('features');
@@ -526,38 +607,22 @@ export default function CountryPage() {
               <AppDownloadCTA />
             </div>
 
-            {/* Why choose KudoSim section */}
-            <div className="py-16 md:py-20 bg-gradient-to-b from-white to-[#f9f9ff] rounded-2xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-3">
-                  {i18n.language === 'en' ? "Why choose KudoSim for your eSIM?" : 
-                   i18n.language === 'sq' ? "Pse të zgjidhni KudoSim për eSIM-in tuaj?" :
-                   i18n.language === 'fr' ? "Pourquoi choisir KudoSim pour votre eSIM ?" :
-                   i18n.language === 'de' ? "Warum KudoSim für Ihre eSIM wählen?" :
-                   i18n.language === 'tr' ? "eSIM'iniz için neden KudoSim'i seçmelisiniz?" :
-                   "Why choose KudoSim for your eSIM?"}
-                </h2>
-                <p className="text-gray-600 max-w-3xl mx-auto">
-                  {i18n.language === 'en' ? "KudoSim gives you more than just data – it gives you freedom, peace of mind, and unmatched support." : 
-                   i18n.language === 'sq' ? "KudoSim ju jep më shumë se thjesht të dhëna - ju jep liri, qetësi mendore dhe mbështetje të pakrahasueshme." :
-                   i18n.language === 'fr' ? "KudoSim vous offre plus que de simples données - il vous offre liberté, tranquillité d'esprit et un support inégalé." :
-                   i18n.language === 'de' ? "KudoSim bietet Ihnen mehr als nur Daten – es bietet Ihnen Freiheit, Seelenfrieden und unvergleichliche Unterstützung." :
-                   i18n.language === 'tr' ? "KudoSim size sadece veri değil - özgürlük, huzur ve eşsiz destek sunar." :
-                   "KudoSim gives you more than just data – it gives you freedom, peace of mind, and unmatched support."}
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
-                {getBenefits().map((benefit, index) => (
-                  <BenefitCard
-                    key={index}
-                    icon={benefit.icon}
-                    title={benefit.title[i18n.language] || benefit.title.en}
-                    description={benefit.description[i18n.language] || benefit.description.en}
-                  />
-                ))}
-              </div>
+            {/* Quick feature highlights */}
+            <div className="py-16 bg-gray-50">
+              <Container>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {quickFeatures.map((item, idx) => (
+                    <QuickCard
+                      key={idx}
+                      icon={item.icon}
+                      title={item.title}
+                      description={item.description}
+                    />
+                  ))}
+                </div>
+              </Container>
             </div>
+
           </div>
         </div>
 
