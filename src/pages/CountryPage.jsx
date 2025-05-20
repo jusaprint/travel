@@ -136,7 +136,7 @@ const QuickCard = ({ icon, title, description }) => (
   </motion.div>
 );
 
-// Quick features data, translated via `features.<key>.*`
+// Quick features data (uses `features.<key>.title` & `.description` translation keys)
 const quickFeatures = [
   { key: 'support', icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
   { key: 'setup',   icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944..."/></svg> },
@@ -173,6 +173,140 @@ export default function CountryPage() {
       case 'tr': return `Ön ödemeli veriye sahip indirilebilir ${name} SIM kartı`;
       default:    return `Downloadable ${name} SIM card with prepaid data`;
     }
+  };
+
+  // Get translated benefit titles and descriptions
+  const getBenefits = () => {
+    const benefits = [
+      {
+        icon: (
+          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        ),
+        title: {
+          en: "24/7 Live Chat Support",
+          sq: "Mbështetje Chat 24/7",
+          fr: "Support Chat 24/7",
+          de: "24/7 Live-Chat-Support",
+          tr: "7/24 Canlı Sohbet Desteği"
+        },
+        description: {
+          en: "Get expert help anytime, anywhere via our friendly chat.",
+          sq: "Merrni ndihmë eksperti në çdo kohë, kudo përmes bisedës sonë miqësore.",
+          fr: "Obtenez de l'aide d'experts à tout moment, n'importe où via notre chat convivial.",
+          de: "Erhalten Sie jederzeit und überall Expertenhilfe über unseren freundlichen Chat.",
+          tr: "Dost canlısı sohbetimiz aracılığıyla istediğiniz zaman, istediğiniz yerden uzman yardımı alın."
+        }
+      },
+      {
+        icon: (
+          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        ),
+        title: {
+          en: "Easy Setup",
+          sq: "Konfigurim i Lehtë",
+          fr: "Configuration Facile",
+          de: "Einfache Einrichtung",
+          tr: "Kolay Kurulum"
+        },
+        description: {
+          en: "Scan, install, and you're connected — no hassle, no SIM swapping.",
+          sq: "Skanoni, instaloni dhe jeni të lidhur — pa telashe, pa ndërrim SIM.",
+          fr: "Scannez, installez et vous êtes connecté — sans tracas, sans changer de SIM.",
+          de: "Scannen, installieren und Sie sind verbunden — kein Ärger, kein SIM-Wechsel.",
+          tr: "Tarayın, yükleyin ve bağlanın — sorunsuz, SIM değiştirmeden."
+        }
+      },
+      {
+        icon: (
+          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        ),
+        title: {
+          en: "One eSIM, All Destinations",
+          sq: "Një eSIM, Të Gjitha Destinacionet",
+          fr: "Une eSIM, Toutes les Destinations",
+          de: "Eine eSIM, Alle Ziele",
+          tr: "Tek eSIM, Tüm Destinasyonlar"
+        },
+        description: {
+          en: "Use a single eSIM for 200+ countries, no reinstallation needed.",
+          sq: "Përdorni një eSIM të vetme për 200+ vende, nuk nevojitet riinstalim.",
+          fr: "Utilisez une seule eSIM pour plus de 200 pays, sans réinstallation nécessaire.",
+          de: "Verwenden Sie eine einzige eSIM für über 200 Länder, keine Neuinstallation erforderlich.",
+          tr: "200'den fazla ülke için tek bir eSIM kullanın, yeniden yükleme gerekmez."
+        }
+      },
+      {
+        icon: (
+          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+        ),
+        title: {
+          en: "Smart Data Alerts",
+          sq: "Njoftime të Mençura të të Dhënave",
+          fr: "Alertes de Données Intelligentes",
+          de: "Intelligente Datenbenachrichtigungen",
+          tr: "Akıllı Veri Uyarıları"
+        },
+        description: {
+          en: "Never get cut off — we notify you at 80% usage.",
+          sq: "Asnjëherë mos u shkëputni — ju njoftojmë në 80% të përdorimit.",
+          fr: "Ne soyez jamais coupé — nous vous notifions à 80% d'utilisation.",
+          de: "Werden Sie nie abgeschnitten — wir benachrichtigen Sie bei 80% Nutzung.",
+          tr: "Asla kesilmeyin — %80 kullanımda sizi bilgilendiriyoruz."
+        }
+      },
+      {
+        icon: (
+          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        ),
+        title: {
+          en: "Safe & Secure",
+          sq: "E Sigurt & E Mbrojtur",
+          fr: "Sûr & Sécurisé",
+          de: "Sicher & Geschützt",
+          tr: "Güvenli & Emniyetli"
+        },
+        description: {
+          en: "We protect your privacy with encrypted networks and zero tracking.",
+          sq: "Ne mbrojmë privatësinë tuaj me rrjete të enkriptuara dhe zero gjurmim.",
+          fr: "Nous protégeons votre vie privée avec des réseaux cryptés et zéro suivi.",
+          de: "Wir schützen Ihre Privatsphäre mit verschlüsselten Netzwerken und ohne Tracking.",
+          tr: "Gizliliğinizi şifreli ağlar ve sıfır izleme ile koruyoruz."
+        }
+      },
+      {
+        icon: (
+          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+          </svg>
+        ),
+        title: {
+          en: "Local, Regional & Global Plans",
+          sq: "Plane Lokale, Rajonale & Globale",
+          fr: "Plans Locaux, Régionaux & Globaux",
+          de: "Lokale, Regionale & Globale Pläne",
+          tr: "Yerel, Bölgesel & Küresel Planlar"
+        },
+        description: {
+          en: "Choose plans that suit your trip: city hop or continent tour.",
+          sq: "Zgjidhni plane që përshtaten me udhëtimin tuaj: qytet ose tur kontinenti.",
+          fr: "Choisissez des forfaits adaptés à votre voyage: saut de ville ou tour de continent.",
+          de: "Wählen Sie Pläne, die zu Ihrer Reise passen: Städtehopping oder Kontinenttour.",
+          tr: "Seyahatinize uygun planlar seçin: şehir gezisi veya kıta turu."
+        }
+      }
+    ];
+
+    return benefits;
   };
 
   // Single, conditional schema
@@ -322,7 +456,7 @@ export default function CountryPage() {
                       <p className="ml-3 text-gray-700">No surprise fees or roaming charges</p>
                     </div>
                     <FeaturesList features={country.features || [
-                      "Unlimited data at high speeds",
+                      "Unlimited high-speed data",
                       "Tethering and hotspot included",
                       "Works with all eSIM compatible devices",
                       "Instant delivery via email",
@@ -370,11 +504,11 @@ export default function CountryPage() {
                    "Why choose KudoSim for your eSIM?"}
                 </h2>
                 <p className="text-gray-600 max-w-3xl mx-auto">
-                  {i18n.language === 'sq' ? "KudoSim ju jep më shumë se thjesht të dhëna - ju jep liri, qetësi mendore dhe mbështetje të pakrahasueshme." :
-                   i18n.language === 'fr' ? "KudoSim vous offre plus que de simples données - il vous offre liberté, tranquillité d'esprit et un support inégalé." :
-                   i18n.language === 'de' ? "KudoSim bietet Ihnen mehr als nur Daten – es bietet Ihnen Freiheit, Seelenfrieden und unvergleichliche Unterstützung." :
-                   i18n.language === 'tr' ? "KudoSim size sadece veri değil - özgürlük, huzur ve eşsiz destek sunar." :
-                   "KudoSim gives you more than just data – it gives you freedom, peace of mind, and unmatched support."}
+                  {i18n.language === 'sq' ? "KudoSim ju jep më shumë se të dhëna – liri, qetësi mendore, mbështetje." :
+                   i18n.language === 'fr' ? "KudoSim vous offre plus que des données – liberté, tranquillité, support." :
+                   i18n.language === 'de' ? "KudoSim bietet mehr als Daten – Freiheit, Ruhe, Support." :
+                   i18n.language === 'tr' ? "KudoSim size sadece veri değil – özgürlük, huzur, destek sunar." :
+                   "KudoSim gives you freedom, peace of mind, and unmatched support."}
                 </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
