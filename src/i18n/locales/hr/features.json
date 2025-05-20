@@ -1,0 +1,26 @@
+{
+  "customize": {
+    "title": "Prilagodi svoj plan",
+    "description": "Podesi trajanje i količinu podataka eSIM-a prema putovanju. Nema plaćanja za neiskorištene dane ni ranog isteka."
+  },
+  "unlimited": {
+    "title": "Neograničeni podatkovni paketi",
+    "description": "Uživaj u prepaid neograničenom internetu na Kosovu. Bez nadoplate, bez brige — ostani povezan cijeli dan."
+  },
+  "whatsapp": {
+    "title": "Zadrži svoj WhatsApp broj",
+    "description": "Zovi i šalji poruke putem WhatsAppa kao kod kuće. Ostanite u kontaktu u inozemstvu bez promjene broja."
+  },
+  "support": {
+    "title": "Korisnička podrška 24/7",
+    "description": "Imate pitanja? Naš tim podrške dostupan je 24/7 putem e-pošte ili chata kad god vam zatreba."
+  },
+  "delivery": {
+    "title": "Trenutna dostava",
+    "description": "Vaš eSIM se šalje odmah e-poštom. Bili već u inozemstvu ili u pripremi, povežite se u sekundi."
+  },
+  "sharing": {
+    "title": "Dijeli podatke s obitelji",
+    "description": "Koristi do 500MB/dan za hotspot i dijeli podatke s prijateljima ili obitelji u pokretu."
+  }
+}
