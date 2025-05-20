@@ -403,9 +403,9 @@ export default function CountryPage() {
 
         {/* Main content */}
         <div className="flex-grow">
-          <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="max-w-7xl mx-auto px-4 py-8 space-y-10 md:space-y-16">
             {/* Country header */}
-            <div className="mb-8">
+            <div>
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-lg">
                   <Flag 
@@ -433,7 +433,7 @@ export default function CountryPage() {
             <h2 className="text-xl font-bold text-gray-900 mb-4">
               {t('select.data.package', 'Select Your Data Package')}
             </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10 md:mb-16">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {packages.map((pkg) => (
                 <PackageCard
                   key={pkg.id}
@@ -579,6 +579,7 @@ export default function CountryPage() {
             </button>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
