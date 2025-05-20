@@ -102,21 +102,6 @@ const FeaturesList = ({ features }) => (
   </div>
 );
 
-// Benefit card for "Why choose KudoSim?"
-const BenefitCard = ({ icon, title, description }) => (
-  <motion.div
-    whileHover={{ y: -5 }}
-    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
-  >
-    <div className="flex flex-col items-center text-center">
-      <div className="w-16 h-16 rounded-full bg-[#f3e9ff] flex items-center justify-center mb-4">
-        <div className="text-[#6a0dad]">{icon}</div>
-      </div>
-      <h3 className="text-lg font-bold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-600 text-sm">{description}</p>
-    </div>
-  </motion.div>
-);
 
 // Animated card component for quick highlights
 const QuickCard = ({ icon, title, description }) => (
@@ -174,6 +159,7 @@ export default function CountryPage() {
       default:    return `Downloadable ${name} SIM card with prepaid data`;
     }
   };
+
 
   // Single, conditional schema
   const countrySchema = country ? {
@@ -358,37 +344,6 @@ export default function CountryPage() {
                 </div>
               </Container>
             </div>
-
-            {/* Why choose KudoSim */}
-            <div className="py-16 md:py-20 bg-gradient-to-b from-white to-[#f9f9ff] rounded-2xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-3">
-                  {i18n.language === 'sq' ? "Pse të zgjidhni KudoSim për eSIM-in tuaj?" :
-                   i18n.language === 'fr' ? "Pourquoi choisir KudoSim pour votre eSIM ?" :
-                   i18n.language === 'de' ? "Warum KudoSim für Ihre eSIM wählen?" :
-                   i18n.language === 'tr' ? "eSIM'iniz için neden KudoSim'i seçmelisiniz?" :
-                   "Why choose KudoSim for your eSIM?"}
-                </h2>
-                <p className="text-gray-600 max-w-3xl mx-auto">
-                  {i18n.language === 'sq' ? "KudoSim ju jep më shumë se thjesht të dhëna - ju jep liri, qetësi mendore dhe mbështetje të pakrahasueshme." :
-                   i18n.language === 'fr' ? "KudoSim vous offre plus que de simples données - il vous offre liberté, tranquillité d'esprit et un support inégalé." :
-                   i18n.language === 'de' ? "KudoSim bietet Ihnen mehr als nur Daten – es bietet Ihnen Freiheit, Seelenfrieden und unvergleichliche Unterstützung." :
-                   i18n.language === 'tr' ? "KudoSim size sadece veri değil - özgürlük, huzur ve eşsiz destek sunar." :
-                   "KudoSim gives you more than just data – it gives you freedom, peace of mind, and unmatched support."}
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
-                {getBenefits().map((b, idx) => (
-                  <BenefitCard
-                    key={idx}
-                    icon={b.icon}
-                    title={b.title[i18n.language] || b.title.en}
-                    description={b.description[i18n.language] || b.description.en}
-                  />
-                ))}
-              </div>
-            </div>
-
           </div>
         </div>
 
