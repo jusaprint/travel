@@ -70,7 +70,9 @@ const PackageCard = ({ pkg, badge, t, isSelected, onSelect }) => (
         </div>
       </div>
       <div className="text-center border-t pt-4 mt-2">
-        <p className="text-2xl font-bold text-gray-900">${Number(pkg.price).toFixed(2)}</p>
+        <p className="text-2xl font-bold text-gray-900">
+          ${Number(pkg.price).toFixed(2)}
+        </p>
       </div>
     </div>
     {isSelected && (
@@ -88,7 +90,12 @@ const FeaturesList = ({ features }) => (
   <div className="space-y-4">
     {features.map((feat, idx) => (
       <div key={idx} className="flex items-start">
-        <svg className="w-5 h-5 text-[#6a0dad] flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg
+          className="w-5 h-5 text-[#6a0dad] flex-shrink-0 mt-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
         </svg>
         <p className="ml-3 text-gray-700">{feat}</p>
@@ -131,14 +138,86 @@ const QuickCard = ({ icon, title, description }) => (
   </motion.div>
 );
 
-// Quick features data (translation keys)
+// Quick features data (uses translation keys for title/description)
 const quickFeatures = [
-  { key: 'support', icon: <svg className="w-6 h-6" /* … */ /> },
-  { key: 'setup',   icon: <svg className="w-6 h-6" /* … */ /> },
-  { key: 'global',  icon: <svg className="w-6 h-6" /* … */ /> },
-  { key: 'alerts',  icon: <svg className="w-6 h-6" /* … */ /> },
-  { key: 'secure',  icon: <svg className="w-6 h-6" /* … */ /> },
-  { key: 'plans',   icon: <svg className="w-6 h-6" /* … */ /> },
+  {
+    key: 'support',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+          d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636
+             m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    )
+  },
+  {
+    key: 'setup',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944
+             a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9
+             c0 5.591 3.824 10.29 9 11.622
+             5.176-1.332 9-6.03 9-11.622
+             0-1.042-.133-2.052-.382-3.016z"
+        />
+      </svg>
+    )
+  },
+  {
+    key: 'global',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945
+             M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2
+             2 2 0 104 0 2 2 0 012-2h1.064
+             M15 20.488V18a2 2 0 012-2h3.064
+             M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    )
+  },
+  {
+    key: 'alerts',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2
+             a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10
+             m-6 0a2 2 0 002 2h2a2 2 0 002-2
+             m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14
+             a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+        />
+      </svg>
+    )
+  },
+  {
+    key: 'secure',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6
+             a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+        />
+      </svg>
+    )
+  },
+  {
+    key: 'plans',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10
+             a2 2 0 002-2V7a2 2 0 00-2-2h-2
+             M9 5a2 2 0 002 2h2a2 2 0 002-2
+             M9 5a2 2 0 012-2h2a2 2 0 012 2
+             m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+        />
+      </svg>
+    )
+  }
 ];
 
 export default function CountryPage() {
@@ -175,7 +254,7 @@ export default function CountryPage() {
   const getBenefits = () => [
     {
       icon: <svg className="w-8 h-8" /* … */ />,
-      title: {
+      title: { 
         en: "24/7 Live Chat Support",
         sq: "Mbështetje Chat 24/7",
         fr: "Support Chat 24/7",
@@ -295,7 +374,7 @@ export default function CountryPage() {
     image: country.coverimage
   } : null;
 
-  // Loading / error states
+  // Loading & error states
   if (countryLoading || packagesLoading || translationsLoading) {
     return (
       <div className="min-h-screen bg-[#f9f9ff] pt-24 flex items-center justify-center">
@@ -369,8 +448,8 @@ export default function CountryPage() {
                 isSelected={selectedPackage?.id===pkg.id}
                 onSelect={setSelectedPackage}
                 badge={
-                  pkg.popular? t('most.popular','Most Popular') :
-                  pkg.best_value? t('best.value','Best Value') :
+                  pkg.popular? t('most.popular','Most Popular'):
+                  pkg.best_value? t('best.value','Best Value'):
                   null
                 }
               />
